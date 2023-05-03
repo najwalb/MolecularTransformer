@@ -230,8 +230,9 @@ class Translator(object):
 
         all_scores = []
         all_predictions = []
-
-        for batch in data_iter:
+        for i, batch in enumerate(data_iter):
+            print(f'batch # {i}\n')
+            print(f'len(batch) {len(batch)}\n')
             batch_data = self.translate_batch(batch, data, fast=self.fast)
             translations = builder.from_batch(batch_data)
 
@@ -284,6 +285,7 @@ class Translator(object):
                         row_format = "{:>10.10} " + "{:>10.7f} " * len(srcs)
                     os.write(1, output.encode('utf-8'))
 
+            if i ==10: break
         if self.report_score:
             msg = self._report_score('PRED', pred_score_total,
                                      pred_words_total)
@@ -465,6 +467,7 @@ class Translator(object):
                     topk_beam_index
                     + beam_offset[:topk_beam_index.size(0)].unsqueeze(1))
             select_indices = batch_index.view(-1)
+            select_indices = select_indices.int()
 
             # Append last prediction.
             alive_seq = torch.cat(
@@ -540,6 +543,7 @@ class Translator(object):
                               -1, alive_attn.size(-1))
 
             # Reorder states.
+            select_indices = select_indices.int()
             if type(memory_bank) == tuple:
                 memory_bank = tuple(m.index_select(1, select_indices) for m in memory_bank)
             else:
