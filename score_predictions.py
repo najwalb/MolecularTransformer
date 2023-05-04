@@ -41,8 +41,18 @@ def main(opt):
 
     test_df['rank'] = test_df.apply(lambda row: get_rank(row, 'canonical_prediction_', opt.beam_size), axis=1)
 
-    correct = 0
+    print(f"test_df['rank'] {test_df['rank']}\n")   
 
+    # accuracy: corresponding top-k at the highest k (beam)
+    accuracy = (test_df['rank'] > 0).sum()/total*100 # accuracy 
+    print(f"accuracy {accuracy}\n") 
+    # coverage: percent. of products with at least one correct proposal
+    unique_targets = test_df['target'].nunique()
+    print(f'unique_targets {unique_targets}\n')
+    coverage = (test_df.groupby(by='target').agg({'rank':'max'}) > 0).sum()['rank']/unique_targets*100 
+    print(f"coverage {coverage}\n") 
+
+    correct = 0
     for i in range(1, opt.beam_size+1):
         correct += (test_df['rank'] == i).sum()
         invalid_smiles = (test_df['canonical_prediction_{}'.format(i)] == '').sum()
@@ -66,6 +76,7 @@ if __name__ == "__main__":
                        help="Path to file containing the predictions")
     parser.add_argument('-targets', type=str, default="",
                        help="Path to file containing targets")
-
+    parser.add_argument('-accuracycoverage', action="store_true",
+                       help="Compute the accoracy and coverage for retrosynthetic proposals.")
     opt = parser.parse_args()
     main(opt)

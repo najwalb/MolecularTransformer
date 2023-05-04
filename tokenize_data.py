@@ -4,6 +4,12 @@
 """
     Tokenize data
 """
+import argparse
+import onmt.opts
+import os
+import pathlib
+
+parent_path = pathlib.Path(os.path.realpath(__file__)).parents[0]
 
 def smi_tokenizer(smi):
     """
@@ -16,10 +22,10 @@ def smi_tokenizer(smi):
     assert smi == ''.join(tokens)
     return ' '.join(tokens)
 
-def main():
-    in_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/gen_10.csv'
-    src_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/src-gen-10.txt'
-    tgt_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/tgt-gen-10.txt'
+def main(opt):
+    in_path = os.path.join(parent_path, 'data', opt.dataset, opt.in_file)
+    src_path = os.path.join(parent_path, 'data', opt.dataset, 'src-'+opt.in_file.split('.')[0]+'.txt')
+    tgt_path = os.path.join(parent_path, 'data', opt.dataset, 'tgt-'+opt.in_file.split('.')[0]+'.txt')
 
     src_tokens = []
     tgt_tokens = []
@@ -34,4 +40,15 @@ def main():
     open(tgt_path, 'w').writelines(tgt_tokens)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description='score_predictions.py',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    onmt.opts.add_md_help_argument(parser)
+
+    parser.add_argument('-dataset', type=str, default='50k_separated',
+                       help='Dataset')
+    parser.add_argument('-in_file', type=str, default='test_10.csv',
+                       help='Text file of reaction smiles to tokenize.')
+    opt = parser.parse_args()
+    main(opt)
+    

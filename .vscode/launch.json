@@ -5,10 +5,23 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "score_predictions",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "score_predictions.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-targets", "data/50k_separated/tgt-try-10.txt",
+                "-predictions", "experiments/results/predictions_MIT_mixed_augm_model_average_20.pt_on_50k_separated_try-10.txt",
+                "-invalid_smiles"
+            ]
+        },
+        {
+            "name": "translate",
+            "type": "python",
+            "request": "launch",
+            "program": "translate.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
@@ -21,6 +34,14 @@
                 "-beam_size", "5",
                 "-n_best", "5"
             ]
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }
