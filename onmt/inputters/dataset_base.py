@@ -83,7 +83,6 @@ class DatasetBase(torchtext.data.Dataset):
         return tuple(words), features, n_feats - 1
 
     # Below are helper functions for intra-class use only.
-
     def _join_dicts(self, *args):
         """
         Args:
