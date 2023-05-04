@@ -17,9 +17,9 @@ def smi_tokenizer(smi):
     return ' '.join(tokens)
 
 def main():
-    in_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/test.csv'
-    src_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/src-test.txt'
-    tgt_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/tgt-test.txt'
+    in_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/gen_10.csv'
+    src_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/src-gen-10.txt'
+    tgt_path = '/Users/laabidn1/MolecularTransformer/data/50k_separated/tgt-gen-10.txt'
 
     src_tokens = []
     tgt_tokens = []

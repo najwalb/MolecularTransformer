@@ -1,0 +1,20 @@
+C C ( O ) C O
+C C ( O ) C F
+C C ( O ) C Cl
+C C ( C ) ( O ) C O
+C C ( O ) C C ( C ) O
+C C ( = O ) N ( C ) C
+C C ( = O ) N ( C ) c 1 c c c c c 1
+N = C ( N ) C
+C C ( = O ) O . [Cl-] . [NH3+]
+C C ( = O ) [O-] . [Cl-] . [NH3+]
+C C ( C ) ( O ) C c 1 c c c c c 1
+C C ( C ) ( O ) C O
+C C ( C ) c 1 c c c c c 1
+C C ( C ) ( O ) C O C C
+C C ( C ) ( O ) c 1 c c c c c 1
+C N ( O ) C c 1 c c c c c 1
+C N ( O ) C c 1 c c c s 1
+C N ( O ) C ( C ) = N O
+C C ( = O ) [O-] . C N ( C ) O
+C N ( O ) C
