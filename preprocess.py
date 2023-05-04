@@ -3,7 +3,6 @@
 """
     Pre-process Data / features files and build vocabulary
 """
-
 import argparse
 import glob
 import sys
@@ -16,7 +15,6 @@ from onmt.utils.logging import init_logger, logger
 import onmt.inputters as inputters
 import onmt.opts as opts
 
-
 def check_existing_pt_files(opt):
     """ Checking if there are existing .pt files to avoid tampering """
     # We will use glob.glob() to find sharded {train|valid}.[0-9]*.pt
@@ -28,7 +26,6 @@ def check_existing_pt_files(opt):
             sys.stderr.write("Please backup existing pt file: %s, "
                              "to avoid tampering!\n" % pattern)
             sys.exit(1)
-
 
 def parse_args():
     """ Parsing arguments """
@@ -45,7 +42,6 @@ def parse_args():
     check_existing_pt_files(opt)
 
     return opt
-
 
 def build_save_in_shards_using_shards_size(src_corpus, tgt_corpus, fields,
                                            corpus_type, opt):
@@ -136,7 +132,6 @@ def build_save_in_shards_using_shards_size(src_corpus, tgt_corpus, fields,
 
     return ret_list
 
-
 def build_save_dataset(corpus_type, fields, opt):
     """ Building and saving the dataset """
     assert corpus_type in ['train', 'valid']
@@ -184,7 +179,6 @@ def build_save_dataset(corpus_type, fields, opt):
 
     return [pt_file]
 
-
 def build_save_vocab(train_dataset, fields, opt):
     """ Building and saving the vocab """
     fields = inputters.build_vocab(train_dataset, fields, opt.data_type,
@@ -199,7 +193,6 @@ def build_save_vocab(train_dataset, fields, opt):
     # Can't save fields, so remove/reconstruct at training time.
     vocab_file = opt.save_data + '.vocab.pt'
     torch.save(inputters.save_fields_to_vocab(fields), vocab_file)
-
 
 def main():
     opt = parse_args()
@@ -229,7 +222,6 @@ def main():
 
     logger.info("Building & saving vocabulary...")
     build_save_vocab(train_dataset_files, fields, opt)
-
 
 if __name__ == "__main__":
     main()

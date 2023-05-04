@@ -52,8 +52,6 @@ def main(opt):
         else:
             print('Top-{}: {:.1f}%'.format(i, correct / total * 100))
 
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='score_predictions.py',
