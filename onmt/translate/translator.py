@@ -285,7 +285,6 @@ class Translator(object):
                         row_format = "{:>10.10} " + "{:>10.7f} " * len(srcs)
                     os.write(1, output.encode('utf-8'))
 
-            if i ==10: break
         if self.report_score:
             msg = self._report_score('PRED', pred_score_total,
                                      pred_words_total)
