@@ -41,11 +41,9 @@ def main(opt):
 
     test_df['rank'] = test_df.apply(lambda row: get_rank(row, 'canonical_prediction_', opt.beam_size), axis=1)
 
-    print(f"test_df['rank'] {test_df['rank']}\n")   
-
     # accuracy: corresponding top-k at the highest k (beam)
     accuracy = (test_df['rank'] > 0).sum()/total*100 # accuracy 
-    print(f"accuracy {accuracy}\n") 
+    print(f"accuracy {accuracy}%\n") 
     # coverage: percent. of products with at least one correct proposal
     unique_targets = test_df['target'].nunique()
     print(f'unique_targets {unique_targets}\n')

@@ -45,9 +45,9 @@ if __name__ == "__main__":
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     onmt.opts.add_md_help_argument(parser)
 
-    parser.add_argument('-dataset', type=str, default='50k_separated',
+    parser.add_argument('-dataset', type=str, required=True,
                        help='Dataset')
-    parser.add_argument('-in_file', type=str, default='test_10.csv',
+    parser.add_argument('-in_file', type=str, required=True,
                        help='Text file of reaction smiles to tokenize.')
     opt = parser.parse_args()
     main(opt)
