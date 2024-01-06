@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """
     Tokenize data
 """
@@ -24,8 +23,8 @@ def smi_tokenizer(smi):
 
 def main(opt):
     in_path = os.path.join(parent_path, 'data', opt.dataset, opt.in_file)
-    src_path = os.path.join(parent_path, 'data', opt.dataset, 'src-'+opt.in_file.split('.')[0]+'.txt')
-    tgt_path = os.path.join(parent_path, 'data', opt.dataset, 'tgt-'+opt.in_file.split('.')[0]+'.txt')
+    src_path = os.path.join(parent_path, 'data', opt.dataset, 'src-'+opt.in_file+'.txt')
+    tgt_path = os.path.join(parent_path, 'data', opt.dataset, 'tgt-'+opt.in_file+'.txt')
 
     src_tokens = []
     tgt_tokens = []

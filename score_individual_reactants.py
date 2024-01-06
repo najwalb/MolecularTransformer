@@ -30,35 +30,18 @@ def main(opt):
     test_df.columns = ['target']
     total = len(test_df)
 
+    # NOTE: the core of this script, in case want to simplify it later
     with open(opt.predictions, 'r') as f:
         for i, line in enumerate(f.readlines()):
             predictions[i % opt.beam_size].append(''.join(line.strip().split(' ')))
 
     for i, preds in enumerate(predictions):
         test_df['prediction_{}'.format(i + 1)] = preds
-        test_df['canonical_prediction_{}'.format(i + 1)] = test_df['prediction_{}'.format(i + 1)].apply(
-            lambda x: canonicalize_smiles(x))
 
+    # NOTE: could keep rank just for info; in practice we only care about the true tgt being in any beam
     test_df['rank'] = test_df.apply(lambda row: get_rank(row, 'prediction_', opt.beam_size), axis=1)
-
-    # accuracy: corresponding top-k at the highest k (beam)
-    accuracy = (test_df['rank'] > 0).sum()/total*100 # accuracy 
-    print(f"accuracy {accuracy}%\n") 
-    # coverage: percent. of products with at least one correct proposal
-    unique_targets = test_df['target'].nunique()
-    print(f'unique_targets {unique_targets}\n')
-    coverage = (test_df.groupby(by='target').agg({'rank':'max'}) > 0).sum()['rank']/unique_targets*100 
-    print(f"coverage {coverage}\n") 
-
-    correct = 0
-    for i in range(1, opt.beam_size+1):
-        correct += (test_df['rank'] == i).sum()
-        invalid_smiles = (test_df['canonical_prediction_{}'.format(i)] == '').sum()
-        if opt.invalid_smiles:
-            print('Top-{}: {:.1f}% || Invalid SMILES {:.2f}%'.format(i, correct/total*100,
-                                                                     invalid_smiles/total*100))
-        else:
-            print('Top-{}: {:.1f}%'.format(i, correct / total * 100))
+    test_df['score'] = int(test_df['rank'] > 0)
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(

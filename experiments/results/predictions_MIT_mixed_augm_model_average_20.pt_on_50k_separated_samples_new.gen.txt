@@ -1,0 +1,2900 @@
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C # C C O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+= C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C c ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C O 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C O C 1 = C C = C C ( C Cl ) = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+= C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c C = C 1
+Cl C 1 = C C C 2 O C C C O C 2 C = C 1
+[Cl-] . [Cl-] C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C 1
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+C 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C C 1
+Cl C C C O C 1 = C C C = C C 1
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C 1 = C C = C ( O C C C I ) C = C 1
+Cl C C C O C 1 = C C = C C C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C C = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C # C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C C ( Cl ) = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c = C 1
+Cl C 1 = C C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+C C C O C 1 = C C = C ( Cl ) C C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C 1 = C C C ( O C C C Cl ) = C 1
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( O C C C Cl ) C = C 1 2
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) C = C 1
+C 1 = C C 2 O C C C O C 2 C = C 1
+C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C ( = O ) C = C C = C ( Cl ) C = C 1
+C C = C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 ( C = C 1 ) O C C C 2
+C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+O C ( C C Cl ) O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+O C ( C C Cl ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+O C 1 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 2 C = C C = C ( Cl ) C = C 2
+Cl C C C ( O ) O C 1 = C C = C ( Cl ) C = C 1
+O C 1 C = C C ( O C ( O ) C C Cl ) = C C 1
+O C 1 C = C C ( O C ( = O ) C C Cl ) = C C 1
+O C 1 C = C C = C ( Cl ) C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+O C ( C C Cl ) c 1 c c ( Cl ) n c s 1
+O C 1 C = C C ( O C ( C C Cl ) O ) = C C 1
+O = C 1 C = C C ( O C ( O ) C C Cl ) = C C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+[Cl-]
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C = C 2
+O C 1 C = C C ( Cl ) = C C = C 1
+[O-] C ( C C Cl ) O C 1 = C C = C ( Cl ) C = C 1
+O C 1 C = C C ( O C ( C C Cl ) C Cl ) = C C 1
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C ( C C Cl ) O 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O C ( C C Cl ) c 1 = C C = C ( Cl ) C = C 1
+O C ( C C Cl ) c 1 c c ( Cl ) n c C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C 2
+O C ( C C Cl ) C C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( O C ( O ) C C Cl ) C = C 1
+O = C ( O ) C C Cl
+O C ( C Cl ) C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1
+O = C ( C C Cl ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Br ) = C C 1
+Cl C C C ( O ) C 1 = C C = C ( Cl ) C = C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C ( O ) C C Cl ) C = C 1
+O C 1 C = C C ( Br ) = C C 1
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2 O 1
+O C ( C = C Cl ) C C Cl
+O C ( C C Cl ) c 1 c c c ( Cl ) n c 1
+O C ( C C Cl ) C C Cl
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C Br
+[Cl-] C C C ( O ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C = 2
+O C 1 = C C = C ( O C ( C C Cl ) O ) C = C 1
+O C ( O ) C C Cl
+Cl C C C = C 1 C = C C ( Cl ) = C C 1
+O = C ( O ) C C C 1 = C C = C ( Cl ) C = C 1
+O C ( = O ) C C Cl
+O = C 1 C = C C ( Cl ) = C 1
+O C ( C C Cl ) c 1 c c ( Cl ) n c C 1 = O
+C C C ( O ) C O C 1 = C C = C ( Cl ) C = C 1
+O C ( C C Cl ) c 1 c c ( Cl ) n c C 1 O
+O C ( C C Cl ) c 1 c c ( Cl ) n c C = C 1
+O C 1 C = C C 2 O C 1 2
+O C ( C C Cl ) O C 1 C = C C ( Cl ) = C C 1
+O C ( C C Cl ) C 1 = C C = C ( Cl ) C = C C 1
+O C ( C C Cl ) c 1 c c ( Cl ) n c c 1 O
+O C 1 = C C = C ( Cl ) C C 1
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2
+O C 1 C = C C C ( Cl ) = C 1
+O C 1 C = C C = C ( Cl ) C 1
+[Cl-] C 1 = C C = C ( O C ( C C Cl ) O ) C = C 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+O C ( C C Cl ) c 1 c c ( Cl ) n c C = C 1 O
+O C ( C C Cl ) c 1 s c ( Cl ) c = C C 1 = O
+O C ( C = Cl ) C C Cl
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 ( C C Cl ) C = C C ( Cl ) = C C 1
+O C 1 O C C C 1 Cl
+O C 1 = C C = C C ( Cl ) = C C 1
+O C ( C C Cl ) c 1 c c ( Cl ) n c C 1 Cl
+O = S 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( O C ( C C Cl ) O ) = C C 1
+O C ( C C Cl ) = C 1 C = C C ( Cl ) = C C 1
+O C 1 = C C = C C = C ( Cl ) C = C 1
+O C ( C C Cl ) O C 1 = C C = C ( Cl ) C C 1
+O = C ( O ) C C I
+Cl C 1 = C C = C ( O C ( C C Cl ) O ) C = C 1
+Cl C C C ( O C 1 = C C = C ( Cl ) C = C 1 ) O
+Cl C C C 1 O C 1 = C C = C ( Cl ) C = C 1
+C C C ( O ) O C 1 = C C = C ( Cl ) C = C 1
+O O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C Br . O = C 1 C = C C ( Cl ) = C C 1
+O C 1 C = C C ( O C C C Cl ) = C C 1
+[Cl-] C C C ( O ) C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O C ( C C Cl ) O C 1 = C C = C ( F ) C = C 1
+O C 1 C = C C C ( Cl ) = C C 1
+O C ( C = C Cl ) C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O C ( O ) C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+O = C 1 C = C C ( Br ) = C C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Br
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1
+O = C 1 C = C C ( Br ) = C C = 1
+Cl C C C Br
+O = C 1 C = C C ( Br ) = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Cl
+O = C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl c 1 c = C C ( Br ) = C C = C 1
+O = C 1 C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C ( Br ) C = C 1
+Cl C C C O
+O C C C Cl
+Cl C C C O C 1 = C = C C ( Br ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C ( Br ) = C 1
+F C C C O C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C C ( Br ) = C 1
+Cl C C C O C 1 = C C C ( Br ) C = C 1
+Cl C 1 = C C = C ( O C C C Br ) C = C 1
+Cl C C C O C 1 = C C C = C ( Br ) C = C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C = C C = C ( Br ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O ) = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Br ) = C C 1
+Cl c 1 c = C C ( Br ) = C C = C 1 Br
+Cl C C C O C 1 = C C C ( Br ) = C C 1
+Cl C C C O C 1 C = C C ( Br ) = C C 1
+Cl C C C O C 1 C = C C ( Br ) = C C = C 1
+O = C 1 C = C ( Cl ) C = C 1
+O = C 1 C = C C ( = O ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C ( C C Br ) = C C = C ( Br ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1 Br
+O = C 1 C = C C ( O ) = C C = C 1 Cl
+Cl C C C O C 1 = C C # C ( Br ) C = C 1
+Cl C C C Br . O = C C = C ( Br ) C = C 1
+O C C C Br
+O = C 1 C = C ( Cl ) C = C 1 Br
+Cl C C C Br C 1 = C C = C ( Br ) C = C 1
+Cl c 1 c = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C c ( Br ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Br ) C = C 1
+Cl C C C O = C 1 C = C C ( Br ) = C C 1
+O C C C Cl ) = C C = C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1 Br
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C c = C ( Br ) C = C 1
+Cl C C C O C ( = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( O ) = C C = C 1
+Cl C ( C C Br ) = C C = C ( Cl ) C = C 1
+Cl C C C ( Br ) = C C = C ( Cl ) C = C 1
+Br C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Br ) C C 1
+Cl C C C O C 1 = C C = C C ( Br ) C = C 1
+O = C 1 C = C ( Cl ) C = C C ( Br ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Br ) C = C C ( Cl ) = C 1
+Cl c 1 n C C = C ( Br ) C = C 1
+Cl C C C O C 1 C = C C ( Br ) = C C = 1
+O = C 1 C = C C ( Cl ) = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1 Br
+Cl C = C C ( Br ) = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Br ) = C C = C 1
+Cl C = C C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C ( Br ) C = C 1
+Cl C C C C 1 = C C = C ( Br ) C = C 1
+Cl C ( C = C Br ) = C C = C ( Cl ) C = C 1
+Cl C C C O C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = c ( Br ) C = C 1
+Cl C C C = C 1 C = C C ( Br ) = C C 1
+Cl C C ( Br ) = C C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O ) C = C 1
+Cl C C C O C ( C = C C = C ( Br ) C = C 1
+Cl C C C O ) C = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C ( C Br ) C = C 1
+Cl C C C O C 1 = C C ( Br ) = C C = C 1
+Cl C ( = C C = C ( Br ) C = C 1 ) C C C Cl
+O C C 1 = C C = C ( Cl ) C = C 1
+O = C c 1 c = C C ( Cl ) = C C = C 1
+Cl C C C Br . O = C 1 C = C C ( Br ) = C 1
+Cl C C C Br . [Br-]
+Cl C C C O C C C Br
+Cl C C C ( Br ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C ( Br ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C = C 2
+Cl C C C 1 O C 1 2 C = C C = C ( Cl ) C = C 2
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C 2
+Cl C C C ( Br ) Br
+Cl C 1 = C C = C ( O C ( Br ) C C Cl ) C = C 1
+Cl C 1 = C C = C ( Br ) C = C 1
+Cl C C C ( Br ) = C 1 C = C C ( Cl ) = C C 1
+Cl C C = C ( Br ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C = C C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O C ( C C Cl ) Br ) C = C 1
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl C C = C ( Br ) Br
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C = 2
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C 1 2
+Cl C C C Br
+Cl C C C = C 1 C = C C ( Cl ) = C C 1
+Cl C C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C = C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 Br
+Cl C C ( Br ) C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O C C C ( Br ) Br ) C = C 1
+Cl C C C 1 ( Br ) C = C C ( Cl ) = C C 1
+Cl C C C ( Br ) N 1 C C = C ( Cl ) C = C C 1
+O = C 1 C = C C ( Br ) = C C 1 Br
+O = C 1 C = C C ( Br ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+Cl C C C 1 = C C = C ( Cl ) C = C 1
+Cl c 1 c = C C ( Br ) = C C = C 1
+Cl C C C ( Br ) = C 1 C = C C ( Cl ) = C C = 1
+Cl C C 1 O C 1 2 C = C C ( Cl ) = C C = C 2
+Cl C C C ( Br ) Br C 1 = C C = C ( Cl ) C = C 1
+Cl C C C = C ( Br ) Br
+Cl c 1 c = C C = C ( Br ) C = C 1
+Cl C C C 1 ( Br ) C = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C 1
+Cl C C C 1 ( Br ) C = C C ( Cl ) = C C = C 1
+Cl C 1 = C C = C ( O C C C Br ) C = C 1
+F C C C ( Br ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C 1 O C 1 2 C = C C = C ( Cl ) C = C 2
+Cl C C C ( Br ) S C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 C = C C ( Cl ) = C C = C 1 Br
+O = C 1 C = C C ( Cl ) = C C 1
+F C 1 = C C = C ( Br ) C = C 1
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2
+Cl C C = C 1 C = C C ( Cl ) = C C 1
+Cl C C C ( Br ) C 1 = C C = C ( Br ) C = C 1
+Cl C C C 1 ( Br ) C = C C ( Cl ) = C C = 1
+Cl C C ( Br ) C C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 C = C C ( Br ) = C C = C 1
+Cl C C C ( Br ) C C 1 = C C = C ( Cl ) C = C 1
+Cl C C 1 O C 2 = C C = C ( Cl ) C = C 2 1
+Cl C C C C 1 ( Br ) C = C C ( Cl ) = C C 1
+Cl C C C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C = C 1 C = C C ( Cl ) = C C = 1
+Cl C C C ( Br ) = C 1 C = C C ( Cl ) = C 1
+Cl C C C 1 Br
+Cl C C 1 O C 1 2 C = C C ( Cl ) = C C 2
+F C C C ( Br ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C C # C C 1 = C C = C ( Cl ) C = C 1
+Cl C C ( Br ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C ( Br ) = C 1 C = C C ( Br ) = C C 1
+[Cl-]
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C ( Br ) N 1 C C = C ( Cl ) C = C 1
+Cl C C ( Br ) = C 1 C = C C ( Cl ) = C C 1
+Cl C C C 1 ( Br ) C = C C ( Br ) = C C 1
+Cl C C C ( Br ) [N+] 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 ( Br ) C = C C ( Br ) = C C = 1
+Cl C C C 1 C C = C ( Br ) C = C 1
+Cl C ( Br ) C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C = C c 1 c c ( Cl ) n c c 1 Br
+Cl C C = C Br
+F C 1 = C C = C ( O C ( Br ) C C Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1 Br
+O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C = C 1 C = C C ( Cl ) = C 1
+Cl C C = C C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C ( Br ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 C = C C ( Br ) = C C = 1
+Cl C C C 1 C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Br ) C = C 1
+Cl C C C = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C 1 ( Br ) C = C C ( = O ) C = C 1
+Cl C C C ( Br ) C C C Br
+O = C 1 C = C C ( Br ) = C C = C 1 Br
+Cl C C C ( Br ) C 1 = C C = C ( F ) C = C 1
+Cl C C C ( Br ) C C Br
+Cl c 1 c = C C ( Br ) = C C = C 1 Br
+Cl C C C ( Br ) n 1 c c = C ( Cl ) C = C 1
+Cl C C C ( Br ) = C C = C ( Cl ) C = C 1
+Cl C C C N 1 C C = C ( Cl ) C = C C 1
+O = C 1 C = C C ( Br ) = C C = C 1
+Cl C C C 1 O C ( Cl ) = C C = C ( Cl ) C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C # C C O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+= C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C c ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C O 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C O C 1 = C C = C C ( C Cl ) = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+= C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c C = C 1
+Cl C 1 = C C C 2 O C C C O C 2 C = C 1
+[Cl-] . [Cl-] C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C 1
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+C 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C C 1
+Cl C C C O C 1 = C C C = C C 1
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C 1 = C C = C ( O C C C I ) C = C 1
+Cl C C C O C 1 = C C = C C C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C C = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C # C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C C ( Cl ) = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c = C 1
+Cl C 1 = C C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+C C C O C 1 = C C = C ( Cl ) C C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C 1 = C C C ( O C C C Cl ) = C 1
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( O C C C Cl ) C = C 1 2
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) C = C 1
+C 1 = C C 2 O C C C O C 2 C = C 1
+C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C ( = O ) C = C C = C ( Cl ) C = C 1
+C C = C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 ( C = C 1 ) O C C C 2
+C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C # C C O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+= C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C c ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C O 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C O C 1 = C C = C C ( C Cl ) = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+= C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c C = C 1
+Cl C 1 = C C C 2 O C C C O C 2 C = C 1
+[Cl-] . [Cl-] C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C 1
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+C 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C C 1
+Cl C C C O C 1 = C C C = C C 1
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C 1 = C C = C ( O C C C I ) C = C 1
+Cl C C C O C 1 = C C = C C C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C C = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C # C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C C ( Cl ) = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c = C 1
+Cl C 1 = C C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+C C C O C 1 = C C = C ( Cl ) C C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C 1 = C C C ( O C C C Cl ) = C 1
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( O C C C Cl ) C = C 1 2
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) C = C 1
+C 1 = C C 2 O C C C O C 2 C = C 1
+C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C ( = O ) C = C C = C ( Cl ) C = C 1
+C C = C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 ( C = C 1 ) O C C C 2
+C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+O = C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C ( Cl ) C = C 1
+[Cl-]
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C ( Cl ) = C C = C 1
+Cl C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+Cl C 1 = C C = C ( O Cl ) C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+O = C 1 C = C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 O C 2 C = C 1
+O = C 1 C = C C ( Cl ) = C = C 1
+O C 1 = C ( Cl ) C = C C = C 1
+F C 1 = C C C ( Cl ) = C C 1
+O = C 1 c = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl C 1 = C C = C ( C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C 1
+O C 1 ( Cl ) C = C C ( Cl ) = C C 1
+F C 1 = C C ( Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 Cl
+F C 1 = C C = C ( Br ) C = C 1
+O = C 1 O C C = C ( Cl ) C = C 1
+O = C 1 C = C C # C C = C 1
+O C 1 = C = C ( Cl ) C = C 1
+O C 1 = C C ( Cl ) C = C 1
+O = C 1 C = C C ( = O ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C # C 1
+Cl C 1 = C C C ( Cl ) = C C 1
+Cl C 1 = C C = C ( F ) C = C 1
+Cl C 1 = C C = C ( O C C Cl ) C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 C C 1 2
+O C 1 = C C C ( Cl ) = C C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+Cl C 1 = C C 2 O C 2 C = C 1
+O = C 1 C = C C # C ( Cl ) = C C 1
+Cl C 1 = C C ( Cl ) = C C = C 1
+O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C C C ( O C C C Cl ) = C 1
+Cl C 1 = C C C ( = O ) C = C 1
+O C 1 = C ( Cl ) C = C C ( Cl ) = C 1
+F C 1 = C C = C C ( Cl ) = C C 1
+O C 1 = C C ( Cl ) = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1
+O = C 1 C = C C ( Cl ) C = C 1
+Cl C 1 = C C # C C = C ( Cl ) C = C 1
+O C 1 = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C C ( O ) = C C = C 1 Cl
+O C 1 = C C = C ( Cl ) C = C 1 Br
+O C 1 = C ( Cl ) C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O [Cl-] ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1
+O = C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1
+Cl C 1 = C C O C ( = C C Cl ) C = C 1
+Cl C 1 = C C ( O C C C Cl ) C = C 1
+O = C 1 c 2 c n c ( Cl ) c = C C 1 Cl
+F C 1 = C C C ( Cl ) = C C = C 1
+Cl C 1 = C C = C C ( = O ) C = C 1
+F C 1 = C C = C ( O Cl ) C = C 1
+Cl C 1 = C C = C ( O C Cl ) C = C 1
+O = C 1 C = C C # C C = C 1 Cl
+O = C 1 C = C C # C C ( Cl ) = C 1
+O = C 1 C = C C # C ( Cl ) C = C 1
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Cl
+Cl C 1 = C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+O = C 1 C = C C ( O ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 F
+O = C 1 C = C [Cl-]
+Cl C 1 = C C C ( O C C C Cl ) = C 1
+O C 1 = C C = C ( Cl ) C 2 C C 1 C 2
+O = C 1 c = C C ( Cl ) = C C = C 1 Cl
+O = C 1 c 2 c n c ( Cl ) c = C C 1 2
+Cl C 1 = C C ( O C C C Cl ) = C C = 1
+O = C 1 c 2 c n c ( Cl ) c = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 I
+O = C 1 C = C C ( Cl ) = C C C 1 Cl
+O = C 1 C = C C ( Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 2 O C 2 C 1
+O = C 1 c 2 c n c ( Cl ) c = C C 1 Br
+O = C 1 C = C C # C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 2
+O = C 1 c 2 c n c ( Cl ) c = C C 1 O
+C = C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C # C C O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+= C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C c ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C O 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C O C 1 = C C = C C ( C Cl ) = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+= C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c C = C 1
+Cl C 1 = C C C 2 O C C C O C 2 C = C 1
+[Cl-] . [Cl-] C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C 1
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+C 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C C 1
+Cl C C C O C 1 = C C C = C C 1
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C 1 = C C = C ( O C C C I ) C = C 1
+Cl C C C O C 1 = C C = C C C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C C = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C # C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C C ( Cl ) = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c = C 1
+Cl C 1 = C C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+C C C O C 1 = C C = C ( Cl ) C C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C 1 = C C C ( O C C C Cl ) = C 1
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( O C C C Cl ) C = C 1 2
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) C = C 1
+C 1 = C C 2 O C C C O C 2 C = C 1
+C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C ( = O ) C = C C = C ( Cl ) C = C 1
+C C = C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 ( C = C 1 ) O C C C 2
+C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C # C C O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+= C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C c ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C O 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C O C 1 = C C = C C ( C Cl ) = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+= C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c C = C 1
+Cl C 1 = C C C 2 O C C C O C 2 C = C 1
+[Cl-] . [Cl-] C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C 1
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+C 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C C 1
+Cl C C C O C 1 = C C C = C C 1
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C 1 = C C = C ( O C C C I ) C = C 1
+Cl C C C O C 1 = C C = C C C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C C = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C # C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C C ( Cl ) = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c = C 1
+Cl C 1 = C C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+C C C O C 1 = C C = C ( Cl ) C C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C 1 = C C C ( O C C C Cl ) = C 1
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( O C C C Cl ) C = C 1 2
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) C = C 1
+C 1 = C C 2 O C C C O C 2 C = C 1
+C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C ( = O ) C = C C = C ( Cl ) C = C 1
+C C = C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 ( C = C 1 ) O C C C 2
+C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1 Cl
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C S C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( Cl ) = C C = C 1 O C C C Cl
+C C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C N 1 C C = C ( Cl ) C = C C 1 O C C C Cl
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C = C ( O C C C Cl ) C = C 1
+C C 1 C = C ( O C C C Cl ) C = C C 1 Cl
+C C 1 = C C = C ( O C C C Cl ) = C C 1
+C C 1 = C = C C ( O C C C Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+C N 1 C C C = C ( O C C C Cl ) C = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+C N 1 C C = C ( O C C C Cl ) C = C C 1
+C C 1 C = C ( O C C C Cl ) C = C C 1 = O
+C C 1 = C C # C ( O C C C Cl ) C = C 1
+C N 1 C C C = C ( Cl ) C = C C 1
+C N 1 C C = C ( O C C C Cl ) C = C C 1 Cl
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+C = C 1 C = C ( Cl ) C = C C 1 O C C C Cl
+C C 1 = C ( Cl ) C = C C = C 1 O C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+C C 1 = C = C C ( O C C C Cl ) = C 1
+C = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C N 1 C C C = C ( O C C C Cl ) C = C 1
+C C 1 = C C # C ( O C C C Cl ) = C C 1
+C C 1 C = C ( O C C C Cl ) C = C 1
+C C 1 = C C ( Br ) = C C = C 1 O C C C Cl
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C 1 = C C O C ( = O ) C = C 1
+C = C 1 C = C C ( Cl ) = C C = 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1 Br
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+C = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+C = C 1 C = C C ( O C C C Cl ) = C C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 C = C ( Cl ) C = C C 1 O C C C Cl
+[O-] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C 1
+C Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C N 1 C C C = C ( Cl ) C = C C 1 = O
+C = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+C C 1 = C C O C ( Cl ) = C C = C 1
+C = C 1 C = C C ( O C C C Cl ) = C C 1 Cl
+C C 1 = C C O C ( = C C C Cl ) C = C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+C C 1 = C ( O C C C Cl ) C = C C = C 1 Cl
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+C C 1 C = C ( O C C C Cl ) = C C = C 1 Cl
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C ) C 1 = C C = C ( Cl ) C = C 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C N 1 C C = C ( Cl ) C = C C 1 = O
+C C 1 = C C = C ( O C C C Cl ) c = C 1
+C C 1 = C C ( O C C C Cl ) C = C C 1 Cl
+C N 1 C C C ( O C C C Cl ) = C C = C 1 Cl
+C = C 1 C = C ( O C C C Cl ) C = C 1
+C [Si] 1 = C C = C ( O C C C Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C 1 C = C C ( Cl ) = C C 1
+C C 1 = C C ( = O ) C = C C 1 Cl
+C C 1 = C C 2 O C C C N 2 C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C ) C = C 1
+C N 1 C C = C ( Cl ) C = C C 1
+C C 1 = C C O C ( O C C C Cl ) = C C 1
+C C 1 = C C = C ( O C C C Cl ) C = C C 1
+C N 1 C C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+C C 1 = C O C ( O C C C Cl ) = C C = C 1
+C = C 1 C = C C ( Cl ) = C C = C 1
+C
+C = C 1 C = C C ( O C C C Cl ) = C C = 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C # C C O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+= C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C c ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C O 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C O C 1 = C C = C C ( C Cl ) = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+= C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c C = C 1
+Cl C 1 = C C C 2 O C C C O C 2 C = C 1
+[Cl-] . [Cl-] C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C 1
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+C 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C C 1
+Cl C C C O C 1 = C C C = C C 1
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C 1 = C C = C ( O C C C I ) C = C 1
+Cl C C C O C 1 = C C = C C C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C C = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C # C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C C ( Cl ) = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c = C 1
+Cl C 1 = C C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+C C C O C 1 = C C = C ( Cl ) C C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C 1 = C C C ( O C C C Cl ) = C 1
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( O C C C Cl ) C = C 1 2
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) C = C 1
+C 1 = C C 2 O C C C O C 2 C = C 1
+C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C ( = O ) C = C C = C ( Cl ) C = C 1
+C C = C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 ( C = C 1 ) O C C C 2
+C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = 1 C C C Cl
+[Cl-]
+F C C C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 I
+O = C 1 C = C ( Cl ) C = C 1 C C C Cl
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 I
+O C 1 ( C C C Cl ) C = C C ( Cl ) = C C 1
+O C 1 = C C ( C C C Cl ) = C C = C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+C C C C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . F C 1 = C C = C ( Cl ) C = C 1
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+Cl C C C N 1 C C = C ( Cl ) C = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C ( I ) = C 1
+O = C 1 C = C C ( Cl ) = C C 1 I
+O C 1 = C C ( Cl ) = C C = C 1 C C C Cl
+Cl C C C C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+[Cl-] . O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = N C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C ( I ) C = C 1
+O C 1 = C C = C ( F ) C = C 1 C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+F C C C N 1 C C = C ( Cl ) C = C C 1
+O = C 1 C = C C ( Cl ) = C C = 1 I
+O C 1 = C C = C ( I ) C = C 1
+[O-] C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+[Cl-] . Cl C C C C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . F C C C C 1 C = C C ( Cl ) = C C = 1
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C I
+O = C 1 C = C C ( Cl ) = C ( Br ) C = C 1
+Cl C C C S C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Br ) C = C 1 C C C Cl
+O = C 1 C = C C # C C = C 1 C C C Cl
+[Cl-] . O = C 1 C = C C ( Cl ) = C C 1 I
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+Cl C C C [N+] 1 = C C = C ( Cl ) C = C 1 . [I-]
+O C 1 = C = C ( Cl ) C = C 1 C C C Cl
+O C 1 = C ( C C C Cl ) C = C 1
+[Cl-] C C C C 1 = C C = C ( Cl ) C = C 1
+Cl C C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C = C 1 C C C Cl
+O C 1 = C = C C ( Cl ) = C C 1 C C C Cl
+Cl C C C O C 1 = N C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 Br
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+Cl C C N 1 C C = C ( Cl ) C = C C 1
+Cl C C C [N+] 1 = C ( Cl ) C = C C 1 . [I-]
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C c = C ( Cl ) C = C 1
+C C C I
+O C 1 = C ( C C C Cl ) C = C C 1
+C Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = [N+] ( C C C Cl ) C = C 1 . [Cl-]
+[Cl-] . O = C 1 C = C C ( Cl ) = C C 1
+F C C C N 1 C C = C ( Cl ) C = C C 1 = O
+F C 1 = C C = C ( I ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+Cl C C 1 O C 2 = C C = C ( Cl ) C = C 2 1
+[O-] C 1 = C C = C ( Cl ) C = C 1 ) C C C Cl
+Cl C C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C ( Cl ) C = C 1
+Cl C C C C 1 C = C C ( Cl ) = C C = 1
+Cl C C C C 1 C = C C ( Cl ) = C C = C 1 O
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+[Cl-] . Cl C C C C 1 C = C C ( Cl ) = C C = 1
+Cl C C C O C 1 = [N+] C = C ( Cl ) C = C 1
+F C C C I
+[Cl-] . O = C 1 C = C C ( Cl ) = C C = C 1 I
+[Cl-] . F C C C C 1 C = C C ( Cl ) = C C 1
+Cl C C 1 O C 2 = C C = C ( Cl ) C = C 2
+F C C 1 O C 2 = C C = C ( Cl ) C = C 2
+C C C Cl
+[Cl-] . [Cl-]
+F C C 1 O C 2 = C C = C ( Cl ) C = C 2 1
+O C 1 = C C = C ( Cl ) C ( C C C Cl ) C 1
+Cl C C C N 1 C C = C ( Cl ) C = C C 1 = O
+[Cl-] . Cl C C C C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+[Cl-]
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C 1
+O = C 1 C = C ( O C C C Cl ) C = C 1
+[Cl-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O = C 1 C = C C ( O C C C Cl ) = C C 1
+F C C C O C 1 C = C C ( Cl ) = C C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 O C C C 1 2
+O C 1 = C C = C ( Cl ) C C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = 1 O C C C Cl
+O = S 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+[Cl-] . [Mg+] C C C Cl
+O C 1 ( O C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C O
+[Cl-] . [Mg+] C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C Cl
+O C C C O C 1 C = C C ( Cl ) = C C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( C C C Cl ) = C C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C C 1
+O = S 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 O C C C Cl
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( C C C Cl ) C = C 1
+[Cl-] . F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+[Cl-] . O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( O C C C Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C ( O C C C Cl ) C 1
+F C C C O C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C O 1
+O C 1 C = C C ( O C C C Cl ) = C C = C 1
+C 1 = C ( O C C C Cl ) C = C C ( Cl ) = C 1
+O = C 1 C = C C ( I ) = C C 1 O C C C Cl
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C C = C ( O C C C Cl ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1 O C C C Cl
+F C C C O C 1 C = C C ( Cl ) = C C 1
+O C C C O C 1 C = C C ( Cl ) = C C 1
+O = S 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 1 C C C O
+[O-] C 1 = C C = C ( Cl ) C = C 1 . Cl C C C O
+Cl c 1 c = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( [Na] ) = C C 1 . [Cl-]
+F C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( O C C C Cl ) = C = C 1
+O C 1 = C C = C ( Cl ) C C 1 C C C Cl
+O = 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( F ) = C C 1 O C C C Cl
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 )
+[Cl-] C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O C 1 = C C = C ( Cl ) C 2 = C 1 C C C 2
+O = C 1 C = C C ( O C C C Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 1
+O = S 1 C = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C = C 1
+O C 1 = C C C ( O C C C Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C 2 = C 1
+C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C ( Br ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C Br . O = C 1 C = C C ( Cl ) = C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C = C O C 1 = C C = C ( Cl ) C = C 1
+C C C ( Br ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C Br . O = C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C Br . O C 1 = C C = C ( Cl ) C = C 1
+O = C C C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C ( O ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C Br
+Cl C C C ( I ) O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C = C 2
+Cl C ( C C Cl ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C Br . [Cl-]
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C ( Br ) O C 1 = C C = C ( Cl ) C C 1
+C # C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C 1 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C N C 1 = C C = C ( Cl ) C = C 1
+[Cl-] . [Mg+] O C 1 = C C = C ( Cl ) C = C 1
+O C 1 ( C C Cl ) C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+Cl C C C = O
+Cl C C C ( Br ) O C 1 = C C = C C ( Cl ) = C 1
+O = C C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C 1 O 2
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C ( Cl ) O C 1 = C C = C ( Cl ) C = C 1
+C C C ( O ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+O C 1 ( C C Cl ) C = C C ( Cl ) = C C 1
+O = C c 1 c = C C ( Cl ) = C C = C 1
+O C ( C C Cl ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C ( Br ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C = O . O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C # C O C 1 = C C = C ( Cl ) C = C 1
+O = C C C Br . [Cl-]
+O = C C C C Cl
+Cl C C C N O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Br ) C = C 1
+O C ( C C Cl ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C = C C 1 = C C = C ( Cl ) C = C 1
+C C C ( O C 1 = C C = C ( Cl ) C = C 1 ) Br
+O = C C C Br
+Cl C C C Br . C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = N C C = C ( Cl ) C = C 1
+Cl c 1 c = C C ( O C = C C Cl ) = C C = C 1
+O = C C C C = C C = C ( Cl ) C = C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C 2
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2
+O = C 1 C = C C ( Br ) = C C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl c 1 c = C C ( O C 2 C C 2 ) = C C = C 1
+O = C C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C ( = O ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C # C 1 = C C = C ( Cl ) C = C 1
+O = C C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C c = C ( Cl ) C = C 1
+Cl C C C ( Cl ) O C 1 = C C = C ( Cl ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C Br . C C = C C = C ( Cl ) C = C 1
+O = C C C = C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C = C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+O = C C = C C 1 = C C = C ( Cl ) C = C 1
+O = C ( C C Cl ) C 1 = C C = C ( Cl ) C = C 1
+Cl C C C = O . O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C ( O C 1 = C C = C ( Cl ) C = C 1 ) Br
+O = C 1 C = C C ( O C ( Br ) C C Cl ) = C C 1
+Cl C C C [Cl-]
+O C 1 ( C C Cl ) C = C C ( Cl ) = C C = C 1
+[Cl-]
+Cl C C C Br . O = C 1 C = C C ( Cl ) = C = C 1
+Cl C C C 1 O C 1 2 C = C C ( Cl ) = C C = 2
+O = C 1 C = C C ( O C ( Cl ) C C Cl ) = C C 1
+Cl C C C Br . O = C 1 C = C C ( Cl ) = C 1
+Cl C C C 1 O C 2 = C C = C ( Cl ) C = C 2 C 1
+C C C ( O C 1 = C C = C ( Cl ) C = C 1 ) C Cl
+Cl C C C ( O C 1 = C C = C ( Cl ) C = C 1 )
+Cl C C C Br . O = C 1 C = C C ( Cl ) = C C = 3
+C [Cl-]
+[Cl-] . [Cl-]
+Cl C C C O C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+O = C 1 C = C C ( Br ) = C C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Br
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1
+O = C 1 C = C C ( Br ) = C C = 1
+Cl C C C Br
+O = C 1 C = C C ( Br ) = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Cl
+O = C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl c 1 c = C C ( Br ) = C C = C 1
+O = C 1 C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C ( Br ) C = C 1
+Cl C C C O
+O C C C Cl
+Cl C C C O C 1 = C = C C ( Br ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C ( Br ) = C 1
+F C C C O C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C C ( Br ) = C 1
+Cl C C C O C 1 = C C C ( Br ) C = C 1
+Cl C 1 = C C = C ( O C C C Br ) C = C 1
+Cl C C C O C 1 = C C C = C ( Br ) C = C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C = C C = C ( Br ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O ) = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Br ) = C C 1
+Cl c 1 c = C C ( Br ) = C C = C 1 Br
+Cl C C C O C 1 = C C C ( Br ) = C C 1
+Cl C C C O C 1 C = C C ( Br ) = C C 1
+Cl C C C O C 1 C = C C ( Br ) = C C = C 1
+O = C 1 C = C ( Cl ) C = C 1
+O = C 1 C = C C ( = O ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C ( C C Br ) = C C = C ( Br ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1 Br
+O = C 1 C = C C ( O ) = C C = C 1 Cl
+Cl C C C O C 1 = C C # C ( Br ) C = C 1
+Cl C C C Br . O = C C = C ( Br ) C = C 1
+O C C C Br
+O = C 1 C = C ( Cl ) C = C 1 Br
+Cl C C C Br C 1 = C C = C ( Br ) C = C 1
+Cl c 1 c = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C c ( Br ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Br ) C = C 1
+Cl C C C O = C 1 C = C C ( Br ) = C C 1
+O C C C Cl ) = C C = C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1 Br
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C c = C ( Br ) C = C 1
+Cl C C C O C ( = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( O ) = C C = C 1
+Cl C ( C C Br ) = C C = C ( Cl ) C = C 1
+Cl C C C ( Br ) = C C = C ( Cl ) C = C 1
+Br C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Br ) C C 1
+Cl C C C O C 1 = C C = C C ( Br ) C = C 1
+O = C 1 C = C ( Cl ) C = C C ( Br ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Br ) C = C C ( Cl ) = C 1
+Cl c 1 n C C = C ( Br ) C = C 1
+Cl C C C O C 1 C = C C ( Br ) = C C = 1
+O = C 1 C = C C ( Cl ) = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1 Br
+Cl C = C C ( Br ) = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Br ) = C C = C 1
+Cl C = C C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C ( Br ) C = C 1
+Cl C C C C 1 = C C = C ( Br ) C = C 1
+Cl C ( C = C Br ) = C C = C ( Cl ) C = C 1
+Cl C C C O C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = c ( Br ) C = C 1
+Cl C C C = C 1 C = C C ( Br ) = C C 1
+Cl C C ( Br ) = C C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O ) C = C 1
+Cl C C C O C ( C = C C = C ( Br ) C = C 1
+Cl C C C O ) C = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C ( C Br ) C = C 1
+Cl C C C O C 1 = C C ( Br ) = C C = C 1
+Cl C ( = C C = C ( Br ) C = C 1 ) C C C Cl
+O C C 1 = C C = C ( Cl ) C = C 1
+O = C c 1 c = C C ( Cl ) = C C = C 1
+Cl C C C Br . O = C 1 C = C C ( Br ) = C 1
+Cl C C C Br . [Br-]
+Cl C C C O C C C Br
+C S ( = O ) ( = O ) O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C 1
+C S ( = O ) ( = O ) O
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 O 2
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+C S ( = O ) ( = O ) O C C C Cl
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 2
+C S C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C ( S ) C = C 1
+C S C 1 = C C ( Cl ) = C C = C 1 O C C C Cl
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C 1 2
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 C O 2
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C ( C = C C ( Cl ) = C C 1
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 2 C C = C ( Cl ) C 1 C 2
+Cl C C C O C 1 2 C C = C ( Cl ) C = C 1 C O 2
+Cl C C C O C 1 2 C C = C ( Cl ) C = C 1 2
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C ( S ) C 1
+Cl C C C O C 1 2 C C C ( Cl ) = C C 1 O 2
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+Cl C C C O C 1 2 C C = C ( Cl ) C ( C 1 ) C 2
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1 2
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+Cl C C C O C 1 = C C = C ( Cl ) C 2 = C 1
+C S ( = O ) ( = O ) [O-]
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C C C O C 1 = C C C ( Cl ) = C ( C S ) C = C 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C ( Cl ) C 1
+Cl C C C O C 1 = C C C ( Cl ) = C ( S ) C 1
+Cl C C C O C 1 2 C C = C ( Cl ) C ( C 1 ) O 2
+Cl C C C O C 1 2 C C = C ( Cl ) C 1 C O 2
+Cl C C C O C 1 2 C C = C ( Cl ) C = C 1 C 2
+Cl C C C O C 1 = C = C C ( Cl ) = C ( C S ) C 1
+Cl C 1 = C C ( O C C C Cl ) = C C 1
+Cl C C C O C 1 2 C C C ( Cl ) = C C 1 2
+Cl C C C O C 1 = C C C 2 ( C = C 1 ) O C 2
+Cl C C C O C 1 = C C C ( Cl ) = C ( C Cl ) C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C 2 O C 2 C 1
+Cl C C C O C 1 C C = C ( Cl ) C = C 1
+Cl C 1 = C C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C 2 O C 2 C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C C 1 C 2
+Cl C C C O C 1 = C C C ( Cl ) = C ( S C ) C = C 1
+C S O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C ( O ) C = C C ( Cl ) = C C 1
+Cl C 1 = C C C ( O C C C Cl ) C 2 O C 2 C = C 1
+Cl C C C O C 1 2 C C = C ( Cl ) C C 1 O 2
+Cl C C C O C 1 = C C C # C C = C 1
+Cl C C C O C 1 = C C C 2 ( C = C 1 ) O 2
+Cl C C C O C 1 = C C C ( Cl ) = C ( O ) C = C 1
+Cl C C C O C 1 = C C C 2 O C 2 C = C 1
+Cl C C C O C 1 2 C C = C ( Cl ) C ( C C 1 ) O 2
+Cl C C C O C 1 = C ( S ) C = C C ( Cl ) = C C 1
+Cl C C C O C 1 3 C = C C ( Cl ) = C C 1 O 3
+F C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 2 O C C = C ( Cl ) C 1 C 2
+Cl C C C O C 1 = C C 2 O C 2 C = C 1
+Cl C C C O C 1 2 C C = C ( Cl ) C ( C 1 ) = C 2
+Cl C 1 = C C 2 O C C C 2 ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 O C 2 1
+Cl C C C O C 1 = C = C ( Cl ) C 2 C C 1 2
+Cl C 1 = C C C ( O C C C Cl ) C 2 = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C ( C S ) C 1
+Cl C C C O C 1 = C C C # C C 1
+C S C 1 = C ( Cl ) C = C C ( O C C C Cl ) = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C 2 C C ( Cl ) = C C 1 2
+Cl C 1 = C C ( O C C C Cl ) C 2 O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C 2 C 1 2
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C 1 C 2
+Cl C C C O C 1 = C = C C ( Cl ) = C ( C Cl ) C 1
+Cl C C C O C 1 2 C = C C ( Cl ) = C ( C C 1 ) O 2
+Cl C C C O C 1 = C = C C ( Cl ) = C ( S C ) C 1
+Cl C C C O C 1 C = C C ( Cl ) = C ( Cl ) C 1
+Cl C C C O C 1 = C ( S ) C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C C 2 ( C = C 1 ) O C C 2
+Cl C C C O C 1 = C C # C C ( Cl ) = C C 1
+Cl C C C O C 1 = C ( C = C C Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C ( O ) = C 1
+Cl C C C O C 1 = C C C 2 ( C = C 1 ) O C C C 2
+Cl C C C O C 1 = C = C C ( Cl ) = C ( S ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C ( C Cl ) = C 1
+Cl C C C O C 1 4 C = C C ( Cl ) = C C 1 O 2
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 O C 2 C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+C # C C O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 2 C C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+C O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+Cl C = C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( C Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+= C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C 2
+C 1 = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C c ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 O C C C O C 2 C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( C = C 1 ) O C C C O 2
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C ( O C C C Cl ) = C C = C 1
+C = C O C 1 = C C = C ( Cl ) C = C 1
+C = C C C O C 1 = C C = C ( Cl ) C = C 1
+N C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl c 1 c = C C ( O C C C Cl ) = C C = C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+Cl C C C O C 1 = C C = C C ( C Cl ) = C 1
+Cl C = C C O C 1 = C C = C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) C C 1
+Cl C C C O C 1 = C C = C C C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+= C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c C = C 1
+Cl C 1 = C C C 2 O C C C O C 2 C = C 1
+[Cl-] . [Cl-] C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C = C C O C 1 = C C = C C ( Cl ) = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C 1
+C C C C O C 1 = C C = C ( Cl ) C = C 1
+C 1 = C C = C ( O C C C Cl ) C = C 1
+[Cl-] . C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( I ) = C C 1
+Cl C C C O C 1 = C C C = C C 1
+Cl C 1 = C C ( O C C C Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C 1 = C C = C ( O C C C I ) C = C 1
+Cl C C C O C 1 = C C = C C C 1
+C N C 1 = C C = C ( Cl ) C = C 1
+) C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C C = C C = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C # C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+C C C O C 1 = C C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C C ( Cl ) = C 1
+C N C C C O C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C c = C 1
+Cl C 1 = C C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C = 1
+C C C O C 1 = C C = C ( Cl ) C C 1
+= C 1 C = C C ( O C C C Cl ) = C C = C 1
+[Cl-] . Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C 1 = C C C ( O C C C Cl ) = C 1
+C C 1 = C C C ( O C C C Cl ) = C C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 ( O C C C Cl ) C = C 1 2
+[O-] C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Cl ) C = C 1
+C 1 = C C 2 O C C C O C 2 C = C 1
+C 1 = C C C ( O C C C Cl ) = C C = C 1
+C C ( = O ) C = C C = C ( Cl ) C = C 1
+C C = C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C 2 ( C = C 1 ) O C C C 2
+C C C O C 1 = C C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C C = C ( Cl ) C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1 Br
+O = C 1 C = C C ( Cl ) = C C 1 C C C Cl
+O = C 1 C = C C ( Cl ) = C ( Br ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Cl
+O = C 1 C = C ( Br ) C = C 1 C C C Cl
+O = C 1 C = C C ( Cl ) = C C 1 Br
+O = C 1 C = C ( Br ) C = C 1 Br
+F C 1 = C C = C ( Br ) C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Br
+[O-] C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O C C C Cl
+Cl C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 Br
+O = C 1 C = C ( Cl ) C = C 1 C C C Cl
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C ( Br ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Br ) = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+F C C C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1
+Cl C C C N 1 C C = C ( Cl ) C = C C 1
+O = C 1 C = C C ( Br ) = C ( Br ) C = C 1
+Cl C C C Br
+Cl C C C C 1 C = C C ( Cl ) = C C = C 1
+Cl C C C [N+] 1 = C C = C ( Cl ) C = C 1 . [Br-]
+Cl C C C S C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Br ) C = C 1
+Cl C C C C 1 C = C C ( Cl ) = C C = C 1 O
+[Cl-] C C C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C N 1 C C = C ( Cl ) C = C C 1 = O
+O C 1 = C C = C ( Cl ) C ( Br ) = C 1
+F C 1 = C C = C ( O C C C Cl ) C = C 1
+O C 1 = C C = C ( Br ) C = C 1
+Cl C C C C 1 C = C ( Cl ) C = C C 1 = O
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C ( Br ) = C 1
+O = C 1 C = C C ( Br ) = C C = 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C ( Br ) C 1
+O C 1 ( C C C Cl ) C = C C ( Cl ) = C C 1
+Cl C C C C 1 C = C ( Cl ) C = C C 1
+O = C 1 C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Br ) = C C 1 C C C Cl
+O = C 1 C = C ( Cl ) C = C 1 Br
+[Cl-] C C C Br
+O = C 1 C = C ( Br ) C = C 1 S C C C Cl
+Cl C C C C O C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 O C C C Cl
+O = C 1 C = C C ( Br ) = C C = C 1
+[Cl-]
+[Cl-] . Cl C C C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1 Br
+[Cl-] C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1 O C C C Cl
+O C 1 = C C = C ( Cl ) C ( Br ) C = C 1
+Cl C C 1 O C 2 = C C = C ( Cl ) C = C 2 1
+Cl C C C C 1 C = C C ( Cl ) = C C = C 1 Br
+O C 1 ( Br ) C = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Br ) C = C 1 Br
+O C 1 = C ( Br ) C = C C ( Cl ) = C C 1
+O C 1 = C C = C ( Br ) C = C 1 Br
+O = C 1 C = C C ( Br ) = C C = 1 Br
+Cl C C C [n+] 1 c c ( Cl ) n c c 1 Br . [Br-]
+F C 1 = C C = C ( Cl ) C = C 1 Br
+O C 1 = C C ( Br ) = C ( Cl ) C = C 1
+Cl C C C C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C ( Br ) C = C 1 ) C C C Cl
+Br C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 O C C = C ( Cl ) C = C 1 Br
+Cl C C C n 1 c c ( Cl ) n c c 1 Br
+Cl C C C 1 = C C = C ( Cl ) C = C 1
+O C 1 ( Br ) C = C C ( Cl ) = C C = C 1
+Cl C C C n 1 c c ( Cl ) n c c 1 = O
+Cl C C C C 1 C = C C ( Br ) = C C = C 1
+Cl C C C [N+] 1 = C C = C ( Cl ) C = C 1
+Cl C C ( Br ) C 1 = C C = C ( Cl ) C = C 1
+F C C C Br
+Cl C C C C 1 = C C = C ( Br ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 C C C Br
+Cl C C C N 1 C = C C ( Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C C 1 O C = C C = C ( Cl ) C = C 1
+Cl C C C C 1 Br
+Cl C C C C Br
+O = C 1 C = C C ( Br ) = C 1 C C C Cl
+O = C 1 C = C ( Br ) C = C 1 Cl
+O C 1 = C C ( Br ) = C C = C 1 Br
+O = C 1 C = C C ( Cl ) = C 1 C C C Cl
+O = C 1 C = C ( Cl ) C = C 1 S C C C Cl
+Cl c 1 c = C C ( Br ) = C C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 S C C C Cl
+Cl C C C C 1 ( Br ) C = C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 C C Br
+Cl C C C C 1 C = C ( Cl ) C = C C 1 Br
+O C 1 = C C = C ( Cl ) C ( Br ) = C C 1
+Cl C C C O C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+O = C 1 C = C C ( Br ) = C C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Br
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1
+O = C 1 C = C C ( Br ) = C C = 1
+Cl C C C Br
+O = C 1 C = C C ( Br ) = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Cl
+O = C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl c 1 c = C C ( Br ) = C C = C 1
+O = C 1 C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C ( Br ) C = C 1
+Cl C C C O
+O C C C Cl
+Cl C C C O C 1 = C = C C ( Br ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C ( Br ) = C 1
+F C C C O C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C C ( Br ) = C 1
+Cl C C C O C 1 = C C C ( Br ) C = C 1
+Cl C 1 = C C = C ( O C C C Br ) C = C 1
+Cl C C C O C 1 = C C C = C ( Br ) C = C 1
+O = C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C = C C = C ( Br ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O ) = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C C ( Br ) = C C 1
+Cl c 1 c = C C ( Br ) = C C = C 1 Br
+Cl C C C O C 1 = C C C ( Br ) = C C 1
+Cl C C C O C 1 C = C C ( Br ) = C C 1
+Cl C C C O C 1 C = C C ( Br ) = C C = C 1
+O = C 1 C = C ( Cl ) C = C 1
+O = C 1 C = C C ( = O ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C ( C C Br ) = C C = C ( Br ) C = C 1
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1 Br
+O = C 1 C = C C ( O ) = C C = C 1 Cl
+Cl C C C O C 1 = C C # C ( Br ) C = C 1
+Cl C C C Br . O = C C = C ( Br ) C = C 1
+O C C C Br
+O = C 1 C = C ( Cl ) C = C 1 Br
+Cl C C C Br C 1 = C C = C ( Br ) C = C 1
+Cl c 1 c = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C c ( Br ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C = C C ( Br ) C = C 1
+Cl C C C O = C 1 C = C C ( Br ) = C C 1
+O C C C Cl ) = C C = C ( Cl ) C = C 1
+O = C 1 C = C C = C ( Cl ) C = C 1 Br
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C c = C ( Br ) C = C 1
+Cl C C C O C ( = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( O ) = C C = C 1
+Cl C ( C C Br ) = C C = C ( Cl ) C = C 1
+Cl C C C ( Br ) = C C = C ( Cl ) C = C 1
+Br C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Br ) C C 1
+Cl C C C O C 1 = C C = C C ( Br ) C = C 1
+O = C 1 C = C ( Cl ) C = C C ( Br ) = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C ( Br ) C = C C ( Cl ) = C 1
+Cl c 1 n C C = C ( Br ) C = C 1
+Cl C C C O C 1 C = C C ( Br ) = C C = 1
+O = C 1 C = C C ( Cl ) = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1 Br
+Cl C = C C ( Br ) = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Br ) = C C = C 1
+Cl C = C C 1 = C C = C ( Br ) C = C 1
+Cl C C C O C 1 = C C ( Br ) C = C 1
+Cl C C C C 1 = C C = C ( Br ) C = C 1
+Cl C ( C = C Br ) = C C = C ( Cl ) C = C 1
+Cl C C C O C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = c ( Br ) C = C 1
+Cl C C C = C 1 C = C C ( Br ) = C C 1
+Cl C C ( Br ) = C C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O ) C = C 1
+Cl C C C O C ( C = C C = C ( Br ) C = C 1
+Cl C C C O ) C = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C C ( Br ) C = C 1
+Cl C C C O C 1 = C C = C ( C Br ) C = C 1
+Cl C C C O C 1 = C C ( Br ) = C C = C 1
+Cl C ( = C C = C ( Br ) C = C 1 ) C C C Cl
+O C C 1 = C C = C ( Cl ) C = C 1
+O = C c 1 c = C C ( Cl ) = C C = C 1
+Cl C C C Br . O = C 1 C = C C ( Br ) = C 1
+Cl C C C Br . [Br-]
+Cl C C C O C C C Br
+O = C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+Cl C 1 = C C = C ( Cl ) C = C 1
+F C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C ( Cl ) C = C 1
+[Cl-]
+O = C 1 C = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C ( O C C C Cl ) = C C 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C = C 1
+C O C 1 = C C = C ( Cl ) C = C 1
+Cl C 1 = C C C = C ( Cl ) C = C 1
+O C 1 = C C ( Cl ) = C C = C 1
+Cl C 1 = C C = C ( Br ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+Cl C 1 = C C = C ( O Cl ) C = C 1
+F C 1 = C C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+O = C 1 C = C = C ( Cl ) C = C 1
+F C 1 = C C C = C ( Cl ) C = C 1
+Cl C 1 = C C C 2 O C 2 C = C 1
+O = C 1 C = C C ( Cl ) = C = C 1
+O C 1 = C ( Cl ) C = C C = C 1
+F C 1 = C C C ( Cl ) = C C 1
+O = C 1 c = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl C 1 = C C = C ( C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C 1
+O C 1 ( Cl ) C = C C ( Cl ) = C C 1
+F C 1 = C C ( Cl ) = C C = C 1
+O C 1 = C C = C ( Cl ) C = C 1 Cl
+F C 1 = C C = C ( Br ) C = C 1
+O = C 1 O C C = C ( Cl ) C = C 1
+O = C 1 C = C C # C C = C 1
+O C 1 = C = C ( Cl ) C = C 1
+O C 1 = C C ( Cl ) C = C 1
+O = C 1 C = C C ( = O ) C = C 1
+O = C 1 C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C # C 1
+Cl C 1 = C C C ( Cl ) = C C 1
+Cl C 1 = C C = C ( F ) C = C 1
+Cl C 1 = C C = C ( O C C Cl ) C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C C = C ( Cl ) C 2 C C 1 2
+O C 1 = C C C ( Cl ) = C C 1
+Cl C 1 = C C C ( O C C C Cl ) C = C 1
+Cl C 1 = C C 2 O C 2 C = C 1
+O = C 1 C = C C # C ( Cl ) = C C 1
+Cl C 1 = C C ( Cl ) = C C = C 1
+O C 1 = C = C C ( Cl ) = C C 1
+Cl C 1 = C C C C ( O C C C Cl ) = C 1
+Cl C 1 = C C C ( = O ) C = C 1
+O C 1 = C ( Cl ) C = C C ( Cl ) = C 1
+F C 1 = C C = C C ( Cl ) = C C 1
+O C 1 = C C ( Cl ) = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C C 1
+O = C 1 C = C C ( Cl ) C = C 1
+Cl C 1 = C C # C C = C ( Cl ) C = C 1
+O C 1 = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C C ( O ) = C C = C 1 Cl
+O C 1 = C C = C ( Cl ) C = C 1 Br
+O C 1 = C ( Cl ) C = C ( Cl ) C = C 1
+Cl C 1 = C C = C ( O [Cl-] ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1
+O = C C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C 1
+Cl C 1 = C C O C ( = C C Cl ) C = C 1
+Cl C 1 = C C ( O C C C Cl ) C = C 1
+O = C 1 c 2 c n c ( Cl ) c = C C 1 Cl
+F C 1 = C C C ( Cl ) = C C = C 1
+Cl C 1 = C C = C C ( = O ) C = C 1
+F C 1 = C C = C ( O Cl ) C = C 1
+Cl C 1 = C C = C ( O C Cl ) C = C 1
+O = C 1 C = C C # C C = C 1 Cl
+O = C 1 C = C C # C C ( Cl ) = C 1
+O = C 1 C = C C # C ( Cl ) C = C 1
+[O-] [N+] 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Br ) = C C = C 1 Cl
+Cl C 1 = C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+O = C 1 C = C C ( O ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 F
+O = C 1 C = C [Cl-]
+Cl C 1 = C C C ( O C C C Cl ) = C 1
+O C 1 = C C = C ( Cl ) C 2 C C 1 C 2
+O = C 1 c = C C ( Cl ) = C C = C 1 Cl
+O = C 1 c 2 c n c ( Cl ) c = C C 1 2
+Cl C 1 = C C ( O C C C Cl ) = C C = 1
+O = C 1 c 2 c n c ( Cl ) c = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 I
+O = C 1 C = C C ( Cl ) = C C C 1 Cl
+O = C 1 C = C C ( Cl ) = C C = 1 Cl
+O C 1 = C C = C ( Cl ) C 2 O C 2 C 1
+O = C 1 c 2 c n c ( Cl ) c = C C 1 Br
+O = C 1 C = C C # C C ( Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 2
+O = C 1 c 2 c n c ( Cl ) c = C C 1 O
+C = C C Cl
+O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1
+O C C C O C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1
+O C C C Cl
+O = C 1 C = C C ( Cl ) = C C = C 1 Cl
+O = C 1 C = C C ( Cl ) = C C = 1
+C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( = O ) C = C 1
+O C C C Cl . [Cl-]
+O = C 1 C = C ( Cl ) C = C 1
+[Cl-]
+C C 1 = C C = C ( O C C C Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C C 1
+O = C 1 C = C C = C ( Cl ) C = C 1
+O C C C Cl ) = C C = C ( Cl ) C = C 1
+O C C C S C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 O
+[Cl-] C C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Cl
+C = C C O C 1 = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O ) = C C = C 1
+Cl C C C O C 1 C = C C ( Cl ) = C C 1
+Cl C C C O C 1 = C C = C C ( Cl ) = C 1
+O O C 1 = C C = C ( Cl ) C = C 1
+O C C 1 = C C = C ( Cl ) C = C 1
+O C 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C # C 1
+O C C C = C 1 C = C C ( Cl ) = C C 1
+Cl C 1 = C C = C ( O C C C Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 O
+Cl C C C O C 1 = C C C ( Cl ) = C C 1
+O = C 1 C = C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) ( Cl ) C = C 1
+O = C 1 C = C C ( O ) = C C = C 1 Cl
+Cl C C C O C 1 = C = C C ( Cl ) = C C 1
+O c 1 c = C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( O C C C Cl ) = C C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 Br
+C 1 = C ( Cl ) C = C C ( O ) = C 1
+O = C 1 C C = C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C 1
+[Cl-] . [Mg+] C 1 = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( Cl ) = C C 1
+C N 1 C C = C ( Cl ) C = C C 1 = O
+O C 1 = C ( Cl ) C = C C ( Cl ) = C C 1
+O C C C I
+O O C C C Cl
+O C 1 ( Cl ) C = C C ( Cl ) = C C = C 1
+C 1 = C C ( O C C C Cl ) = C C = C 1
+= C 1 C = C C ( Cl ) = C C = C 1
+O ) C 1 = C C = C ( Cl ) C = C 1
+O C C C C 1 = C C = C ( Cl ) C = C 1
+C C C O C 1 = C C = C ( Cl ) C = C 1
+[O-] C 1 = C C = C ( Cl ) C = C 1
+O = O C 1 = C C = C ( Cl ) C = C 1
+O
+O C 1 ( Cl ) C = C C = C ( Cl ) C = C 1
+O C C C Br
+O = C 1 C = C C ( Cl ) = C = C 1
+C S C 1 = C C = C ( Cl ) C = C 1
+O = C c 1 c = C C ( Cl ) = C C = C 1
+O C = C C = C C = C ( Cl ) C = C 1
+O C C C F
+F C C C O C 1 = C C = C ( Cl ) C = C 1
+O C C C [Ru] C 1 = C C = C ( Cl ) C = C 1
+C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O
+O = C 1 C = C C # C C = C 1
+Cl C C C O C 1 = C C C ( = O ) C = C 1
+O C 1 = C C = C C ( Cl ) = C C 1
+O = C = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C C ( Cl ) C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 Br
+Cl C C C O C 1 = C C # C C = C 1
+C 1 = C C ( O ) = C C = C 1 Cl
+O C C C 1 = C C = C ( Cl ) C = C 1
+Cl C C C O C 1 = C C = C ( Cl ) C 1
+O = C 1 C = C C ( Cl ) = C C C 1
+O 1 = C C = C ( Cl ) C = C 1
+C 1 = C ( O ) C = C C ( Cl ) = C 1
+O C C C N 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C 1 [Na]
+Cl C C C O C = C C = C ( Cl ) C = C 1
+O C 1 = C = C C ( Cl ) = C C = C 1
+S C 1 = C C = C ( Cl ) C = C 1
+O C C C ( = O ) C = C C = C ( Cl ) Cl
+O C 1 = C ( Cl ) C = C C ( Cl ) = C 1
+O C C N C 1 = C C = C ( Cl ) C = C 1
+O C C C [Cl-]
+O = C 1 C = C C ( Cl ) = C C = 1 O
+O = S 1 C = C C ( Cl ) = C C = C 1 Cl
+C 1 = C ( Cl ) C = C C ( O ) = C C 1
+C 1 = C C ( O C C C Cl ) = C C = C 1 Cl
+C [Cl-]
+O = S 1 C = C C ( Cl ) = C C = C 1
+O = C 1 C = C C ( Cl ) = C C = C 1 I
+O = C 1 C = C C ( Cl ) = C C = C 1 S

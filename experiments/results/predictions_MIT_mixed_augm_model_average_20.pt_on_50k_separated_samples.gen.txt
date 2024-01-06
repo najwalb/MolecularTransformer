@@ -1,0 +1,20 @@
+C [N+] 1 ( C ) C C C ( O C ( C 2 = C C = C C ( I ) = C 2 ) C 2 = N C 3 = C C = C C = C 3 N 2 ) C C 1 . [I-]
+C [N+] 1 ( C ) C C C ( O C ( C 2 = c C = C C ( I ) = C 2 ) C 2 = N C 3 = C C = C C = C 3 N 2 ) C C 1 . [I-]
+C [N+] 1 ( C ) C C C ( O C ( C 2 = N C 3 = C C = C C = C 3 N 2 ) C 2 = C C = C C ( I ) = C 2 ) C C 1 . [I-]
+C [N+] 1 ( C ) C C C ( O C ( C 2 = C C = C C ( I ) = C 2 ) C 2 = N C 3 = C C = C C = N 3 N 2 ) C C 1 . [I-]
+C N 1 C C C ( O C ( C 2 = C C = C C ( I ) = C 2 ) C 2 = N C 3 = C C = C C = C 3 N 2 ) C C 1
+C [N+] 1 ( C ) C C C ( O C ( C 2 = C C = C C ( I ) = C 2 ) C 2 = N C 3 = c C = C C = C 3 N 2 ) C C 1 . [I-]
+C [N+] 1 ( C ) C C C ( O C ( C 2 = C C = C C ( I ) = C 2 ) C 2 = C C = C C = C 3 N 2 ) C C 1 . [I-]
+C [N+] 1 ( C ) C C C ( O C ( C 2 = C C = C C ( I ) = C 2 C 2 = N C 3 = C C = C C = C 3 N 2 ) C C 1 . [I-]
+C [N+] 1 ( C ) C C C ( O C ( C 2 = C C = C C ( I ) = C 2 ) C 2 = N C 3 = C C = C C = 3 N 2 ) C C 1 . [I-]
+C [N+] 1 ( C ) C C C ( O C ( C 2 = C C = C C ( I ) = C 2 ) N C 2 = C C = C C = C 2 N 2 ) C C 1 . [I-]
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) = C 3 ) C = C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) C = C 3 ) C = C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) C = C 3 C ) C = C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) = C 3 ) C = C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) C = C 3 ) C O C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C ( C 4 = C ( C ) C C ( = O ) C = C 4 C ) C = C 3 ) C = C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) C = C C 3 ) C = C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C C ( C 4 = C ( C ) C C ( = O ) C = C 4 C ) = C 3 ) C = C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) C = C 3 ) C 2 ) C O C 1
+C C O C ( = O ) C C 1 ( C 2 = C C = C ( O C C 3 = C C = C C ( C 4 = C ( C ) C = C ( O ) C = C 4 C ) = C 3 ) C O C 2 ) C O C 1
