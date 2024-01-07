@@ -12,10 +12,9 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "-n_conditions", "128",
-                "-wandb_eval_run_id", "ca96gxkf",
-                "-epoch", "680",
-                "-beam_size", "100"
+                "-n_conditions", "2",
+                "-wandb_run_id", "x6mi2bwg",
+                "-epoch", "160"
             ],
             "python": "/Users/laabidn1/miniconda3/envs/mol_transformer/bin/python"
         },
