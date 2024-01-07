@@ -1,3 +1,5 @@
+wandb
+
 # repo-specific stuff
 pred.txt
 multi-bleu.perl
