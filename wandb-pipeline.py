@@ -73,10 +73,10 @@ def get_artifact_with_newest_alias(wandb_entity, wandb_project, wandb_run_id, co
                      if ('eval' in alias and 'cond' in alias) \
                      and re.findall('epoch\d+', alias)[0]==f'epoch{epoch}' \
                      and re.findall('cond\d+', alias)[0]==f'cond{n_conditions}' \
-                     and alias.split('_')[5].split('.txt')[0]==edge_conditional_set]
+                     and re.findall('sampercond\d+', alias)[0]==f'sampercond{n_samples_per_condition}' \
+                     and alias.split('_')[6].split('.txt')[0]==edge_conditional_set]
     versions = [int(art.version.split('v')[-1]) for art in coll.versions()]
     aliases = [a for a,v in sorted(zip(aliases, versions), key=lambda pair: -pair[1])]
-    # aliases[0] = "eval_epoch280_resorted_0.9_s128"
     
     return aliases[0]
     
@@ -91,6 +91,25 @@ def donwload_eval_file_from_artifact(wandb_entity, wandb_project, wandb_run_id, 
     
     return os.path.join(savedir, f"{alias}.txt"), artifact_name
     
+def output_round_trip_scores(df, output_file):
+    '''
+        Output file of the format:
+            (cond #) original_rxn:
+                gen_rxn, exact_match_score (0/1), round_trip score (0/1), 1st MT prediction, 2nd MT pred, 3rd MT pred
+    '''
+    targets = df['target'].unique()
+    ground_truth = df['ground_truth'].unique()
+ 
+    f = open(output_file, 'w')
+    for i, (p, g) in enumerate(zip(targets, ground_truth)):
+        f.write(f'(cond {i}) {g}>>{p}:\n')
+        df_p = df[df['target']==p].reset_index()
+        for j in range(len(df_p)):
+            f.write(f"\t{df_p.loc[j,'reactants']}>>{p}, match: {df_p.loc[j,'exact_match_score']}, "+\
+                    f"round-trip: {df_p.loc[j,'round_trip_score']}, pred1: {df_p.loc[j,'prediction_1']}, "+\
+                    f"pred2: {df_p.loc[j,'prediction_2']}, pred3: {df_p.loc[j,'prediction_3']}\n")
+    f.close()
+    
 def main(opt):
     ''' 
         Logic:
@@ -98,7 +117,7 @@ def main(opt):
             => round trip top k: if top k has a score 1
             => keep in same order as given in elbo
     '''
-    conda_env_path = '/Users/laabidn1/miniconda3/envs/mol_transformer/bin/' # used by subprocess
+    # conda_env_path = '/Users/laabidn1/miniconda3/envs/mol_transformer/bin/' # used by subprocess
     wandb_entity = 'najwalb'
     wandb_project = 'retrodiffuser'
     model = "MIT_mixed_augm_model_average_20.pt"
@@ -109,14 +128,13 @@ def main(opt):
                                                                 opt.epoch, opt.n_conditions, opt.n_samples_per_condition,
                                                                 opt.edge_conditional_set, savedir)
     
-    
     # 2. read saved reaction data from eval file
     reactions = read_saved_reaction_data(eval_file)
     
     # 3. output reaction data to text file as one reaction per line
-    eval_file_name = eval_file.split('/')[-1].split('.')[0]
+    eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
     dataset = f'{opt.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-    reaction_file_name = f"{eval_file_name}.gen"
+    reaction_file_name = f"{eval_file_name}_TOKENIZED.gen"
     reaction_file_path = os.path.join(parent_path, 'data', dataset, reaction_file_name) 
     open(reaction_file_path, 'w').writelines([x+'\n' for rxns in reactions for x in rxns[1]])
     
@@ -131,7 +149,7 @@ def main(opt):
                     translate_output_file, "-batch_size", opt.batch_size, "-replace_unk", "-max_length", 
                     opt.max_length, "-beam_size", opt.beam_size, "-n_best", opt.n_best])
     
-    # get scores
+    # 6. get round_trip k accuracy scores
     targets = [''.join(line.strip().split(' ')) for line in open(f"data/{dataset}/tgt-{reaction_file_name}.txt", 'r').readlines()]
     reactants = [''.join(line.strip().split(' ')) for line in open(f"data/{dataset}/src-{reaction_file_name}.txt", 'r').readlines()]
     predictions = [[] for i in range(int(opt.beam_size))]
@@ -152,20 +170,33 @@ def main(opt):
 
     # NOTE: could keep rank just for info; in practice we only care about the true tgt being in any beam
     test_df['rank'] = test_df.apply(lambda row: get_rank(row, 'prediction_', int(opt.beam_size)), axis=1)
-    test_df['score'] = pd.concat([test_df['rank']>0, (test_df['reactants']==test_df['ground_truth'])],axis=1).max(axis=1).apply(int)
+    # score = 1 if round_trip matches (i.e. rank>0) or ground_truth matches (exact equality)
+    test_df['exact_match_score'] = (test_df['reactants']==test_df['ground_truth']).apply(int)
+    test_df['round_trip_score'] = (test_df['rank']>0).apply(int)
+    test_df['score'] = pd.concat([test_df['round_trip_score'], test_df['exact_match_score']], axis=1).max(axis=1)
     
+    round_trip_output_name = f"round_trip_{eval_file_name}"
+    round_trip_output_path = os.path.join(parent_path, "data", dataset, f"{round_trip_output_name}.txt")
+    output_round_trip_scores(test_df, round_trip_output_path)
+    
+    # 7. compute top-k averages
     avg = pd.DataFrame(test_df['target'].unique())
     avg.columns = ['target']
     
     for k in opt.round_trip_k:
-        avg[f'round-trip-{k}_weighted_0.9'] = int(test_df.groupby('target').head(k)['score'].sum()>=1)
+        avg[f'round-trip-{k}_weighted_0.9'] = (test_df.groupby('target').head(int(k)).groupby('target').agg({'score':'sum'})>=1).reset_index()['score']
     
     round_trip_res = avg.mean(0).to_dict()
     log.info(f'round_trip_res {round_trip_res}\n')
-    with wandb.init(name=f"round_trip_{opt.wandb_run_id}_cond{opt.n_conditions}_sampercond{opt.n_samples_per_condition}_{opt.edge_conditional_set}", 
-                    project=wandb_project, entity=wandb_entity, resume='allow', job_type='ranking', config={"experiment_group": opt.wandb_run_id}) as run:
+    
+    # 8. log scores to wandb
+    with wandb.init(name=f"round_trip_{opt.wandb_run_id}_epoch{opt.epoch}_cond{opt.n_conditions}_sampercond{opt.n_samples_per_condition}_{opt.edge_conditional_set}", 
+                    project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', config={"experiment_group": opt.wandb_run_id}) as run:
         run.log({'round_trip_k/': round_trip_res})
         run.use_artifact(artifact_name)
+        artifact = wandb.Artifact(f'{opt.wandb_run_id}_round_trip', type='round_trip')
+        artifact.add_file(round_trip_output_path, name=round_trip_output_name)
+        run.log_artifact(artifact, aliases=[round_trip_output_name])
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
