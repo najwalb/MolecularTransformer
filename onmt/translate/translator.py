@@ -7,6 +7,7 @@ import os
 import math
 
 import torch
+import time
 
 from itertools import count
 from onmt.utils.misc import tile
@@ -231,6 +232,7 @@ class Translator(object):
         all_scores = []
         all_predictions = []
         for i, batch in enumerate(data_iter):
+            t0 = time.time()
             print(f'batch # {i}\n')
             print(f'len(batch) {len(batch)}\n')
             batch_data = self.translate_batch(batch, data, fast=self.fast)
@@ -284,7 +286,8 @@ class Translator(object):
                         output += row_format.format(word, *row) + '\n'
                         row_format = "{:>10.10} " + "{:>10.7f} " * len(srcs)
                     os.write(1, output.encode('utf-8'))
-
+            print(f'==== Time {time.time()-t0}\n')
+            
         if self.report_score:
             msg = self._report_score('PRED', pred_score_total,
                                      pred_words_total)

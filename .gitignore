@@ -1,4 +1,6 @@
 wandb
+outputs
+experiments
 
 # repo-specific stuff
 pred.txt
