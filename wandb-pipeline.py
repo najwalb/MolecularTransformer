@@ -228,8 +228,7 @@ if __name__ == "__main__":
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     onmt.opts.add_md_help_argument(parser)
 
-    parser.add_argument('-wandb_run_id', type=str, required=True,
-                       help='The id of the training run on wandb')
+    parser.add_argument('-wandb_run_id', type=str, required=True, help='The id of the training run on wandb')
     parser.add_argument('-n_conditions', type=str, required=True,
                        help='to identify the samples artifact')
     parser.add_argument('-epochs', nargs='+', type=int, required=True,
