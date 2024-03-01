@@ -17,6 +17,9 @@ import onmt.translate.beam
 import onmt.inputters as inputters
 import onmt.opts as opts
 import onmt.decoders.ensemble
+import torch
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 def build_translator(opt, report_score=True, logger=None, out_file=None, log_probs_out_file=None):
@@ -37,6 +40,8 @@ def build_translator(opt, report_score=True, logger=None, out_file=None, log_pro
     else:
         fields, model, model_opt = \
             onmt.model_builder.load_test_model(opt, dummy_opt.__dict__)
+            
+    model.to(device)
 
     scorer = onmt.translate.GNMTGlobalScorer(opt.alpha,
                                              opt.beta,
@@ -209,7 +214,7 @@ class Translator(object):
                           window=self.window,
                           use_filter_pred=self.use_filter_pred,
                           image_channel_size=self.image_channel_size)
-
+        
         if self.cuda:
             cur_device = "cuda"
         else:
@@ -235,6 +240,10 @@ class Translator(object):
             t0 = time.time()
             print(f'batch # {i}\n')
             print(f'len(batch) {len(batch)}\n')
+            batch.src = (batch.src[0].to(device), batch.src[1].to(device))
+            batch.indices = batch.indices.to(device)
+            batch.src_map = batch.src_map.to(device)
+            
             batch_data = self.translate_batch(batch, data, fast=self.fast)
             translations = builder.from_batch(batch_data)
 
@@ -286,8 +295,7 @@ class Translator(object):
                         output += row_format.format(word, *row) + '\n'
                         row_format = "{:>10.10} " + "{:>10.7f} " * len(srcs)
                     os.write(1, output.encode('utf-8'))
-            print(f'==== Time {time.time()-t0}\n')
-            
+            print(f'==== Time {time.time()-t0}\n') 
         if self.report_score:
             msg = self._report_score('PRED', pred_score_total,
                                      pred_words_total)
@@ -569,11 +577,9 @@ class Translator(object):
 
         # Define a list of tokens to exclude from ngram-blocking
         # exclusion_list = ["<t>", "</t>", "."]
-        exclusion_tokens = set([vocab.stoi[t]
-                                for t in self.ignore_when_blocking])
+        exclusion_tokens = set([vocab.stoi[t] for t in self.ignore_when_blocking])
 
-        beam = [onmt.translate.Beam(beam_size, n_best=self.n_best,
-                                    cuda=self.cuda,
+        beam = [onmt.translate.Beam(beam_size, n_best=self.n_best, cuda=self.cuda,
                                     global_scorer=self.global_scorer,
                                     pad=vocab.stoi[inputters.PAD_WORD],
                                     eos=vocab.stoi[inputters.EOS_WORD],
@@ -636,8 +642,7 @@ class Translator(object):
 
             # Construct batch x beam_size nxt words.
             # Get all the pending current beam words and arrange for forward.
-            inp = var(torch.stack([b.get_current_state() for b in beam])
-                      .t().contiguous().view(1, -1))
+            inp = var(torch.stack([b.get_current_state() for b in beam]).t().contiguous().view(1, -1)).to(device)
 
             # Turn any copied words to UNKs
             # 0 is unk

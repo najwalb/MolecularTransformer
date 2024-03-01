@@ -1,0 +1,4 @@
+product,pred,pred_product
+CC(=O)c1ccc2c(ccn2C(=O)OC(C)(C)C)c1,CC(=O)c1ccc2nccc2c1.CC(C)(C)OC(=O)OC(=O)OC(C)(C)C,C=C(OC(=O)OC(C)(C)C)c1ccc2ncccc2c1
+CC(=O)c1ccc2c(ccn2C(=O)OC(C)(C)C)c1,CC(=O)c1ccc2nccc2c1.CC(C)(C)OC(=O)OC(=O)OC(C)(C)C,C=C(OC(=O)OC(C)(C)C)c1ccc2ncccc2c1
+CC(=O)c1ccc2c(ccn2C(=O)OC(C)(C)C)c1,CC(C)(C)OC(=O)n1ccc2cc(Br)ccc21.CC1OCCCN1O,CC1OCCCN1Oc1ccc2c(ccn2C(=O)OC(C)(C)C)c1

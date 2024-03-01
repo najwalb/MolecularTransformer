@@ -19,16 +19,78 @@ mkdir_p(job_directory)
 mkdir_p(output_dir)
 
 num_gpus = 1
-run_id = 'l86a0avb'
-epochs = '320 260' # [320, 260, 140, 20]
-n_conditions = 128
+# run_id = 'l86a0avb'
+# epochs = '320 260 140 20' # [320, 260, 140, 20]
+# run_id = 's82o6pi4'
+# epochs = '150 100 20'
+# run_id = 'if3aizpe'
+# epochs = '200 240'
+# run_id = 'o6zn38fc' # charged_smiles_pos_enc
+# epochs = '440 480'
+# run_id = 'z7d425l4' # p_to_r_init_10
+# epochs = '440 420'
+# run_id = 'z7d425l4' # p_to_r_init_10
+# epochs = '320'
+# n_conditions = 5000 # 
+
+##### skip connection model
+# run_id = '6q1cd3e3' # uncharged_smiles_pos_enc
+# epochs = '260'
+# n_conditions = 4960 # 
+# n_samples_per_condition = 100
+# steps = 250
+# edge_conditional_set = 'test'
+# beam_size = 100
+# n_best = 100
+# batch_size = 64
+
+##### best laplacian model
+# run_id = 'if3aizpe' # uncharged_smiles_pos_enc
+# epochs = '300'
+# n_conditions = 4960 # 
+# n_samples_per_condition = 100
+# steps = 100
+# edge_conditional_set = 'test'
+# beam_size = 100
+# n_best = 100
+# batch_size = 64
+
+####### TODO: new MT hyperparams from retrobridge
+
+##### skip connection model
+# run_id = '6q1cd3e3' # uncharged_smiles_pos_enc
+# epochs = '260'
+# n_conditions = 4960 # 
+# n_samples_per_condition = 100
+# steps = 250
+# edge_conditional_set = 'test'
+# beam_size = 100
+# n_best = 100
+# batch_size = 64
+
+##### laplacian model
+# run_id = 'if3aizpe' # uncharged_smiles_pos_enc
+# epochs = '300'
+# n_conditions = 4960 # 
+# n_samples_per_condition = 100
+# steps = 100
+# edge_conditional_set = 'test'
+# beam_size = 100
+# n_best = 100
+# batch_size = 64
+
+##### 250 steps model
+run_id = 'bznufq64' # uncharged_smiles_pos_enc
+epochs = '200' 
+n_conditions = 4992 # 
 n_samples_per_condition = 100
-edge_conditional_set = 'val'
+steps = 250
+edge_conditional_set = 'test' #
 beam_size = 100
 n_best = 100
-batch_size = 256
+batch_size = 64
 
-experiment_name = f'wandb_pipeline_{run_id}'
+experiment_name = f'{run_id}_wandb_pipeline_beam{beam_size}'
 print(f"Creating job {experiment_name}... ")
 job_file = os.path.join(job_directory, f"{experiment_name}.job")
 
@@ -43,15 +105,18 @@ with open(job_file, 'w') as fh:
     fh.writelines(f"#SBATCH --gres=gpu:v100:{num_gpus}\n")
     fh.writelines("#SBATCH --mem-per-cpu=10G\n")
     fh.writelines("#SBATCH --cpus-per-task=16\n")
-    fh.writelines(f"#SBATCH --time=06:00:00\n")
+    fh.writelines(f"#SBATCH --time=2-00:00:00\n")
     fh.writelines("#SBATCH --array=1-1\n")
     fh.writelines("module purge\n")
     fh.writelines("module load gcc/11.3.0\n\n")
     fh.writelines(f"export WANDB_CACHE_DIR=/scratch/{project}\n")
     fh.writelines(f"export MPLCONFIGDIR=/scratch/{project}\n")
     fh.writelines(f'export PATH="/projappl/{project}/{conda_env}/bin:$PATH"\n')
-    fh.writelines(f"python3 {script_name} -wandb_run_id {run_id} -n_conditions {n_conditions} -beam_size {beam_size} -n_best {n_best} "+\
-                    f" -batch_size {batch_size} -epochs {epochs} -edge_conditional_set {edge_conditional_set} -n_samples_per_condition {n_samples_per_condition} ")
+    # fh.writelines(f"python3 {script_name} -wandb_run_id {run_id} -n_conditions {n_conditions} -beam_size {beam_size} -n_best {n_best} -steps {steps} "+\
+    #               f" -batch_size {batch_size} -epochs {epochs} -edge_conditional_set {edge_conditional_set} -n_samples_per_condition {n_samples_per_condition}")
+    # trying out the same hyperparams as retrobridge
+    fh.writelines(f"python3 {script_name} "+\
+                  f" -wandb_run_id {run_id} -n_conditions {n_conditions} -steps {steps} -epochs {epochs} -edge_conditional_set {edge_conditional_set} -n_samples_per_condition {n_samples_per_condition}")
 
 result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
 if 'job' not in result.stdout.decode("utf-8"):

@@ -21,6 +21,8 @@ log.setLevel(logging.INFO)
 handler = logging.StreamHandler()
 log.addHandler(handler)
 
+os.environ["WANDB__SERVICE_WAIT"] = "300"
+
 parent_path = pathlib.Path(os.path.realpath(__file__)).parents[0]
     
 def read_saved_reaction_data(output_file):
@@ -51,7 +53,8 @@ def get_rank(row, base, max_rank):
             return i
     return 0
 
-def get_artifact_with_newest_alias(wandb_entity, wandb_project, wandb_run_id, collection_name, epoch, n_conditions, n_samples_per_condition, edge_conditional_set):
+def get_artifact_with_newest_alias(wandb_entity, wandb_project, wandb_run_id, collection_name, epoch, 
+                                   steps, n_conditions, n_samples_per_condition, edge_conditional_set):
     collection_name = f"{wandb_run_id}_eval"
     api = wandb.Api()
     collections = [
@@ -65,11 +68,13 @@ def get_artifact_with_newest_alias(wandb_entity, wandb_project, wandb_run_id, co
     ## TODO: test this once good file is on wandb
 
     aliases = [alias for art in coll.versions() for alias in art.aliases \
-                     if ('eval' in alias and 'cond' in alias) \
+                     if ('eval' in alias and 'cond' in alias and 'steps' in alias) \
                      and re.findall('epoch\d+', alias)[0]==f'epoch{epoch}' \
+                     and re.findall('steps\d+', alias)[0]==f'steps{steps}' \
                      and re.findall('cond\d+', alias)[0]==f'cond{n_conditions}' \
                      and re.findall('sampercond\d+', alias)[0]==f'sampercond{n_samples_per_condition}' \
-                     and alias.split('_')[6].split('.txt')[-1]==edge_conditional_set]
+                     and alias.split('_')[7].split('.txt')[-1]==edge_conditional_set]
+    
     versions = [int(art.version.split('v')[-1]) for art in coll.versions()]
 
     aliases = [a for a,v in sorted(zip(aliases, versions), key=lambda pair: -pair[1])]
@@ -78,10 +83,10 @@ def get_artifact_with_newest_alias(wandb_entity, wandb_project, wandb_run_id, co
    
     return aliases[0]
     
-def donwload_eval_file_from_artifact(wandb_entity, wandb_project, wandb_run_id, epoch, n_conditions, n_samples_per_condition, edge_conditional_set, savedir):
+def donwload_eval_file_from_artifact(wandb_entity, wandb_project, wandb_run_id, epoch, steps, n_conditions, n_samples_per_condition, edge_conditional_set, savedir):
     collection_name = f"{wandb_run_id}_eval"
     alias = get_artifact_with_newest_alias(wandb_entity, wandb_project, wandb_run_id, collection_name, 
-                                           epoch, n_conditions, n_samples_per_condition, edge_conditional_set)
+                                           epoch, steps, n_conditions, n_samples_per_condition, edge_conditional_set)
     
     artifact_name = f"{wandb_entity}/{wandb_project}/{collection_name}:{alias}"
     samples_art = wandb.Api().artifact(artifact_name)
@@ -103,6 +108,8 @@ def output_round_trip_scores(df, output_file):
         f.write(f'(cond {i}) {g}>>{p}:\n')
         df_p = df[df['target']==p].reset_index()
         for j in range(len(df_p)):
+            # f.write(f"\t{df_p.loc[j,'reactants']}>>{p}, match: {df_p.loc[j,'exact_match_score']}, "+\
+            #         f"round-trip: {df_p.loc[j,'round_trip_score']}, pred1: {df_p.loc[j,'prediction_1']}\n")
             f.write(f"\t{df_p.loc[j,'reactants']}>>{p}, match: {df_p.loc[j,'exact_match_score']}, "+\
                     f"round-trip: {df_p.loc[j,'round_trip_score']}, pred1: {df_p.loc[j,'prediction_1']}, "+\
                     f"pred2: {df_p.loc[j,'prediction_2']}, pred3: {df_p.loc[j,'prediction_3']}\n")
@@ -118,10 +125,16 @@ def main(opt):
     wandb_entity = 'najwalb'
     wandb_project = 'retrodiffuser'
     model = "MIT_mixed_augm_model_average_20.pt"
+    # NOTE: hard-coded for last min experiments
+    # opt.batch_size = '64'
+    # opt.max_length = '200'
+    # opt.beam_size = '1'
+    # opt.n_best = '1'
     
+    mt_opts = f'maxlength{opt.max_length}_beamsize{opt.beam_size}_nbest{opt.n_best}_{model}'
     # conda_env_path = '/Users/laabidn1/miniconda3/envs/mol_transformer/bin/' # used by subprocess
     # TODO: add sample_step to the run name once it's in wandb artifacts
-    run = wandb.init(name=f"round_trip_{opt.wandb_run_id}_cond{opt.n_conditions}_sampercond{opt.n_samples_per_condition}_{opt.edge_conditional_set}", 
+    run = wandb.init(name=f"round_trip_{opt.wandb_run_id}_cond{opt.n_conditions}_sampercond{opt.n_samples_per_condition}_{opt.edge_conditional_set}_beamsize{opt.beam_size}", 
                      project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', config={"experiment_group": opt.wandb_run_id})
     
     # 1. get the evaluation file from wandb
@@ -129,8 +142,9 @@ def main(opt):
         log.info(f'Getting eval file from wandb...\n')
         savedir = os.path.join(parent_path, "data", f"{opt.wandb_run_id}_eval")
         log.info(f'==== Saving artifact in {savedir}\n')
-        eval_file, artifact_name = donwload_eval_file_from_artifact(wandb_entity, wandb_project, opt.wandb_run_id, epoch, opt.n_conditions, 
-                                                                    opt.n_samples_per_condition, opt.edge_conditional_set, savedir)
+        eval_file, artifact_name = donwload_eval_file_from_artifact(wandb_entity, wandb_project, opt.wandb_run_id, epoch, opt.steps, 
+                                                                    opt.n_conditions, opt.n_samples_per_condition, opt.edge_conditional_set, 
+                                                                    savedir)
     
         # 2. read saved reaction data from eval file
         log.info(f'Read saved reactions...\n')
@@ -140,7 +154,7 @@ def main(opt):
         log.info(f'Output reactions to file for processing...\n')
         eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
         dataset = f'{opt.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-        reaction_file_name = f"{eval_file_name}_TOKENIZED.gen"
+        reaction_file_name = f"{eval_file_name}_{mt_opts}_TOKENIZED.gen"
         reaction_file_path = os.path.join(parent_path, 'data', dataset, reaction_file_name) 
         log.info(f'==== reaction_file_path {reaction_file_path}\n')
         open(reaction_file_path, 'w').writelines([x+'\n' for rxns in reactions for x in rxns[1]])
@@ -157,9 +171,19 @@ def main(opt):
         translate_output_file = f"experiments/results/predictions_{model}_on_{dataset}_{reaction_file_name}.txt"
         src_file = f"data/{dataset}/src-{reaction_file_name}.txt"
         model_file = f"experiments/models/{model}"
+        # subprocess.run(["python", "translate.py", "-model", model_file, "-src", src_file, "-output", 
+        #                 translate_output_file, "-batch_size", opt.batch_size, "-replace_unk", "-max_length", 
+        #                 opt.max_length, "-beam_size", opt.beam_size, "-n_best", opt.n_best], stdout=None, stderr=None)
+        # TODO: values hard-coded because of closeness to ICML24 deadline, should make it a hyperparam
+        # TODO: careful with '-fast'
+        # subprocess.run(["python", "translate.py", "-model", model_file, "-src", src_file, "-output", 
+        #                 translate_output_file, "-batch_size", opt.batch_size, "-replace_unk", "-max_length", 
+        #                 opt.max_length, "-beam_size", opt.beam_size, "-n_best", opt.n_best, '-fast'], stdout=None, stderr=None)
         subprocess.run(["python", "translate.py", "-model", model_file, "-src", src_file, "-output", 
                         translate_output_file, "-batch_size", opt.batch_size, "-replace_unk", "-max_length", 
                         opt.max_length, "-beam_size", opt.beam_size, "-n_best", opt.n_best], stdout=None, stderr=None)
+
+                 
         log.info(f'Time translating {time.time()-t0}\n')
     
         # 6. get round_trip k accuracy scores
@@ -195,7 +219,7 @@ def main(opt):
         test_df['score'] = pd.concat([test_df['round_trip_score'], test_df['exact_match_score']], axis=1).max(axis=1)
         
         log.info(f'Output top-k files ...\n')
-        round_trip_output_name = f"round_trip_{eval_file_name}"
+        round_trip_output_name = f"round_trip_{eval_file_name}_{mt_opts}"
         round_trip_output_path = os.path.join(parent_path, "data", dataset, f"{round_trip_output_name}.txt")
         output_round_trip_scores(test_df, round_trip_output_path)
     
@@ -204,7 +228,8 @@ def main(opt):
         avg.columns = ['target']
         
         for k in opt.round_trip_k:
-            avg[f'round-trip-{k}_weighted_0.9'] = (test_df.groupby('target').head(int(k)).groupby('target').agg({'score':'sum'})>=1).reset_index()['score']
+            avg[f'roundtrip-coverage-{k}_weighted_0.9'] = (test_df.groupby('target').head(int(k)).groupby('target').agg({'score':'sum'})>=1).reset_index()['score']
+            avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = (test_df.groupby('target').head(int(k)).groupby('target').agg({'score':'mean'})).reset_index()['score']
         
         round_trip_res = avg.mean(0).to_dict()
         round_trip_res['epoch'] = epoch
@@ -217,8 +242,9 @@ def main(opt):
         run.log({'round_trip_k/': round_trip_res})
         run.use_artifact(artifact_name)
         artifact = wandb.Artifact(f'{opt.wandb_run_id}_round_trip', type='round_trip')
-        artifact.add_file(round_trip_output_path, name=f'{round_trip_output_name}.txt')
-        run.log_artifact(artifact, aliases=[round_trip_output_name])
+        art_name = f"round_trip_{eval_file_name}_10"
+        artifact.add_file(round_trip_output_path, name=f'{art_name}.txt')
+        run.log_artifact(artifact, aliases=[art_name])
         
         log.info(f'Time of wandb logging {time.time()-t0}\n')
 
@@ -227,12 +253,14 @@ if __name__ == "__main__":
         description='score_predictions.py',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     onmt.opts.add_md_help_argument(parser)
-
-    parser.add_argument('-wandb_run_id', type=str, required=True, help='The id of the training run on wandb')
+    parser.add_argument('-wandb_run_id', type=str, required=True,
+                       help='The id of the training run on wandb')
     parser.add_argument('-n_conditions', type=str, required=True,
                        help='to identify the samples artifact')
     parser.add_argument('-epochs', nargs='+', type=int, required=True,
                        help='epochs')
+    parser.add_argument('-steps', type=int, required=True,
+                        help='sampling steps')
     parser.add_argument('-round_trip_k', nargs='+', type=int, default=[1, 3, 5, 10, 50],
                        help='list of k values for the round_trip accuracy')
     parser.add_argument('-n_samples_per_condition', type=str, default="100",
