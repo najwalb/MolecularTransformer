@@ -18,81 +18,12 @@ jobids_file = os.path.join(job_directory, 'jobids.txt')
 mkdir_p(job_directory)
 mkdir_p(output_dir)
 
-num_gpus = 1
-# run_id = 'l86a0avb'
-# epochs = '320 260 140 20' # [320, 260, 140, 20]
-# run_id = 's82o6pi4'
-# epochs = '150 100 20'
-# run_id = 'if3aizpe'
-# epochs = '200 240'
-# run_id = 'o6zn38fc' # charged_smiles_pos_enc
-# epochs = '440 480'
-# run_id = 'z7d425l4' # p_to_r_init_10
-# epochs = '440 420'
-# run_id = 'z7d425l4' # p_to_r_init_10
-# epochs = '320'
-# n_conditions = 5000 # 
-
-##### skip connection model
-# run_id = '6q1cd3e3' # uncharged_smiles_pos_enc
-# epochs = '260'
-# n_conditions = 4960 # 
-# n_samples_per_condition = 100
-# steps = 250
-# edge_conditional_set = 'test'
-# beam_size = 100
-# n_best = 100
-# batch_size = 64
-
-##### best laplacian model
-# run_id = 'if3aizpe' # uncharged_smiles_pos_enc
-# epochs = '300'
-# n_conditions = 4960 # 
-# n_samples_per_condition = 100
-# steps = 100
-# edge_conditional_set = 'test'
-# beam_size = 100
-# n_best = 100
-# batch_size = 64
-
-####### TODO: new MT hyperparams from retrobridge
-
-##### skip connection model
-# run_id = '6q1cd3e3' # uncharged_smiles_pos_enc
-# epochs = '260'
-# n_conditions = 4960 # 
-# n_samples_per_condition = 100
-# steps = 250
-# edge_conditional_set = 'test'
-# beam_size = 100
-# n_best = 100
-# batch_size = 64
-
-##### laplacian model
-# run_id = 'if3aizpe' # uncharged_smiles_pos_enc
-# epochs = '300'
-# n_conditions = 4960 # 
-# n_samples_per_condition = 100
-# steps = 100
-# edge_conditional_set = 'test'
-# beam_size = 100
-# n_best = 100
-# batch_size = 64
-
-##### 250 steps model
-run_id = 'bznufq64' # uncharged_smiles_pos_enc
-epochs = '200' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 250
-edge_conditional_set = 'test' #
-# beam_size = 100
-# n_best = 100
-# batch_size = 64
-
-experiment_name = f'{run_id}_wandb_pipeline_retrobridge'
+experiment_name = f'retrobridge_retranslating'
 print(f"Creating job {experiment_name}... ")
 job_file = os.path.join(job_directory, f"{experiment_name}.job")
+
+csv_in = "/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_without_translation.csv"
+csv_out = "/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_retranslated.csv"
 
 # TODO: Could load the yaml file in question the experiment name and log with that locally to outputs/
 with open(job_file, 'w') as fh:
@@ -112,8 +43,7 @@ with open(job_file, 'w') as fh:
     fh.writelines(f"export WANDB_CACHE_DIR=/scratch/{project}\n")
     fh.writelines(f"export MPLCONFIGDIR=/scratch/{project}\n")
     fh.writelines(f'export PATH="/projappl/{project}/{conda_env}/bin:$PATH"\n')
-    fh.writelines(f"python3 retrobridge-roundtrip.py  "+\
-                  f" --wandb_run_id {run_id} --n_conditions {n_conditions} --steps {steps} --epochs {epochs} --edge_conditional_set {edge_conditional_set} --n_samples_per_condition {n_samples_per_condition}")
+    fh.writelines(f"python3 retrobridge_code_roundtrip.py --csv_file {csv_in} --csv_out {csv_out}")
 
 result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
 if 'job' not in result.stdout.decode("utf-8"):

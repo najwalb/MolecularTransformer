@@ -152,8 +152,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     args = parser.parse_args()
 
-    translation_out_file = os.path.join('experiments', 'results', 'retroB_translated_eval_epoch200_steps250_resorted_0.9_cond4992_sampercond100_test_lam0.9_retrobridge_roundtrip_parsed.txt')
-    translation_out_file = '/Users/laabidn1/MolecularTransformer/data/retrobridge/retrobridge_samples.csv'
+    #translation_out_file = os.path.join('experiments', 'results', 'retroB_translated_eval_epoch200_steps250_resorted_0.9_cond4992_sampercond100_test_lam0.9_retrobridge_roundtrip_parsed.txt')
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_retranslated.csv'
     df_in = pd.read_csv(translation_out_file)
     df_in = assign_groups(df_in, samples_per_product_per_file=10)
     df_in.loc[(df_in['product'] == 'C') & (df_in['true'] == 'C'), 'true'] = 'Placeholder'

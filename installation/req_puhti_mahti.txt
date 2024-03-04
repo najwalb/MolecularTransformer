@@ -1,1 +1,1 @@
-pip install pandas==1.5.3 
+pip install rdkit==2023.03.2
