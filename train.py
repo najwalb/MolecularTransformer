@@ -26,8 +26,7 @@ def main(opt):
         raise AssertionError("BPTT is not compatible with -accum > 1")
 
     if len(opt.gpuid) > 1:
-        raise AssertionError("gpuid is deprecated \
-              see world_size and gpu_ranks")
+        raise AssertionError("gpuid is deprecated see world_size and gpu_ranks")
 
     nb_gpu = len(opt.gpu_ranks)
 
@@ -103,7 +102,6 @@ class ErrorHandler(object):
                  be ignored --\n\n"""
         msg += original_trace
         raise Exception(msg)
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(

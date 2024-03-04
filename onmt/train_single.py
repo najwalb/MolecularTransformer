@@ -88,8 +88,7 @@ def main(opt, device_id):
     # Load checkpoint if we resume from a previous training.
     if opt.train_from:
         logger.info('Loading checkpoint from %s' % opt.train_from)
-        checkpoint = torch.load(opt.train_from,
-                                map_location=lambda storage, loc: storage)
+        checkpoint = torch.load(opt.train_from, map_location=lambda storage, loc: storage)
         model_opt = checkpoint['opt']
     else:
         checkpoint = None
@@ -104,7 +103,6 @@ def main(opt, device_id):
     fields = _load_fields(first_dataset, data_type, opt, checkpoint)
 
     # Report src/tgt features.
-
     src_features, tgt_features = _collect_report_features(fields)
     for j, feat in enumerate(src_features):
         logger.info(' * src feature %d size = %d'
@@ -137,8 +135,7 @@ def main(opt, device_id):
         lazily_load_dataset("valid", opt), fields, opt, is_train=False)
 
     # Do training.
-    trainer.train(train_iter_fct, valid_iter_fct, opt.train_steps,
-                  opt.valid_steps)
+    trainer.train(train_iter_fct, valid_iter_fct, opt.train_steps, opt.valid_steps)
 
     if opt.tensorboard:
         trainer.report_manager.tensorboard_writer.close()

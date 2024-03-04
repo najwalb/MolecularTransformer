@@ -17,6 +17,16 @@ log.addHandler(handler)
 
 parent_path = pathlib.Path(os.path.realpath(__file__)).parents[0]
 
+import re
+
+def remove_charges_func(reactant):
+    # Regular expression to match charges (+, -, and numerical charges like +2, -3, etc.)
+    charge_pattern = re.compile(r'(\d+)?[\+\-]')
+    # Remove charges from the reactant string
+    cleaned_reactant = re.sub(charge_pattern, '', reactant)
+    # print(reactant, cleaned_reactant)
+    return cleaned_reactant
+
 """
 Chen, Shuan, and Yousung Jung.
 "Deep retrosynthetic reaction prediction using local reactivity and global attention."
@@ -39,13 +49,13 @@ def read_saved_reaction_data_like_retrobridge(output_file):
     for block in blocks:
         lines = block.strip().split('\n')
         original_reaction = lines[0].split(':')[0].strip()
-        prod = original_reaction.split('>>')[-1]
-        true_reactants = original_reaction.split('>>')[0]
+        prod = remove_charges_func(original_reaction.split('>>')[-1])
+        true_reactants = remove_charges_func(original_reaction.split('>>')[0])
         for line in lines[1:]:
             match = re.match(r"\t\('([^']+)', \[([^\]]+)\]\)", line)
             if match:
                 reaction_smiles = match.group(1)
-                pred_reactants = reaction_smiles.split('>>')[0]
+                pred_reactants = remove_charges_func(reaction_smiles.split('>>')[0])
                 # numbers = list(map(float, match.group(2).split(',')))
                 # generated_reactions.append((reaction_smiles, numbers))
                 # maybe don't care about the numbers for now?
