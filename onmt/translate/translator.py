@@ -197,6 +197,7 @@ class Translator(object):
                 of `n_best` predictions
         """
         assert src_data_iter is not None or src_path is not None
+        print(f'batch_size {batch_size}\n')
 
         if batch_size is None:
             raise ValueError("batch_size must be set")
@@ -240,6 +241,8 @@ class Translator(object):
             t0 = time.time()
             print(f'batch # {i}\n')
             print(f'len(batch) {len(batch)}\n')
+            print(f'dir(batch) {dir(batch)}\n')
+            print(f'batch.__len__ {batch.__len__}\n')
             batch.src = (batch.src[0].to(device), batch.src[1].to(device))
             batch.indices = batch.indices.to(device)
             batch.src_map = batch.src_map.to(device)

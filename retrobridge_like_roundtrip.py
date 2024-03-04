@@ -8,6 +8,7 @@ import os
 import logging
 import wandb
 import pathlib
+from rdkit import Chem
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -27,9 +28,9 @@ Predicted precursors are considered correct if
 - Molecular Transformer predicts the target product for the proposed precursors
 """
 '''
-python3 retrobridge-roundtrip.py --csv_out testing_wandb.out --wandb_run_id bznufq64 --n_conditions 4992 --steps 250 --epochs 200 --edge_conditional_set test --n_samples_per_condition 100
+python3 retrobridge_like_roundtrip.py --csv_out testing_wandb.out --wandb_run_id bznufq64 --n_conditions 4992 --steps 250 --epochs 200 --edge_conditional_set test --n_samples_per_condition 100
 '''
-def read_saved_reaction_data_like_retrobridge(output_file):
+def read_saved_reaction_data_like_retrobridge(output_file, reprocess_like_retrobridge=False, keep_unprocessed=False):
     # Reads the saved reaction data from the samples.txt file
     # Split the data into individual blocks based on '(cond ?)' pattern
     data = open(output_file, 'r').read()
@@ -40,12 +41,28 @@ def read_saved_reaction_data_like_retrobridge(output_file):
         lines = block.strip().split('\n')
         original_reaction = lines[0].split(':')[0].strip()
         prod = original_reaction.split('>>')[-1]
+        if reprocess_like_retrobridge: prod = Chem.MolToSmiles(Chem.MolFromSmiles(prod))
         true_reactants = original_reaction.split('>>')[0]
+        if reprocess_like_retrobridge: 
+            if '.' in true_reactants:
+                true_reactants = '.'.join([Chem.MolToSmiles(Chem.MolFromSmiles(rct)) for rct in true_reactants.split('.')])
+            else:
+                true_reactants = Chem.MolToSmiles(Chem.MolFromSmiles(true_reactants))
         for line in lines[1:]:
             match = re.match(r"\t\('([^']+)', \[([^\]]+)\]\)", line)
             if match:
                 reaction_smiles = match.group(1)
-                pred_reactants = reaction_smiles.split('>>')[0]
+                orig_pred = reaction_smiles.split('>>')[0]
+                if reprocess_like_retrobridge: 
+                    try:
+                        if '.' in pred_reactants:
+                            pred_reactants = '.'.join([Chem.MolToSmiles(Chem.MolFromSmiles(rct)) for rct in orig_pred.split('.')])
+                        else:
+                            mol = Chem.MolFromSmiles(orig_pred)
+                            if mol: pred_reactants = Chem.MolToSmiles(mol)
+                            else: pred_reactants = orig_pred if keep_unprocessed else ''
+                    except:
+                        pred_reactants = orig_pred if keep_unprocessed else ''
                 # numbers = list(map(float, match.group(2).split(',')))
                 # generated_reactions.append((reaction_smiles, numbers))
                 # maybe don't care about the numbers for now?
@@ -112,6 +129,8 @@ if __name__ == "__main__":
     # parser.add_argument("--csv_file", type=Path, required=True)
     parser.add_argument("--csv_out", type=Path, required=False, default=True)
     parser.add_argument("--mol_trans_dir", type=Path, default="./")
+    parser.add_argument("--reprocess_like_retrobridge", type=bool, default=False)
+    parser.add_argument("--keep_unprocessed", type=bool, default=False)
     # added these params to be able to get data from wandb
     parser.add_argument('--wandb_run_id', type=str, required=True,
                        help='The id of the training run on wandb')
@@ -158,10 +177,10 @@ if __name__ == "__main__":
     
     # 2. read saved reaction data from eval file
     log.info(f'Read saved reactions...\n')
-    reactions = read_saved_reaction_data_like_retrobridge(eval_file)
+    reactions = read_saved_reaction_data_like_retrobridge(eval_file, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_unprocessed=args.keep_unprocessed)
 
     # 3. output reaction data to text file as one reaction per line
-    mt_opts = f'retrobridge_roundtrip'
+    mt_opts = f'retrobridge_roundtrip_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}'
     log.info(f'Output reactions to file for processing...\n')
     eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
     dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
@@ -176,6 +195,7 @@ if __name__ == "__main__":
 
     # Find unique SMILES
     unique_smiles = list(set(df['pred']))
+    print(f'unique_smiles {unique_smiles}\n')
 
     # Tokenize
     tokenized_smiles = [smi_tokenizer(s.strip()) for s in unique_smiles]
