@@ -53,7 +53,8 @@ def read_saved_reaction_data_like_retrobridge(output_file, remove_charges=False,
     for block in blocks:
         lines = block.strip().split('\n')
         original_reaction = lines[0].split(':')[0].strip()
-        prod = original_reaction.split('>>')[-1]
+        #prod = remove_charges_func(original_reaction.split('>>')[-1])
+        true_reactants = remove_charges_func(original_reaction.split('>>')[0])
         if reprocess_like_retrobridge: prod = Chem.MolToSmiles(Chem.MolFromSmiles(prod))
         if remove_charges: prod = remove_charges_func(prod)
         true_reactants = original_reaction.split('>>')[0]
@@ -67,6 +68,7 @@ def read_saved_reaction_data_like_retrobridge(output_file, remove_charges=False,
             match = re.match(r"\t\('([^']+)', \[([^\]]+)\]\)", line)
             if match:
                 reaction_smiles = match.group(1)
+                #pred_reactants = remove_charges_func(reaction_smiles.split('>>')[0])
                 orig_pred = reaction_smiles.split('>>')[0]
                 if reprocess_like_retrobridge: 
                     try:
