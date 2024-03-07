@@ -80,172 +80,75 @@ num_gpus = 1
 # batch_size = 64
 
 ##### 250 steps model
-run_id = 'bznufq64' # uncharged_smiles_pos_enc
-epochs = '200' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 250
-edge_conditional_set = 'test' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
+# run_id = 'bznufq64' # uncharged_smiles_pos_enc
+# epochs = '200' 
+# n_conditions = 4992 # 
+# n_samples_per_condition = 100
+# steps = 250
+# edge_conditional_set = 'test' #
+# reprocess_like_retrobridge = True
+# keep_unprocessed = True
+# remove_charges = True
 # beam_size = 100
 # n_best = 100
 # batch_size = 64
 
 ##### new runs
-# run_id = '7ckmnkvc' # uncharged_smiles_pos_enc
-# epochs = '360' 
-# n_conditions = 4992 # 
-# n_samples_per_condition = 100
-# steps = 100
-# edge_conditional_set = 'val' #
-# reprocess_like_retrobridge = True
-# keep_unprocessed = True
-# remove_charges = True
 
-# run_id = '82wscv5d' # uncharged_smiles_pos_enc
-# epochs = '360' 
-# n_conditions = 4992 # 
-# n_samples_per_condition = 100
-# steps = 100
-# edge_conditional_set = 'val' #
-# reprocess_like_retrobridge = True
-# keep_unprocessed = True
-# remove_charges = True
- 
-run_id = 'bznufq64'
-epochs = '360' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
+all_run_ids = ['7ckmnkvc', '82wscv5d', 'bznufq64', 'p28j1qh2', 'sne65sw8', '7ckmnkvc', '82wscv5d', '9nd48syv', 'bznufq64', 'k6di2qtr',
+           'p28j1qh2', 'sne65sw8']
+all_epochs = ['360', '360', '360', '360', '360', '280', '280', '280', '280', '280', '280', '280']
+all_run_ids = ['7ckmnkvc']
+all_epochs = ['360']
+all_n_conditions = [4992]*len(all_run_ids)
+all_n_samples_per_condition = [100]*len(all_run_ids)
+all_steps = [100]*len(all_run_ids)
+all_edge_conditional_set = ['val']*len(all_run_ids)
+all_reprocess_like_retrobridge = [True]*len(all_run_ids)
+all_keep_unprocessed = [True]*len(all_run_ids)
+all_remove_charges = [False]*len(all_run_ids)
+all_new_prob_weights = [0.9]*len(all_run_ids)
+all_ranking_metrics = ['new_prob_weight']*len(all_run_ids)
+all_log_to_wandb = [True]*len(all_run_ids)
 
-run_id = 'p28j1qh2' 
-epochs = '360' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
+for (run_id, epochs, n_conditions, n_samples_per_condition, steps, edge_conditional_set, reprocess_like_retrobridge, \
+     keep_unprocessed, remove_charges, new_prob_weight, ranking_metric, log_to_wandb) \
+    in zip(all_run_ids, all_epochs, all_n_conditions, all_n_samples_per_condition, all_steps, all_edge_conditional_set, \
+           all_reprocess_like_retrobridge, all_keep_unprocessed, all_remove_charges, all_new_prob_weights, all_ranking_metrics, all_log_to_wandb):
 
-run_id = 'sne65sw8'
-epochs = '360' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
+    experiment_name = f'{run_id}_wandb_pipeline_retrobridge_reproc{reprocess_like_retrobridge}_keep{keep_unprocessed}_rmch{remove_charges}_nprob{new_prob_weight}_rank{ranking_metric}'
+    print(f"Creating job {experiment_name}... ")
+    job_file = os.path.join(job_directory, f"{experiment_name}.job")
 
-run_id = '7ckmnkvc'
-epochs = '280' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
+    # TODO: Could load the yaml file in question the experiment name and log with that locally to outputs/
+    with open(job_file, 'w') as fh:
+        fh.writelines("#!/bin/bash\n")
+        fh.writelines(f"#SBATCH --job-name={experiment_name}_%a.job\n") # add time stamp?
+        fh.writelines(f"#SBATCH --output={output_dir}/{experiment_name}_%a.out\n")
+        fh.writelines(f"#SBATCH --error={output_dir}/{experiment_name}_%a.err\n")
+        fh.writelines(f"#SBATCH --account={project}\n")
+        # fh.writelines(f"#SBATCH --partition=gpu\n")
+        # fh.writelines(f"#SBATCH --gres=gpu:v100:{num_gpus}\n")
+        fh.writelines("#SBATCH --mem-per-cpu=10G\n")
+        fh.writelines("#SBATCH --cpus-per-task=2\n")
+        fh.writelines(f"#SBATCH --time=10:00:00\n")
+        fh.writelines("#SBATCH --array=1-1\n")
+        fh.writelines("module purge\n")
+        fh.writelines("module load gcc/11.3.0\n\n")
+        fh.writelines(f"export WANDB_CACHE_DIR=/scratch/{project}\n")
+        fh.writelines(f"export MPLCONFIGDIR=/scratch/{project}\n")
+        fh.writelines(f'export PATH="/projappl/{project}/{conda_env}/bin:$PATH"\n')
+        fh.writelines(f"python3 retrobridge_like_roundtrip.py  --reprocess_like_retrobridge {reprocess_like_retrobridge} --keep_unprocessed {keep_unprocessed} --remove_charges {remove_charges}"+\
+                      f" --wandb_run_id {run_id} --n_conditions {n_conditions} --steps {steps} --epochs {epochs} --edge_conditional_set {edge_conditional_set} --n_samples_per_condition {n_samples_per_condition}"+\
+                      f" --new_prob_weight {new_prob_weight} --ranking_metric {ranking_metric} --log_to_wandb {log_to_wandb} \n")
 
-run_id = '82wscv5d' 
-epochs = '280' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
+    result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
+    if 'job' not in result.stdout.decode("utf-8"):
+        print(result)
+    else:
+        job_id = result.stdout.decode("utf-8").strip().split('job ')[1]
 
-run_id = '9nd48syv'
-epochs = '280' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
+        with open(jobids_file, 'a') as f:
+            f.write(f"train.job: {job_id}\n")
 
-run_id = 'bznufq64' 
-epochs = '280' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
-
-run_id = 'k6di2qtr' 
-epochs = '280' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
-
-run_id = 'p28j1qh2'
-epochs = '280' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
-
-run_id = 'sne65sw8'
-epochs = '280' 
-n_conditions = 4992 # 
-n_samples_per_condition = 100
-steps = 100
-edge_conditional_set = 'val' #
-reprocess_like_retrobridge = True
-keep_unprocessed = True
-remove_charges = True
-
-experiment_name = f'{run_id}_wandb_pipeline_retrobridge_reproc{reprocess_like_retrobridge}_keep{keep_unprocessed}'
-print(f"Creating job {experiment_name}... ")
-job_file = os.path.join(job_directory, f"{experiment_name}.job")
-
-# TODO: Could load the yaml file in question the experiment name and log with that locally to outputs/
-with open(job_file, 'w') as fh:
-    fh.writelines("#!/bin/bash\n")
-    fh.writelines(f"#SBATCH --job-name={experiment_name}_%a.job\n") # add time stamp?
-    fh.writelines(f"#SBATCH --output={output_dir}/{experiment_name}_%a.out\n")
-    fh.writelines(f"#SBATCH --error={output_dir}/{experiment_name}_%a.err\n")
-    fh.writelines(f"#SBATCH --account={project}\n")
-    # fh.writelines(f"#SBATCH --partition=gpu\n")
-    # fh.writelines(f"#SBATCH --gres=gpu:v100:{num_gpus}\n")
-    fh.writelines("#SBATCH --mem-per-cpu=10G\n")
-    fh.writelines("#SBATCH --cpus-per-task=2\n")
-    fh.writelines(f"#SBATCH --time=10:00:00\n")
-    fh.writelines("#SBATCH --array=1-1\n")
-    fh.writelines("module purge\n")
-    fh.writelines("module load gcc/11.3.0\n\n")
-    fh.writelines(f"export WANDB_CACHE_DIR=/scratch/{project}\n")
-    fh.writelines(f"export MPLCONFIGDIR=/scratch/{project}\n")
-    fh.writelines(f'export PATH="/projappl/{project}/{conda_env}/bin:$PATH"\n')
-    fh.writelines(f"python3 retrobridge_like_roundtrip.py  --reprocess_like_retrobridge {reprocess_like_retrobridge} --keep_unprocessed {keep_unprocessed} --remove_charges {remove_charges}"+\
-                  f" --wandb_run_id {run_id} --n_conditions {n_conditions} --steps {steps} --epochs {epochs} --edge_conditional_set {edge_conditional_set} --n_samples_per_condition {n_samples_per_condition}")
-
-result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
-if 'job' not in result.stdout.decode("utf-8"):
-    print(result)
-else:
-    job_id = result.stdout.decode("utf-8").strip().split('job ')[1]
-
-    with open(jobids_file, 'a') as f:
-        f.write(f"train.job: {job_id}\n")
-
-    print(f"=== Submitted to Slurm with ID {job_id}.")
+        print(f"=== Submitted to Slurm with ID {job_id}.")

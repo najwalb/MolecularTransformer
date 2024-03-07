@@ -56,6 +56,26 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "rb_like_round_trip",
+            "type": "python",
+            "request": "launch",
+            "program": "retrobridge_like_roundtrip.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--csv_out", "testing_wandb.out",
+                "--wandb_run_id", "bznufq64",
+                "--n_conditions", "4992",
+                "--steps", "250",
+                "--epochs", "200",
+                "--edge_conditional_set", "test",
+                "--n_samples_per_condition", "100",
+                "--reprocess_like_retrobridge", "True",
+                "--keep_unprocessed", "True",
+                "--remove_charges", "True"
+            ]
         }
     ]
 }

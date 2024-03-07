@@ -50,11 +50,10 @@ def read_saved_reaction_data_like_retrobridge(output_file, remove_charges=False,
     blocks = re.split(r'\(cond \d+\)', data)[1:]
     reactant_predictions = []
     
-    for block in blocks:
+    for block in blocks[:2]:
         lines = block.strip().split('\n')
         original_reaction = lines[0].split(':')[0].strip()
-        #prod = remove_charges_func(original_reaction.split('>>')[-1])
-        true_reactants = remove_charges_func(original_reaction.split('>>')[0])
+        prod = original_reaction.split('>>')[-1]
         if reprocess_like_retrobridge: prod = Chem.MolToSmiles(Chem.MolFromSmiles(prod))
         if remove_charges: prod = remove_charges_func(prod)
         true_reactants = original_reaction.split('>>')[0]
@@ -81,10 +80,19 @@ def read_saved_reaction_data_like_retrobridge(output_file, remove_charges=False,
                     except:
                         pred_reactants = orig_pred if keep_unprocessed else ''
                 if remove_charges: orig_pred = remove_charges_func(orig_pred)
-                # numbers = list(map(float, match.group(2).split(',')))
+                numbers = list(map(float, match.group(2).split(',')))
                 # generated_reactions.append((reaction_smiles, numbers))
                 # maybe don't care about the numbers for now?
-                reactant_predictions.append((prod, true_reactants, pred_reactants))
+                pb_prod = 'CC(C)(C)c1ccc(COc2ccc3c(C4CCNCC4)cn(Cc4ccc(C(C)(C)C)cc4)c3c2)cc1'
+                pb_rct = 'Cc1ccccc1OC(=O)N1CCC(c2cn(Cc3ccc(C(C)(C)C)cc3)c3cc(OCc4ccc(C(C)(C)C)cc4)ccc23)CC1'
+                if prod==pb_prod and pred_reactants==pb_rct:
+                    print(f'orig_pred {orig_pred}\n')
+                single_reaction = [prod, true_reactants, pred_reactants]
+                single_reaction.extend(numbers)
+                counts = numbers[-2]
+                print(f'counts {counts}\n')
+                for _ in range(int(counts)):
+                    reactant_predictions.append(single_reaction)
 
     return reactant_predictions
 
@@ -158,34 +166,47 @@ def assign_groups(df, samples_per_product_per_file=10):
     return df
 
 def compute_confidence(df, group_key='product'):
-    # count the number of times a prediction is made for a given product/group => repetitions!!
-    counts = df.groupby([group_key, 'pred'], group_keys=False).size().reset_index(name='count') 
-    # group = single product => count the number of predictions we get per product => nb_samples_per_product
-    group_size = df.groupby([group_key], group_keys=False).size().reset_index(name='group_size') # shld be 100 in paper experiments
-
-    #     # Don't use .merge() as it can change the order of rows
-    ##     df = df.merge(counts, on=['group', 'pred'], how='left')
-    #     df = df.merge(counts, on=['group', 'pred'], how='inner')
-    #     df = df.merge(group_size, on=['group'], how='left')
+    '''
+        Taken from retrobridge and modified in the following ways:
+            1. renamed the columns to avoid confusion with stuff we computed before
+            2. removed the group_size computation as it's not used since we compute it already to normalize the counts
     
-    counts_dict = {(g, p): c for g, p, c in zip(counts[group_key], counts['pred'], counts['count'])}
-    df['count'] = df.apply(lambda x: counts_dict[(x[group_key], x['pred'])], axis=1)
+    '''
+    
+    # count the number of times a prediction is made for a given product/group => repetitions!!
+    counts = df.groupby([group_key, 'pred'], group_keys=False).size().reset_index(name='new_counts') 
+    # group = single product => count the number of predictions we get per product => nb_samples_per_product
+    # group_size = df.groupby([group_key], group_keys=False).size().reset_index(name='n_samples_per_product') # shld be 100 in paper experiments
 
-    size_dict = {g: s for g, s in zip(group_size[group_key], group_size['group_size'])}
-    df['group_size'] = df.apply(lambda x: size_dict[x[group_key]], axis=1)
+    ## Don't use .merge() as it can change the order of rows
+    # df = df.merge(counts, on=['group', 'pred'], how='left')
+    # df = df.merge(counts, on=['group', 'pred'], how='inner')
+    # df = df.merge(group_size, on=['group'], how='left')
+    
+    counts_dict = {(g, p): c for g, p, c in zip(counts[group_key], counts['pred'], counts['new_counts'])}
+    df['new_counts'] = df.apply(lambda x: counts_dict[(x[group_key], x['pred'])], axis=1)
+
+    # size_dict = {g: s for g, s in zip(group_size[group_key], group_size['n_samples_per_product'])}
+    # df['n_samples_per_product'] = df.apply(lambda x: size_dict[x[group_key]], axis=1)
 
     # how many times the same prediction is made for a given product
-    df['confidence'] = df['count'] / df['group_size']
+    df['confidence'] = df['new_counts'] / df['n_samples_per_product']
 
     # sanity check
     # what does nunique do?
     # it counts the number of unique values in a series: all product_pred have the same confidence value
     # all groups have the same group_size (n_samples is the same for all products)
     assert (df.groupby([group_key, 'pred'], group_keys=False)['confidence'].nunique() == 1).all()
-    assert (df.groupby([group_key], group_keys=False)['group_size'].nunique() == 1).all()
+    assert (df.groupby([group_key], group_keys=False)['n_samples_per_product'].nunique() == 1).all()
 
     return df
 
+def recompute_elbo(df, group_key='product'):
+    new_elbos = df.groupby([group_key, 'pred'], group_keys=False).agg({'elbo': 'mean'}).to_dict()
+    df['new_elbo'] = df.apply(lambda x: new_elbos['elbo'][(x[group_key], x['pred'])], axis=1)
+    
+    return df
+    
 def get_top_k(df, k, scoring=None):
     if callable(scoring):
         df["_new_score"] = scoring(df)
@@ -209,28 +230,22 @@ def canonicalize(smi):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # parser.add_argument("--csv_file", type=Path, required=True)
-    parser.add_argument("--csv_out", type=Path, required=False, default=True)
+    # parser.add_argument("--csv_out", type=Path, required=False, default=True)
     parser.add_argument("--mol_trans_dir", type=Path, default="./")
     parser.add_argument("--reprocess_like_retrobridge", type=bool, default=False)
     parser.add_argument("--keep_unprocessed", type=bool, default=False)
     parser.add_argument("--remove_charges", type=bool, default=False)
+    parser.add_argument('--new_prob_weight', type=float, default=0.9, help='new_prob_weight')
+    parser.add_argument('--ranking_metric', type=str, default='new_weighted_prob', help='ranking_metric')
     # added these params to be able to get data from wandb
-    parser.add_argument('--wandb_run_id', type=str, required=True,
-                       help='The id of the training run on wandb')
-    parser.add_argument('--n_conditions', type=str, required=True,
-                       help='to identify the samples artifact')
-    parser.add_argument('--epochs', nargs='+', type=int, required=True,
-                       help='epochs')
-    parser.add_argument('--steps', type=int, required=True,
-                        help='sampling steps')
-    parser.add_argument('--round_trip_k', nargs='+', type=int, default=[1, 3, 5, 10, 50],
-                       help='list of k values for the round_trip accuracy')
-    parser.add_argument('--n_samples_per_condition', type=str, default="100",
-                       help='nb samples per condition')
-    parser.add_argument('--edge_conditional_set', type=str, default='test',
-                       help='edge conditional set')
-    parser.add_argument('--log_to_wandb', type=bool, default=False,
-                       help='log_to_wandb')
+    parser.add_argument('--wandb_run_id', type=str, required=True, help='The id of the training run on wandb')
+    parser.add_argument('--n_conditions', type=str, required=True, help='to identify the samples artifact')
+    parser.add_argument('--epochs', nargs='+', type=int, required=True, help='epochs')
+    parser.add_argument('--steps', type=int, required=True, help='sampling steps')
+    parser.add_argument('--round_trip_k', nargs='+', type=int, default=[1, 3, 5, 10, 50, 100], help='list of k values for the round_trip accuracy')
+    parser.add_argument('--n_samples_per_condition', type=str, default="100", help='nb samples per condition')
+    parser.add_argument('--edge_conditional_set', type=str, default='test', help='edge conditional set')
+    parser.add_argument('--log_to_wandb', type=bool, default=False, help='log_to_wandb')
     args = parser.parse_args()
 
     sys.path.append(str(args.mol_trans_dir))
@@ -265,10 +280,10 @@ if __name__ == "__main__":
 
     # 3. output reaction data to text file as one reaction per line
     # log.info(f'Output reactions to file for processing...\n')
-    # mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
-    # eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
-    # dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-    # reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
+    mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
+    eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
+    dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
+    reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
     # reaction_file_path = os.path.join(parent_path, 'data', dataset, reaction_file_name) 
     # log.info(f'==== reaction_file_path {reaction_file_path}\n')
     # open(reaction_file_path, 'w').write('product,true,pred\n')
@@ -276,7 +291,11 @@ if __name__ == "__main__":
     
     # Read CSV
     # turn list into df
-    df = pd.read_csv(reaction_file_path)
+    df = pd.DataFrame(reactions, columns=['product', 'true', 'pred', 'elbo', 'loss_t', 'loss_0', 'counts', 'weighted_prob'])
+    # add normalized counts
+    all_sizes = df.groupby('product').size().to_dict()
+    df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
+    df['normalized_counts'] = df['counts']/df['n_samples_per_product']
 
     # Find unique SMILES
     unique_smiles = list(set(df['pred']))
@@ -303,12 +322,17 @@ if __name__ == "__main__":
     pred_products = {r:p for r, p in zip(unique_smiles, pred_products)}
 
     # update dataframe
-    df['pred_product'] = [pred_products[r] for r in df['pred']]
+    # df['pred_product'] = [pred_products[r] for r in df['pred']]
+    df.insert(3, 'pred_product', [pred_products[r] for r in df['pred']])
 
     # Write results
-    if args.csv_out:
-        print("Writing CSV file...")
-        df.to_csv(os.path.join('experiments', 'results', dataset, reaction_file_name), index=False)
+    mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
+    eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
+    dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
+    reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
+    print("Writing CSV file...")
+    os.makedirs(os.path.join(parent_path, 'experiments', 'results', dataset), exist_ok=True)
+    df.to_csv(os.path.join(parent_path, 'experiments', 'results', dataset, reaction_file_name), index=False)
 
     # translation_out_file = args.translation_out_file
     # df_in = pd.read_csv(translation_out_file)
@@ -316,22 +340,23 @@ if __name__ == "__main__":
     
     # df = assign_groups(df, samples_per_product_per_file=10)
     # df.loc[(df['product'] == 'C') & (df['true'] == 'C'), 'true'] = 'Placeholder'
-    # df = compute_confidence(df, group_key='product')
-    # TODO: replace with our own count
+    df = compute_confidence(df, group_key='product')
+    df = recompute_elbo(df, group_key='product')
+    df['new_weighted_prob'] = (1-args.new_prob_weight)*df['new_elbo'] + args.new_prob_weight*df['confidence']
     
-    for key in ['product', 'pred_product']:
-        df[key] = df[key].apply(canonicalize)
+    # for key in ['product', 'pred_product']:
+    #     df[key] = df[key].apply(canonicalize)
 
     df['exact_match'] = df['true'] == df['pred']
     df['round_trip_match'] = df['product'] == df['pred_product']
     df['match'] = df['exact_match'] | df['round_trip_match']
     
     avg = {}
-    ranking_metric = 'confidence'
     for k in args.round_trip_k:
-        topk_df = df.groupby(['product']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[ranking_metric]))).reset_index(drop=True)
+        topk_df = df.groupby(['product']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[args.ranking_metric]))).reset_index(drop=True)
         avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('product').match.any().mean()
         avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('product').match.mean().mean()
+        avg[f'top-{k}_weighted_0.9'] = topk_df.exact_match.any().mean()
     print(f'avg {avg}\n')
 
     # 8. log scores to wandb
@@ -340,6 +365,6 @@ if __name__ == "__main__":
         wandb_entity = 'najwalb'
         wandb_project = 'retrodiffuser'
         model = "MIT_mixed_augm_model_average_20.pt"
-        run = wandb.init(name=f'{wandb_run_id}_{reaction_file_name}', project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', 
+        run = wandb.init(name=f'{args.wandb_run_id}_{reaction_file_name}', project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', 
                          config={"experiment_group": 'retrobridge_samples'})
         run.log({'round_trip_k/': avg})
