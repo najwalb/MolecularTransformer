@@ -39,22 +39,22 @@ def assign_groups(df, samples_per_product_per_file=10):
     return df
 
 # counting! => doesn't use elbo at all ...
-def compute_confidence(df):
+def compute_confidence(df, group_key='product'):
     # count the number of times a prediction is made for a given product/group => repetitions!!
-    counts = df.groupby(['group', 'pred'], group_keys=False).size().reset_index(name='count') 
+    counts = df.groupby([group_key, 'pred'], group_keys=False).size().reset_index(name='count') 
     # group = single product => count the number of predictions we get per product => nb_samples_per_product
-    group_size = df.groupby(['group'], group_keys=False).size().reset_index(name='group_size') # shld be 100 in paper experiments
+    group_size = df.groupby([group_key], group_keys=False).size().reset_index(name='group_size') # shld be 100 in paper experiments
 
     #     # Don't use .merge() as it can change the order of rows
     ##     df = df.merge(counts, on=['group', 'pred'], how='left')
     #     df = df.merge(counts, on=['group', 'pred'], how='inner')
     #     df = df.merge(group_size, on=['group'], how='left')
     
-    counts_dict = {(g, p): c for g, p, c in zip(counts['group'], counts['pred'], counts['count'])}
-    df['count'] = df.apply(lambda x: counts_dict[(x['group'], x['pred'])], axis=1)
+    counts_dict = {(g, p): c for g, p, c in zip(counts[group_key], counts['pred'], counts['count'])}
+    df['count'] = df.apply(lambda x: counts_dict[(x[group_key], x['pred'])], axis=1)
 
-    size_dict = {g: s for g, s in zip(group_size['group'], group_size['group_size'])}
-    df['group_size'] = df.apply(lambda x: size_dict[x['group']], axis=1)
+    size_dict = {g: s for g, s in zip(group_size[group_key], group_size['group_size'])}
+    df['group_size'] = df.apply(lambda x: size_dict[x[group_key]], axis=1)
 
     # how many times the same prediction is made for a given product
     df['confidence'] = df['count'] / df['group_size']
@@ -63,8 +63,8 @@ def compute_confidence(df):
     # what does nunique do?
     # it counts the number of unique values in a series: all product_pred have the same confidence value
     # all groups have the same group_size (n_samples is the same for all products)
-    assert (df.groupby(['group', 'pred'], group_keys=False)['confidence'].nunique() == 1).all()
-    assert (df.groupby(['group'], group_keys=False)['group_size'].nunique() == 1).all()
+    assert (df.groupby([group_key, 'pred'], group_keys=False)['confidence'].nunique() == 1).all()
+    assert (df.groupby([group_key], group_keys=False)['group_size'].nunique() == 1).all()
 
     return df
 
@@ -138,12 +138,15 @@ if __name__ == "__main__":
                        help='log_to_wandb')
     args = parser.parse_args()
 
-    translation_out_file = '/Users/laabidn1/MolecularTransformer/data/retrobridge/retrobridge_samples.csv'
-    df_in = pd.read_csv(translation_out_file)
+    #translation_out_file = '/Users/laabidn1/MolecularTransformer/data/retrobridge/retrobridge_samples.csv'
+    translation_out_file = args.translation_out_file
+    df = pd.read_csv(translation_out_file)
+    # df_in['from_file'] = args.translation_out_file   
     
-    df_in = assign_groups(df_in, samples_per_product_per_file=10)
-    df_in.loc[(df_in['product'] == 'C') & (df_in['true'] == 'C'), 'true'] = 'Placeholder'
-    df = compute_confidence(df_in)
+    # df_in = assign_groups(df_in, samples_per_product_per_file=10)
+    group_key = 'product'
+    df.loc[(df['product'] == 'C') & (df['true'] == 'C'), 'true'] = 'Placeholder'
+    df = compute_confidence(df, group_key=group_key)
     
     for key in ['product', 'pred_product']:
         df[key] = df[key].apply(canonicalize)
@@ -154,18 +157,19 @@ if __name__ == "__main__":
     
     avg = {}
     for k in args.round_trip_k:
-        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['confidence']))).reset_index(drop=True)
-        avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('group').match.any().mean()
-        avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('group').match.mean().mean()
+        topk_df = df.groupby([group_key]).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['confidence']))).reset_index(drop=True)
+        avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby(group_key).match.any().mean()
+        avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby(group_key).match.mean().mean()
     print(f'avg {avg}\n')
 
     # 8. log scores to wandb
+    reaction_file_name = args.translation_out_file
+    wandb_run_id = 'test'
     print(f'args.log_to_wandb {args.log_to_wandb}\n')
     if args.log_to_wandb:
         wandb_entity = 'najwalb'
         wandb_project = 'retrodiffuser'
         model = "MIT_mixed_augm_model_average_20.pt"
-        run = wandb.init(name=f"retrobridge_samples", 
-                        project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', config={"experiment_group": 'retrobridge_samples'})
+        run = wandb.init(name=f'{wandb_run_id}_{reaction_file_name}', project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', 
+                         config={"experiment_group": 'retrobridge_samples'})
         run.log({'round_trip_k/': avg})
-    

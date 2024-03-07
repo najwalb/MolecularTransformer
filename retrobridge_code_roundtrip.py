@@ -29,7 +29,6 @@ def smi_tokenizer(smi):
         
     return ' '.join(tokens)
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--csv_file", type=Path, required=True)

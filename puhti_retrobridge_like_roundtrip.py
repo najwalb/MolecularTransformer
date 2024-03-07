@@ -88,9 +88,131 @@ steps = 250
 edge_conditional_set = 'test' #
 reprocess_like_retrobridge = True
 keep_unprocessed = True
+remove_charges = True
 # beam_size = 100
 # n_best = 100
 # batch_size = 64
+
+##### new runs
+# run_id = '7ckmnkvc' # uncharged_smiles_pos_enc
+# epochs = '360' 
+# n_conditions = 4992 # 
+# n_samples_per_condition = 100
+# steps = 100
+# edge_conditional_set = 'val' #
+# reprocess_like_retrobridge = True
+# keep_unprocessed = True
+# remove_charges = True
+
+# run_id = '82wscv5d' # uncharged_smiles_pos_enc
+# epochs = '360' 
+# n_conditions = 4992 # 
+# n_samples_per_condition = 100
+# steps = 100
+# edge_conditional_set = 'val' #
+# reprocess_like_retrobridge = True
+# keep_unprocessed = True
+# remove_charges = True
+ 
+run_id = 'bznufq64'
+epochs = '360' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = 'p28j1qh2' 
+epochs = '360' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = 'sne65sw8'
+epochs = '360' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = '7ckmnkvc'
+epochs = '280' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = '82wscv5d' 
+epochs = '280' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = '9nd48syv'
+epochs = '280' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = 'bznufq64' 
+epochs = '280' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = 'k6di2qtr' 
+epochs = '280' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = 'p28j1qh2'
+epochs = '280' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
+
+run_id = 'sne65sw8'
+epochs = '280' 
+n_conditions = 4992 # 
+n_samples_per_condition = 100
+steps = 100
+edge_conditional_set = 'val' #
+reprocess_like_retrobridge = True
+keep_unprocessed = True
+remove_charges = True
 
 experiment_name = f'{run_id}_wandb_pipeline_retrobridge_reproc{reprocess_like_retrobridge}_keep{keep_unprocessed}'
 print(f"Creating job {experiment_name}... ")
@@ -114,7 +236,7 @@ with open(job_file, 'w') as fh:
     fh.writelines(f"export WANDB_CACHE_DIR=/scratch/{project}\n")
     fh.writelines(f"export MPLCONFIGDIR=/scratch/{project}\n")
     fh.writelines(f'export PATH="/projappl/{project}/{conda_env}/bin:$PATH"\n')
-    fh.writelines(f"python3 retrobridge_like_roundtrip.py  --reprocess_like_retrobridge {reprocess_like_retrobridge} --keep_unprocessed {keep_unprocessed} "+\
+    fh.writelines(f"python3 retrobridge_like_roundtrip.py  --reprocess_like_retrobridge {reprocess_like_retrobridge} --keep_unprocessed {keep_unprocessed} --remove_charges {remove_charges}"+\
                   f" --wandb_run_id {run_id} --n_conditions {n_conditions} --steps {steps} --epochs {epochs} --edge_conditional_set {edge_conditional_set} --n_samples_per_condition {n_samples_per_condition}")
 
 result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
