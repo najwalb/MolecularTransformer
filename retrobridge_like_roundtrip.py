@@ -50,7 +50,7 @@ def read_saved_reaction_data_like_retrobridge(output_file, remove_charges=False,
     blocks = re.split(r'\(cond \d+\)', data)[1:]
     reactant_predictions = []
     
-    for block in blocks[:2]:
+    for block in blocks:
         lines = block.strip().split('\n')
         original_reaction = lines[0].split(':')[0].strip()
         prod = original_reaction.split('>>')[-1]
@@ -232,9 +232,9 @@ if __name__ == "__main__":
     # parser.add_argument("--csv_file", type=Path, required=True)
     # parser.add_argument("--csv_out", type=Path, required=False, default=True)
     parser.add_argument("--mol_trans_dir", type=Path, default="./")
-    parser.add_argument("--reprocess_like_retrobridge", type=bool, default=False)
-    parser.add_argument("--keep_unprocessed", type=bool, default=False)
-    parser.add_argument("--remove_charges", type=bool, default=False)
+    parser.add_argument("--reprocess_like_retrobridge", action='store_true', default=False)
+    parser.add_argument("--keep_unprocessed", action='store_true', default=False)
+    parser.add_argument("--remove_charges", default=False, action='store_true')
     parser.add_argument('--new_prob_weight', type=float, default=0.9, help='new_prob_weight')
     parser.add_argument('--ranking_metric', type=str, default='new_weighted_prob', help='ranking_metric')
     # added these params to be able to get data from wandb
@@ -245,97 +245,99 @@ if __name__ == "__main__":
     parser.add_argument('--round_trip_k', nargs='+', type=int, default=[1, 3, 5, 10, 50, 100], help='list of k values for the round_trip accuracy')
     parser.add_argument('--n_samples_per_condition', type=str, default="100", help='nb samples per condition')
     parser.add_argument('--edge_conditional_set', type=str, default='test', help='edge conditional set')
-    parser.add_argument('--log_to_wandb', type=bool, default=False, help='log_to_wandb')
+    parser.add_argument('--log_to_wandb', action='store_true', default=False, help='log_to_wandb')
     args = parser.parse_args()
 
-    sys.path.append(str(args.mol_trans_dir))
-    import onmt
-    from onmt.translate.translator import build_translator
-    import onmt.opts
+    # sys.path.append(str(args.mol_trans_dir))
+    # import onmt
+    # from onmt.translate.translator import build_translator
+    # import onmt.opts
 
-    onmt.opts.add_md_help_argument(parser)
-    onmt.opts.translate_opts(parser)
-    args = parser.parse_args(sys.argv[1:] + [
-        "-model", str(Path(args.mol_trans_dir, 'experiments/models', 'MIT_mixed_augm_model_average_20.pt')),
-        "-src", "input.txt", "-output", "pred.txt ",
-        "-replace_unk", "-max_length", "200", "-fast"
-    ])
+    # onmt.opts.add_md_help_argument(parser)
+    # onmt.opts.translate_opts(parser)
+    # args = parser.parse_args(sys.argv[1:] + [
+    #     "-model", str(Path(args.mol_trans_dir, 'experiments/models', 'MIT_mixed_augm_model_average_20.pt')),
+    #     "-src", "input.txt", "-output", "pred.txt ",
+    #     "-replace_unk", "-max_length", "200", "-fast"
+    # ])
     
-    # 1. get the evaluation file from wandb
-    wandb_entity = 'najwalb'
-    wandb_project = 'retrodiffuser'
-    model = "MIT_mixed_augm_model_average_20.pt"
+    # # 1. get the evaluation file from wandb
+    # wandb_entity = 'najwalb'
+    # wandb_project = 'retrodiffuser'
+    # model = "MIT_mixed_augm_model_average_20.pt"
     
-    assert len(args.epochs)==1, 'The script can only handle one epoch for now.'
-    epoch = args.epochs[0]
-    log.info(f'Getting eval file from wandb...\n')
-    savedir = os.path.join(parent_path, "data", f"{args.wandb_run_id}_eval")
-    log.info(f'==== Saving artifact in {savedir}\n')
-    eval_file, artifact_name = donwload_eval_file_from_artifact(wandb_entity, wandb_project, args.wandb_run_id, epoch, args.steps, args.n_conditions, 
-                                                                args.n_samples_per_condition, args.edge_conditional_set, savedir)
+    # assert len(args.epochs)==1, 'The script can only handle one epoch for now.'
+    # epoch = args.epochs[0]
+    # log.info(f'Getting eval file from wandb...\n')
+    # savedir = os.path.join(parent_path, "data", f"{args.wandb_run_id}_eval")
+    # log.info(f'==== Saving artifact in {savedir}\n')
+    # eval_file, artifact_name = donwload_eval_file_from_artifact(wandb_entity, wandb_project, args.wandb_run_id, epoch, args.steps, args.n_conditions, 
+    #                                                             args.n_samples_per_condition, args.edge_conditional_set, savedir)
     
-    # 2. read saved reaction data from eval file
-    log.info(f'Read saved reactions...\n')
-    reactions = read_saved_reaction_data_like_retrobridge(eval_file, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_unprocessed=args.keep_unprocessed)
+    # # 2. read saved reaction data from eval file
+    # log.info(f'Read saved reactions...\n')
+    # reactions = read_saved_reaction_data_like_retrobridge(eval_file, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_unprocessed=args.keep_unprocessed)
 
-    # 3. output reaction data to text file as one reaction per line
-    # log.info(f'Output reactions to file for processing...\n')
-    mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
-    eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
-    dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-    reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
-    # reaction_file_path = os.path.join(parent_path, 'data', dataset, reaction_file_name) 
-    # log.info(f'==== reaction_file_path {reaction_file_path}\n')
-    # open(reaction_file_path, 'w').write('product,true,pred\n')
-    # open(reaction_file_path, 'a').writelines([f'{prod},{true},{pred}\n' for prod,true,pred in reactions])
+    # # 3. output reaction data to text file as one reaction per line
+    # # log.info(f'Output reactions to file for processing...\n')
+    # mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
+    # eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
+    # dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
+    # reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
+    # # reaction_file_path = os.path.join(parent_path, 'data', dataset, reaction_file_name) 
+    # # log.info(f'==== reaction_file_path {reaction_file_path}\n')
+    # # open(reaction_file_path, 'w').write('product,true,pred\n')
+    # # open(reaction_file_path, 'a').writelines([f'{prod},{true},{pred}\n' for prod,true,pred in reactions])
     
-    # Read CSV
-    # turn list into df
-    df = pd.DataFrame(reactions, columns=['product', 'true', 'pred', 'elbo', 'loss_t', 'loss_0', 'counts', 'weighted_prob'])
-    # add normalized counts
-    all_sizes = df.groupby('product').size().to_dict()
-    df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
-    df['normalized_counts'] = df['counts']/df['n_samples_per_product']
+    # # Read CSV
+    # # turn list into df
+    # df = pd.DataFrame(reactions, columns=['product', 'true', 'pred', 'elbo', 'loss_t', 'loss_0', 'counts', 'weighted_prob'])
+    # # add normalized counts
+    # all_sizes = df.groupby('product').size().to_dict()
+    # df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
+    # df['normalized_counts'] = df['counts']/df['n_samples_per_product']
 
-    # Find unique SMILES
-    unique_smiles = list(set(df['pred']))
+    # # Find unique SMILES
+    # unique_smiles = list(set(df['pred']))
 
-    # Tokenize
-    tokenized_smiles = [smi_tokenizer(s.strip()) for s in unique_smiles]
+    # # Tokenize
+    # tokenized_smiles = [smi_tokenizer(s.strip()) for s in unique_smiles]
 
-    print("Predicting products...")
-    tic = time()
-    translator = build_translator(args, report_score=True)
-    scores, pred_products = translator.translate(
-        src_data_iter=tokenized_smiles,
-        batch_size=args.batch_size,
-        attn_debug=args.attn_debug
-    )
-    # always take n_best = 1?
-    pred_products = [x[0].strip() for x in pred_products]
-    print("... done after {} seconds".format(time() - tic))
+    # print("Predicting products...")
+    # tic = time()
+    # translator = build_translator(args, report_score=True)
+    # scores, pred_products = translator.translate(
+    #     src_data_iter=tokenized_smiles,
+    #     batch_size=args.batch_size,
+    #     attn_debug=args.attn_debug
+    # )
+    # # always take n_best = 1?
+    # pred_products = [x[0].strip() for x in pred_products]
+    # print("... done after {} seconds".format(time() - tic))
 
-    # De-tokenize
-    pred_products = [''.join(x.split()) for x in pred_products]
+    # # De-tokenize
+    # pred_products = [''.join(x.split()) for x in pred_products]
 
-    # gather results
-    pred_products = {r:p for r, p in zip(unique_smiles, pred_products)}
+    # # gather results
+    # pred_products = {r:p for r, p in zip(unique_smiles, pred_products)}
 
-    # update dataframe
-    # df['pred_product'] = [pred_products[r] for r in df['pred']]
-    df.insert(3, 'pred_product', [pred_products[r] for r in df['pred']])
+    # # update dataframe
+    # # df['pred_product'] = [pred_products[r] for r in df['pred']]
+    # df.insert(3, 'pred_product', [pred_products[r] for r in df['pred']])
 
-    # Write results
-    mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
-    eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
-    dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-    reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
-    print("Writing CSV file...")
-    os.makedirs(os.path.join(parent_path, 'experiments', 'results', dataset), exist_ok=True)
-    df.to_csv(os.path.join(parent_path, 'experiments', 'results', dataset, reaction_file_name), index=False)
+    # # Write results
+    # mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
+    # eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
+    # dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
+    # reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
+    # print("Writing CSV file...")
+    # os.makedirs(os.path.join(parent_path, 'experiments', 'results', dataset), exist_ok=True)
+    # df.to_csv(os.path.join(parent_path, 'experiments', 'results', dataset, reaction_file_name), index=False)
+    
 
     # translation_out_file = args.translation_out_file
-    # df_in = pd.read_csv(translation_out_file)
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/7ckmnkvc_eval/eval_epoch280_steps100_resorted_0.9_cond4992_sampercond100_val_lam0.9_RB_translated_reprocTrue_keepTrue_chargesTrue_parsed.txt'
+    df = pd.read_csv(translation_out_file)
     # df['from_file'] = eval_file_name 
     
     # df = assign_groups(df, samples_per_product_per_file=10)
