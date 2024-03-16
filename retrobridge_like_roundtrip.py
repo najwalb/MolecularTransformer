@@ -229,8 +229,6 @@ def canonicalize(smi):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    # parser.add_argument("--csv_file", type=Path, required=True)
-    # parser.add_argument("--csv_out", type=Path, required=False, default=True)
     parser.add_argument("--mol_trans_dir", type=Path, default="./")
     parser.add_argument("--reprocess_like_retrobridge", action='store_true', default=False)
     parser.add_argument("--keep_unprocessed", action='store_true', default=False)
@@ -248,54 +246,54 @@ if __name__ == "__main__":
     parser.add_argument('--log_to_wandb', action='store_true', default=False, help='log_to_wandb')
     args = parser.parse_args()
 
-    # sys.path.append(str(args.mol_trans_dir))
-    # import onmt
-    # from onmt.translate.translator import build_translator
-    # import onmt.opts
+    sys.path.append(str(args.mol_trans_dir))
+    import onmt
+    from onmt.translate.translator import build_translator
+    import onmt.opts
 
-    # onmt.opts.add_md_help_argument(parser)
-    # onmt.opts.translate_opts(parser)
-    # args = parser.parse_args(sys.argv[1:] + [
-    #     "-model", str(Path(args.mol_trans_dir, 'experiments/models', 'MIT_mixed_augm_model_average_20.pt')),
-    #     "-src", "input.txt", "-output", "pred.txt ",
-    #     "-replace_unk", "-max_length", "200", "-fast"
-    # ])
+    onmt.opts.add_md_help_argument(parser)
+    onmt.opts.translate_opts(parser)
+    args = parser.parse_args(sys.argv[1:] + [
+        "-model", str(Path(args.mol_trans_dir, 'experiments/models', 'MIT_mixed_augm_model_average_20.pt')),
+        "-src", "input.txt", "-output", "pred.txt ",
+        "-replace_unk", "-max_length", "200", "-fast"
+    ])
     
-    # # 1. get the evaluation file from wandb
-    # wandb_entity = 'najwalb'
-    # wandb_project = 'retrodiffuser'
-    # model = "MIT_mixed_augm_model_average_20.pt"
+    # 1. get the evaluation file from wandb
+    wandb_entity = 'najwalb'
+    wandb_project = 'retrodiffuser'
+    model = "MIT_mixed_augm_model_average_20.pt"
     
-    # assert len(args.epochs)==1, 'The script can only handle one epoch for now.'
-    # epoch = args.epochs[0]
-    # log.info(f'Getting eval file from wandb...\n')
-    # savedir = os.path.join(parent_path, "data", f"{args.wandb_run_id}_eval")
-    # log.info(f'==== Saving artifact in {savedir}\n')
-    # eval_file, artifact_name = donwload_eval_file_from_artifact(wandb_entity, wandb_project, args.wandb_run_id, epoch, args.steps, args.n_conditions, 
-    #                                                             args.n_samples_per_condition, args.edge_conditional_set, savedir)
+    assert len(args.epochs)==1, 'The script can only handle one epoch for now.'
+    epoch = args.epochs[0]
+    log.info(f'Getting eval file from wandb...\n')
+    savedir = os.path.join(parent_path, "data", f"{args.wandb_run_id}_eval")
+    log.info(f'==== Saving artifact in {savedir}\n')
+    eval_file, artifact_name = donwload_eval_file_from_artifact(wandb_entity, wandb_project, args.wandb_run_id, epoch, args.steps, args.n_conditions, 
+                                                                args.n_samples_per_condition, args.edge_conditional_set, savedir)
     
-    # # 2. read saved reaction data from eval file
-    # log.info(f'Read saved reactions...\n')
-    # reactions = read_saved_reaction_data_like_retrobridge(eval_file, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_unprocessed=args.keep_unprocessed)
+    # 2. read saved reaction data from eval file
+    log.info(f'Read saved reactions...\n')
+    reactions = read_saved_reaction_data_like_retrobridge(eval_file, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_unprocessed=args.keep_unprocessed)
 
-    # # 3. output reaction data to text file as one reaction per line
-    # # log.info(f'Output reactions to file for processing...\n')
-    # mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
-    # eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
-    # dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-    # reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
-    # # reaction_file_path = os.path.join(parent_path, 'data', dataset, reaction_file_name) 
-    # # log.info(f'==== reaction_file_path {reaction_file_path}\n')
-    # # open(reaction_file_path, 'w').write('product,true,pred\n')
-    # # open(reaction_file_path, 'a').writelines([f'{prod},{true},{pred}\n' for prod,true,pred in reactions])
+    # 3. output reaction data to text file as one reaction per line
+    # log.info(f'Output reactions to file for processing...\n')
+    mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
+    eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
+    dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
+    reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
+    # reaction_file_path = os.path.join(parent_path, 'data', dataset, reaction_file_name) 
+    # log.info(f'==== reaction_file_path {reaction_file_path}\n')
+    # open(reaction_file_path, 'w').write('product,true,pred\n')
+    # open(reaction_file_path, 'a').writelines([f'{prod},{true},{pred}\n' for prod,true,pred in reactions])
     
-    # # Read CSV
-    # # turn list into df
-    # df = pd.DataFrame(reactions, columns=['product', 'true', 'pred', 'elbo', 'loss_t', 'loss_0', 'counts', 'weighted_prob'])
-    # # add normalized counts
-    # all_sizes = df.groupby('product').size().to_dict()
-    # df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
-    # df['normalized_counts'] = df['counts']/df['n_samples_per_product']
+    # Read CSV
+    # turn list into df
+    df = pd.DataFrame(reactions, columns=['product', 'true', 'pred', 'elbo', 'loss_t', 'loss_0', 'counts', 'weighted_prob'])
+    # add normalized counts
+    all_sizes = df.groupby('product').size().to_dict()
+    df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
+    df['normalized_counts'] = df['counts']/df['n_samples_per_product']
 
     # # Find unique SMILES
     # unique_smiles = list(set(df['pred']))
@@ -325,19 +323,19 @@ if __name__ == "__main__":
     # # df['pred_product'] = [pred_products[r] for r in df['pred']]
     # df.insert(3, 'pred_product', [pred_products[r] for r in df['pred']])
 
-    # # Write results
-    # mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
-    # eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
-    # dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-    # reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
-    # print("Writing CSV file...")
-    # os.makedirs(os.path.join(parent_path, 'experiments', 'results', dataset), exist_ok=True)
-    # df.to_csv(os.path.join(parent_path, 'experiments', 'results', dataset, reaction_file_name), index=False)
+    # Write results
+    mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_unprocessed}_charges{args.remove_charges}'
+    eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
+    dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
+    reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
+    print("Writing CSV file...")
+    os.makedirs(os.path.join(parent_path, 'experiments', 'results', dataset), exist_ok=True)
+    df.to_csv(os.path.join(parent_path, 'experiments', 'results', dataset, reaction_file_name), index=False)
     
 
     # translation_out_file = args.translation_out_file
-    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/7ckmnkvc_eval/eval_epoch280_steps100_resorted_0.9_cond4992_sampercond100_val_lam0.9_RB_translated_reprocTrue_keepTrue_chargesTrue_parsed.txt'
-    df = pd.read_csv(translation_out_file)
+    # translation_out_file = '/Users/laabidn1/MolecularTransformer/experiments/results/eval_epoch280_steps100_resorted_0.9_cond4992_sampercond100_val_lam0.9_RB_translated_reprocTrue_keepTrue_chargesTrue_parsed.txt'
+    # df = pd.read_csv(translation_out_file)
     # df['from_file'] = eval_file_name 
     
     # df = assign_groups(df, samples_per_product_per_file=10)
@@ -350,15 +348,15 @@ if __name__ == "__main__":
     #     df[key] = df[key].apply(canonicalize)
 
     df['exact_match'] = df['true'] == df['pred']
-    df['round_trip_match'] = df['product'] == df['pred_product']
-    df['match'] = df['exact_match'] | df['round_trip_match']
+    #df['round_trip_match'] = df['product'] == df['pred_product']
+    #df['match'] = df['exact_match'] | df['round_trip_match']
     
     avg = {}
     for k in args.round_trip_k:
         topk_df = df.groupby(['product']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[args.ranking_metric]))).reset_index(drop=True)
-        avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('product').match.any().mean()
-        avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('product').match.mean().mean()
-        avg[f'top-{k}_weighted_0.9'] = topk_df.exact_match.any().mean()
+        # avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('product').match.any().mean()
+        # avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('product').match.mean().mean()
+        avg[f'top-{k}_weighted_0.9'] = topk_df.groupby('product').exact_match.any().mean()
     print(f'avg {avg}\n')
 
     # 8. log scores to wandb
@@ -367,6 +365,6 @@ if __name__ == "__main__":
         wandb_entity = 'najwalb'
         wandb_project = 'retrodiffuser'
         model = "MIT_mixed_augm_model_average_20.pt"
-        run = wandb.init(name=f'{args.wandb_run_id}_{reaction_file_name}', project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', 
+        run = wandb.init(name=f'{args.wandb_run_id}_rerun_topk_{reaction_file_name.split("eval_")[-1].split(".txt")[0]}', project=wandb_project, entity=wandb_entity, resume='allow', job_type='round_trip', 
                          config={"experiment_group": 'retrobridge_samples'})
-        run.log({'round_trip_k/': avg})
+        run.log({'sample_eval/': avg})
