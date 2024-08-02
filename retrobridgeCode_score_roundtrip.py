@@ -35,7 +35,7 @@ def assign_groups(df, samples_per_product_per_file=10):
     # what happens if we group by from_file then by group?
     # for each file, we assign numbers 0...nb_product_in_subset to each group of 10 samples 
     # (i.e. assign the index of the product to each group of 10 samples)
-    df = df.groupby('from_file', group_keys=False).apply(partial(_assign_groups, samples_per_product=samples_per_product_per_file))
+    df = df.groupby('product', group_keys=False).apply(partial(_assign_groups, samples_per_product=samples_per_product_per_file))
     return df
 
 # counting! => doesn't use elbo at all ...
@@ -133,14 +133,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--translation_out_file", type=Path, required=False, default=True)
     parser.add_argument("--topk", type=list, default=[1, 3, 5, 10, 50])
-    # parser.add_argument('--wandb_run_id', type=str, required=True,
-    #                    help='The id of the training run on wandb')
-    # parser.add_argument('--n_conditions', type=str, required=True,
-    #                    help='to identify the samples artifact')
-    # parser.add_argument('--epochs', nargs='+', type=int, required=True,
-    #                    help='epochs')
-    # parser.add_argument('--steps', type=int, required=True,
-    #                     help='sampling steps')
     parser.add_argument('--round_trip_k', nargs='+', type=int, default=[1, 3, 5, 10, 50],
                        help='list of k values for the round_trip accuracy')
     parser.add_argument('--n_samples_per_condition', type=str, default="100",
@@ -150,26 +142,22 @@ if __name__ == "__main__":
     parser.add_argument('--log_to_wandb', type=bool, default=False,
                        help='log_to_wandb')
     args = parser.parse_args()
-    args = parser.parse_args()
 
     #translation_out_file = os.path.join('experiments', 'results', 'retroB_translated_eval_epoch200_steps250_resorted_0.9_cond4992_sampercond100_test_lam0.9_retrobridge_roundtrip_parsed.txt')
     translation_out_file = '/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_retranslated.csv'
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_rb_in_common.csv'
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_7ck620_in_common.csv'
     df_in = pd.read_csv(translation_out_file)
+    df_in = df_in.dropna(0)
     df_in = assign_groups(df_in, samples_per_product_per_file=10)
     df_in.loc[(df_in['product'] == 'C') & (df_in['true'] == 'C'), 'true'] = 'Placeholder'
-    # print(f"{len(df_in.loc[(df_in['product'] == 'C') & (df_in['true'] == 'C'), 'true'])}")
-    # exit()
     
     df = compute_confidence(df_in)
-    # print(f'df.head(2)["score"] = {df.head(2)["score"]}')
-    # print(f'df.head(2)["confidence"] = {df.head(2)["confidence"]}')
-    # assert (df['score']==df['confidence']).all()
-    
     for key in ['product', 'pred_product']:
         df[key] = df[key].apply(canonicalize)
 
-    df['exact_match'] = df['true'] == df['pred']
-    df['round_trip_match'] = df['product'] == df['pred_product']
+    df['exact_match'] = df['true']==df['pred']
+    df['round_trip_match'] = df['product']==df['pred_product']
     df['match'] = df['exact_match'] | df['round_trip_match']
     
     avg = {}
@@ -179,12 +167,11 @@ if __name__ == "__main__":
         # df = df.drop_duplicates(subset='pred')
         # avg[f'roundtrip-coverage-{k}_weighted_0.9'] = df.groupby('product', group_keys=False).head(int(k)).groupby('product', group_keys=False).match.any().reset_index()['match']
         # avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = df.groupby('product', group_keys=False).head(int(k)).groupby('product', group_keys=False).match.mean().reset_index()['match']
-        
-        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['confidence']))).reset_index(drop=True)
+        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['normalized_counts']))).reset_index(drop=True)
         avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('group').match.any().mean()
         avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('group').match.mean().mean()
     print(f'avg {avg}\n')
-    exit()
+
     # 8. log scores to wandb
     wandb_entity = 'najwalb'
     wandb_project = 'retrodiffuser'
