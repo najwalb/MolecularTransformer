@@ -65,16 +65,14 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "--csv_out", "testing_wandb.out",
-                "--wandb_run_id", "bznufq64",
+                "--wandb_run_id", "7ckmnkvc",
                 "--n_conditions", "4992",
-                "--steps", "250",
-                "--epochs", "200",
-                "--edge_conditional_set", "test",
+                "--steps", "100",
+                "--epochs", "280",
+                "--edge_conditional_set", "val",
                 "--n_samples_per_condition", "100",
-                "--reprocess_like_retrobridge", "True",
-                "--keep_unprocessed", "True",
-                "--remove_charges", "True"
+                "--ranking_metric", "",
+                "--log_to_wandb"
             ]
         }
     ]
