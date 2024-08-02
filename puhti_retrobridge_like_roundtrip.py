@@ -120,20 +120,20 @@ mkdir_p(output_dir)
 # cpus_per_task = '1'
 
 ##### later 7ckmnkvc runs
-all_run_ids = ['7ckmnkvc']*2
-all_epochs = [520, 500]
-all_run_ids = ['7ckmnkvc']
-all_epochs = [500]
-all_n_conditions = [4992]*len(all_run_ids)
-all_n_samples_per_condition = [100]*len(all_run_ids)
-all_steps = [100]*len(all_run_ids)
-all_edge_conditional_set = ['val']*len(all_run_ids)
-all_new_prob_weights = [0.9]*len(all_run_ids)
-all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
-all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
-all_boolean_flags = ['--log_to_wandb']*len(all_run_ids)
-t = '08:00:00'
-cpus_per_task = '2'
+# all_run_ids = ['7ckmnkvc']*2
+# all_epochs = [520, 500]
+# all_run_ids = ['7ckmnkvc']
+# all_epochs = [500]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [100]*len(all_run_ids)
+# all_edge_conditional_set = ['val']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# all_boolean_flags = ['--log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
 ##### trained without charges
 # all_run_ids = ['ltnuvhp9', 't7fu3v10']
@@ -149,17 +149,17 @@ cpus_per_task = '2'
 # cpus_per_task = '2'
 
 ###### without rb reprocessing: 
-all_run_ids = ['7ckmnkvc']
-all_epochs = [500]
-all_n_conditions = [4992]*len(all_run_ids)
-all_n_samples_per_condition = [100]*len(all_run_ids)
-all_steps = [100]*len(all_run_ids)
-all_edge_conditional_set = ['val']*len(all_run_ids)
-all_new_prob_weights = [0.9]*len(all_run_ids)
-all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
-all_boolean_flags = ['--log_to_wandb']*len(all_run_ids)
-t = '08:00:00'
-cpus_per_task = '2'
+# all_run_ids = ['7ckmnkvc']
+# all_epochs = [500]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [100]*len(all_run_ids)
+# all_edge_conditional_set = ['val']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
 ###### with charges removal
 # all_run_ids = ['7ckmnkvc']
@@ -182,61 +182,156 @@ cpus_per_task = '2'
 # cpus_per_task = '1'
 
 ###### with charges removal
-all_run_ids = ['7ckmnkvc']
-all_epochs = [620]
-all_n_conditions = [4992]*len(all_run_ids)
-all_n_samples_per_condition = [100]*len(all_run_ids)
-all_steps = [100]*len(all_run_ids)
-all_edge_conditional_set = ['test']*len(all_run_ids)
-all_new_prob_weights = [0.9]*len(all_run_ids)
-all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
-all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
-t = '08:00:00'
-cpus_per_task = '2'
+# all_run_ids = ['7ckmnkvc']
+# all_epochs = [620]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [100]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
-for (run_id, epochs, n_conditions, n_samples_per_condition, steps, edge_conditional_set, new_prob_weight, ranking_metric, boolean_flags) \
-    in zip(all_run_ids, all_epochs, all_n_conditions, all_n_samples_per_condition, all_steps, all_edge_conditional_set, \
-           all_new_prob_weights, all_ranking_metrics, all_boolean_flags):
+# all_run_ids = ['t7fu3v10']
+# all_epochs = [380]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [100]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
-    reprocess_like_retrobridge = 'reprocess_like_retrobridge' in boolean_flags
-    keep_unprocessed = 'keep_unprocessed' in boolean_flags
-    remove_charges = 'remove_charges' in boolean_flags
-    experiment_name = f'{run_id}_wandb_pipeline_retrobridge_reproc{reprocess_like_retrobridge}_keep{keep_unprocessed}_rmch{remove_charges}_nprob{new_prob_weight}_rank{ranking_metric}'
-    print(f"Creating job {experiment_name}... ")
-    job_file = os.path.join(job_directory, f"{experiment_name}.job")
+# all_run_ids = ['nn2446qu']
+# all_epochs = [500]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [100]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
-    # TODO: Could load the yaml file in question the experiment name and log with that locally to outputs/
-    with open(job_file, 'w') as fh:
-        fh.writelines("#!/bin/bash\n")
-        fh.writelines(f"#SBATCH --job-name={experiment_name}_%a.job\n") # add time stamp?
-        fh.writelines(f"#SBATCH --output={output_dir}/{experiment_name}_%a.out\n")
-        fh.writelines(f"#SBATCH --error={output_dir}/{experiment_name}_%a.err\n")
-        fh.writelines(f"#SBATCH --account={project}\n")
-        # fh.writelines(f"#SBATCH --partition=gpu\n")
-        # fh.writelines(f"#SBATCH --gres=gpu:v100:{num_gpus}\n")
-        fh.writelines("#SBATCH --mem-per-cpu=10G\n")
-        fh.writelines(f"#SBATCH --cpus-per-task={cpus_per_task}\n")
-        fh.writelines(f"#SBATCH --time={t}\n")
-        fh.writelines("#SBATCH --array=1-1\n")
-        fh.writelines("module purge\n")
-        fh.writelines("module load gcc/11.3.0\n\n")
-        fh.writelines(f"export WANDB_CACHE_DIR=/scratch/{project}\n")
-        fh.writelines(f"export MPLCONFIGDIR=/scratch/{project}\n")
-        fh.writelines(f'export PATH="/projappl/{project}/{conda_env}/bin:$PATH"\n')
-        if run_id=='retrobridge_samples': # retrobridge samples
-            fh.writelines(f"python3 retrobridge_like_roundtrip.py --ranking_metric {ranking_metric} {boolean_flags}\n")
-        else:
-            fh.writelines(f"python3 retrobridge_like_roundtrip.py --wandb_run_id {run_id} --n_conditions {n_conditions} --steps {steps} --epochs {epochs} --edge_conditional_set {edge_conditional_set} --n_samples_per_condition {n_samples_per_condition}"+\
-                      f" --new_prob_weight {new_prob_weight} --ranking_metric {ranking_metric} {boolean_flags}\n")
+# all_run_ids = ['nn2446qu']
+# all_epochs = [500]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [100]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
+# all_run_ids = ['nn2446qu']
+# all_epochs = [420]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [100]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
-    result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
-    if 'job' not in result.stdout.decode("utf-8"):
-        print(result)
-    else:
-        job_id = result.stdout.decode("utf-8").strip().split('job ')[1]
+# all_run_ids = ['nn2446qu']
+# all_epochs = [420]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [250]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
-        with open(jobids_file, 'a') as f:
-            f.write(f"train.job: {job_id}\n")
+# all_run_ids = ['7ckmnkvc']
+# all_epochs = [720]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [100]*len(all_run_ids)
+# all_steps = [10]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--reprocess_like_retrobridge --keep_unprocessed --log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
 
-        print(f"=== Submitted to Slurm with ID {job_id}.")
+# all_run_ids = ['6q1cd3e3']
+# all_epochs = [260]
+# all_n_conditions = [4992]*len(all_run_ids)
+# all_n_samples_per_condition = [200]*len(all_run_ids)
+# all_steps = [250]*len(all_run_ids)
+# all_edge_conditional_set = ['test']*len(all_run_ids)
+# all_new_prob_weights = [0.9]*len(all_run_ids)
+# all_ranking_metrics = ['new_weighted_prob']*len(all_run_ids)
+# all_boolean_flags = ['--log_to_wandb']*len(all_run_ids)
+# t = '08:00:00'
+# cpus_per_task = '2'
+
+# for (run_id, epochs, n_conditions, n_samples_per_condition, steps, edge_conditional_set, new_prob_weight, ranking_metric, boolean_flags) \
+#     in zip(all_run_ids, all_epochs, all_n_conditions, all_n_samples_per_condition, all_steps, all_edge_conditional_set, \
+#            all_new_prob_weights, all_ranking_metrics, all_boolean_flags):
+
+#     reprocess_like_retrobridge = 'reprocess_like_retrobridge' in boolean_flags
+#     keep_unprocessed = 'keep_unprocessed' in boolean_flags
+#     remove_charges = 'remove_charges' in boolean_flags
+#    experiment_name = f'{run_id}_wandb_pipeline_retrobridge_reproc{reprocess_like_retrobridge}_keep{keep_unprocessed}_rmch{remove_charges}_nprob{new_prob_weight}_rank{ranking_metric}'
+
+run_id = ''
+input_file = "/scratch/project_2006950/MolecularTransformer/experiments/results/7ck_620_eval/7ck_620.txt"
+nb_gpus = 1
+batch_size = 512
+metric = 'new_weighted_prob'
+cpus_per_task = 8
+t = '00:30:00'
+
+file_name = input_file.split('/')[-1]
+experiment_name = f'round_trip_{file_name}'
+print(f"Creating job {experiment_name}... ")
+job_file = os.path.join(job_directory, f"{experiment_name}.job")
+
+# TODO: Could load the yaml file in question the experiment name and log with that locally to outputs/
+with open(job_file, 'w') as fh:
+    fh.writelines("#!/bin/bash\n")
+    fh.writelines(f"#SBATCH --job-name={experiment_name}_%a.job\n") # add time stamp?
+    fh.writelines(f"#SBATCH --output={output_dir}/{experiment_name}_%a.out\n")
+    fh.writelines(f"#SBATCH --error={output_dir}/{experiment_name}_%a.err\n")
+    fh.writelines(f"#SBATCH --account={project}\n")
+    fh.writelines(f"#SBATCH --partition=gpu\n")
+    fh.writelines(f"#SBATCH --gres=gpu:v100:{nb_gpus}\n")
+    fh.writelines("#SBATCH --mem-per-cpu=10G\n")
+    fh.writelines(f"#SBATCH --cpus-per-task={cpus_per_task}\n")
+    fh.writelines(f"#SBATCH --time={t}\n")
+    fh.writelines("#SBATCH --array=1-1\n")
+    fh.writelines("module purge\n")
+    fh.writelines("module load gcc/11.3.0\n\n")
+    fh.writelines(f"export WANDB_CACHE_DIR=/scratch/{project}\n")
+    fh.writelines(f"export MPLCONFIGDIR=/scratch/{project}\n")
+    fh.writelines(f'export PATH="/projappl/{project}/{conda_env}/bin:$PATH"\n')
+    # if run_id=='retrobridge_samples': # retrobridge samples
+    #     fh.writelines(f"python3 retrobridge_like_roundtrip.py --ranking_metric {ranking_metric} {boolean_flags}\n")
+    # else:
+        # fh.writelines(f"python3 retrobridge_like_roundtrip.py --wandb_run_id {run_id} --n_conditions {n_conditions} --steps {steps} --epochs {epochs} --edge_conditional_set {edge_conditional_set} --n_samples_per_condition {n_samples_per_condition}"+\
+        #           f" --new_prob_weight {new_prob_weight} --ranking_metric {ranking_metric} {boolean_flags}\n")
+    fh.writelines(f"python3 retrobridge_like_roundtrip.py --log_to_wandb --remove_charges --input_file {input_file} --ranking_metric {metric} --gpu {nb_gpus} --batch_size {batch_size}\n")
+
+result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
+if 'job' not in result.stdout.decode("utf-8"):
+    print(result)
+else:
+    job_id = result.stdout.decode("utf-8").strip().split('job ')[1]
+
+    with open(jobids_file, 'a') as f:
+        f.write(f"train.job: {job_id}\n")
+
+    print(f"=== Submitted to Slurm with ID {job_id}.")
