@@ -142,27 +142,23 @@ if __name__ == "__main__":
     parser.add_argument('--log_to_wandb', type=bool, default=False,
                        help='log_to_wandb')
     args = parser.parse_args()
-    args = parser.parse_args()
 
     translation_out_file = args.translation_out_file
     #translation_out_file = os.path.join('experiments', 'results', 'retroB_translated_eval_epoch200_steps250_resorted_0.9_cond4992_sampercond100_test_lam0.9_retrobridge_roundtrip_parsed.txt')
-    #translation_out_file = '/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_retranslated.csv'
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_retranslated.csv'
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_rb_in_common.csv'
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_7ck620_in_common.csv'
     df_in = pd.read_csv(translation_out_file)
+    df_in = df_in.dropna(0)
     df_in = assign_groups(df_in, samples_per_product_per_file=10)
     df_in.loc[(df_in['product'] == 'C') & (df_in['true'] == 'C'), 'true'] = 'Placeholder'
-    # print(f"{len(df_in.loc[(df_in['product'] == 'C') & (df_in['true'] == 'C'), 'true'])}")
-    # exit()
     
     df = compute_confidence(df_in)
-    # print(f'df.head(2)["score"] = {df.head(2)["score"]}')
-    # print(f'df.head(2)["confidence"] = {df.head(2)["confidence"]}')
-    # assert (df['score']==df['confidence']).all()
-    
     for key in ['product', 'pred_product']:
         df[key] = df[key].apply(canonicalize)
 
-    df['exact_match'] = df['true'] == df['pred']
-    df['round_trip_match'] = df['product'] == df['pred_product']
+    df['exact_match'] = df['true']==df['pred']
+    df['round_trip_match'] = df['product']==df['pred_product']
     df['match'] = df['exact_match'] | df['round_trip_match']
     
     avg = {}
@@ -172,12 +168,11 @@ if __name__ == "__main__":
         # df = df.drop_duplicates(subset='pred')
         # avg[f'roundtrip-coverage-{k}_weighted_0.9'] = df.groupby('product', group_keys=False).head(int(k)).groupby('product', group_keys=False).match.any().reset_index()['match']
         # avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = df.groupby('product', group_keys=False).head(int(k)).groupby('product', group_keys=False).match.mean().reset_index()['match']
-        
-        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['confidence']))).reset_index(drop=True)
+        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['normalized_counts']))).reset_index(drop=True)
         avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('group').match.any().mean()
         avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('group').match.mean().mean()
     print(f'avg {avg}\n')
-    exit()
+
     # 8. log scores to wandb
     wandb_entity = 'najwalb'
     wandb_project = 'retrodiffuser'

@@ -23,6 +23,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 def build_translator(opt, report_score=True, logger=None, out_file=None, log_probs_out_file=None):
+    print(f'opt.gpu {opt.gpu}\n')
     if out_file is None:
         out_file = codecs.open(opt.output, 'w+', 'utf-8')
 
@@ -215,7 +216,7 @@ class Translator(object):
                           window=self.window,
                           use_filter_pred=self.use_filter_pred,
                           image_channel_size=self.image_channel_size)
-        
+
         if self.cuda:
             cur_device = "cuda"
         else:
@@ -237,6 +238,7 @@ class Translator(object):
 
         all_scores = []
         all_predictions = []
+        print(f'batch_size {batch_size}\n')
         for i, batch in enumerate(data_iter):
             t0 = time.time()
             print(f'batch # {i}\n')
