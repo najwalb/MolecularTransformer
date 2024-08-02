@@ -325,8 +325,11 @@ if __name__ == "__main__":
     
     if args.retrobridge_samples:
         eval_file = os.path.join(parent_path, 'data', 'retrobridge', 'retrobridge_samples.csv')
-        reactions = read_retrobridge_samples(eval_file, no_pred_product=True, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_unprocessed=args.keep_unprocessed)
-        df = pd.DataFrame(reactions, columns=['product', 'pred', 'true', 'score', 'true_n_dummy_nodes', 'sampled_n_dummy_nodes', 'nll', 'ell', 'from_file'])
+        reactions = read_retrobridge_samples(eval_file, no_pred_product=False, remove_charges=args.remove_charges, 
+                                             reprocess_like_retrobridge=args.reprocess_like_retrobridge, 
+                                             keep_unprocessed=args.keep_unprocessed)
+        df = pd.DataFrame(reactions, columns=['product', 'pred', 'true', 'score', 'true_n_dummy_nodes', 'sampled_n_dummy_nodes', 
+                                              'nll', 'ell', 'from_file', 'pred_product'])
     else:
         assert len(args.epochs)==1, 'The script can only handle one epoch for now.'
         epoch = args.epochs[0]
@@ -355,31 +358,31 @@ if __name__ == "__main__":
         df['normalized_counts'] = df['counts']/df['n_samples_per_product']
 
     # Find unique SMILES
-    unique_smiles = list(set(df['pred']))
+    # unique_smiles = list(set(df['pred']))
 
-    # Tokenize
-    tokenized_smiles = [smi_tokenizer(s.strip()) for s in unique_smiles]
+    # # Tokenize
+    # tokenized_smiles = [smi_tokenizer(s.strip()) for s in unique_smiles]
 
-    print("Predicting products...")
-    tic = time()
-    translator = build_translator(args, report_score=True)
-    scores, pred_products = translator.translate(
-        src_data_iter=tokenized_smiles,
-        batch_size=args.batch_size,
-        attn_debug=args.attn_debug
-    )
-    # always take n_best = 1?
-    pred_products = [x[0].strip() for x in pred_products]
-    print("... done after {} seconds".format(time() - tic))
+    # print("Predicting products...")
+    # tic = time()
+    # translator = build_translator(args, report_score=True)
+    # scores, pred_products = translator.translate(
+    #     src_data_iter=tokenized_smiles,
+    #     batch_size=args.batch_size,
+    #     attn_debug=args.attn_debug
+    # )
+    # # always take n_best = 1?
+    # pred_products = [x[0].strip() for x in pred_products]
+    # print("... done after {} seconds".format(time() - tic))
 
-    # De-tokenize
-    pred_products = [''.join(x.split()) for x in pred_products]
+    # # De-tokenize
+    # pred_products = [''.join(x.split()) for x in pred_products]
 
-    # gather results
-    pred_products = {r:p for r, p in zip(unique_smiles, pred_products)}
+    # # gather results
+    # pred_products = {r:p for r, p in zip(unique_smiles, pred_products)}
 
-    # update dataframe
-    df.insert(3, 'pred_product', [pred_products[r] for r in df['pred']])
+    # # update dataframe
+    # df.insert(3, 'pred_product', [pred_products[r] for r in df['pred']])
 
     # Write results
     mt_opts = f'reprocess{args.reprocess_like_retrobridge}_keepUnprocessed{args.keep_unprocessed}_removeCharges{args.remove_charges}'
@@ -404,16 +407,16 @@ if __name__ == "__main__":
         df[key] = df[key].apply(canonicalize)
 
     df['exact_match'] = df['true'] == df['pred']
-    #df['round_trip_match'] = df['product'] == df['pred_product']
-    #df['match'] = df['exact_match'] | df['round_trip_match']
+    df['round_trip_match'] = df['product'] == df['pred_product']
+    df['match'] = df['exact_match'] | df['round_trip_match']
     
     assert args.ranking_metric in df.columns, f'ranking metric {args.ranking_metric} not in columns'
     avg = {}
     for k in args.round_trip_k:
-        topk_df = df.groupby(['product']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[args.ranking_metric]))).reset_index(drop=True)
-        avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('product').match.any().mean()
-        avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('product').match.mean().mean()
-        avg[f'top-{k}_weighted_0.9'] = topk_df.groupby('product').exact_match.any().mean()
+        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[args.ranking_metric]))).reset_index(drop=True)
+        avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('group').match.any().mean()
+        avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('group').match.mean().mean()
+        avg[f'top-{k}_weighted_0.9'] = topk_df.groupby('group').exact_match.any().mean()
     
     if not args.retrobridge_samples: avg['epoch'] = epoch
     print(f'avg {avg}\n')
