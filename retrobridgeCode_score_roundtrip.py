@@ -35,7 +35,7 @@ def assign_groups(df, samples_per_product_per_file=10):
     # what happens if we group by from_file then by group?
     # for each file, we assign numbers 0...nb_product_in_subset to each group of 10 samples 
     # (i.e. assign the index of the product to each group of 10 samples)
-    df = df.groupby('product', group_keys=False).apply(partial(_assign_groups, samples_per_product=samples_per_product_per_file))
+    df = df.groupby('from_file', group_keys=False).apply(partial(_assign_groups, samples_per_product=samples_per_product_per_file))
     return df
 
 # counting! => doesn't use elbo at all ...
@@ -131,7 +131,8 @@ def donwload_eval_file_from_artifact(wandb_entity, wandb_project, wandb_run_id, 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--translation_out_file", type=Path, required=False, default=True)
+    parser.add_argument("--translation_out_file", type=Path, required=True, default='')
+    parser.add_argument("--ranking_metric", type=str, required=True, default='confidence')
     parser.add_argument("--topk", type=list, default=[1, 3, 5, 10, 50])
     parser.add_argument('--round_trip_k', nargs='+', type=int, default=[1, 3, 5, 10, 50],
                        help='list of k values for the round_trip accuracy')
@@ -143,17 +144,19 @@ if __name__ == "__main__":
                        help='log_to_wandb')
     args = parser.parse_args()
 
-    #translation_out_file = os.path.join('experiments', 'results', 'retroB_translated_eval_epoch200_steps250_resorted_0.9_cond4992_sampercond100_test_lam0.9_retrobridge_roundtrip_parsed.txt')
-    translation_out_file = '/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_retranslated.csv'
-    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_rb_in_common.csv'
-    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_7ck620_in_common.csv'
-    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/7ck620_all_from_atoms_and_bonds.csv'
-    df_in = pd.read_csv(translation_out_file)
-    df_in = df_in.dropna(0)
-    df_in = assign_groups(df_in, samples_per_product_per_file=10)
-    df_in.loc[(df_in['product'] == 'C') & (df_in['true'] == 'C'), 'true'] = 'Placeholder'
+    translation_out_file = args.translation_out_file
+    df = pd.read_csv(translation_out_file)
+
+    df = assign_groups(df, samples_per_product_per_file=10)
+    df.loc[(df['product'] == 'C') & (df['true'] == 'C'), 'true'] = 'Placeholder'
+    df = compute_confidence(df)
     
-    df = compute_confidence(df_in)
+    all_sizes = df.groupby('product').size().to_dict()
+    all_counts = df.groupby(['product','pred']).size().to_dict()
+    df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
+    df['counts'] = df.apply(lambda x: all_counts[x['product'],x['pred']], axis=1)
+    df['normalized_counts'] = df['counts']/df['n_samples_per_product']
+
     for key in ['product', 'pred_product']:
         df[key] = df[key].apply(canonicalize)
 
@@ -163,12 +166,7 @@ if __name__ == "__main__":
     
     avg = {}
     for k in args.topk:
-        # df['log_conf'] = np.log(df['confidence'])
-        # df = df.sort_values(by='log_conf', ascending=False)
-        # df = df.drop_duplicates(subset='pred')
-        # avg[f'roundtrip-coverage-{k}_weighted_0.9'] = df.groupby('product', group_keys=False).head(int(k)).groupby('product', group_keys=False).match.any().reset_index()['match']
-        # avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = df.groupby('product', group_keys=False).head(int(k)).groupby('product', group_keys=False).match.mean().reset_index()['match']
-        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['normalized_counts']))).reset_index(drop=True)
+        topk_df = df.groupby(['group']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[args.ranking_metric]))).reset_index(drop=True)
         avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('group').match.any().mean()
         avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('group').match.mean().mean()
     print(f'avg {avg}\n')

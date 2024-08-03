@@ -131,20 +131,18 @@ def donwload_eval_file_from_artifact(wandb_entity, wandb_project, wandb_run_id, 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--translation_out_file", type=Path, required=False, default=True)
+    parser.add_argument("--input_file", type=Path, required=False, default=True)
     parser.add_argument('--round_trip_k', nargs='+', type=int, default=[1, 3, 5, 10, 50],
                        help='list of k values for the round_trip accuracy')
-    parser.add_argument('--log_to_wandb', type=bool, default=False,
-                       help='log_to_wandb')
+    parser.add_argument('--log_to_wandb', action='store_true', default=False, help='log_to_wandb')
     args = parser.parse_args()
 
-    #translation_out_file = '/Users/laabidn1/MolecularTransformer/data/retrobridge/retrobridge_samples.csv'
-    translation_out_file = args.translation_out_file
-    df = pd.read_csv(translation_out_file)
-    # df_in['from_file'] = args.translation_out_file   
+    input_file = args.input_file
+    df = pd.read_csv(input_file)
     
-    # df_in = assign_groups(df_in, samples_per_product_per_file=10)
-    group_key = 'product'
+    df = assign_groups(df, samples_per_product_per_file=10)
+    
+    group_key = 'group'
     df.loc[(df['product'] == 'C') & (df['true'] == 'C'), 'true'] = 'Placeholder'
     df = compute_confidence(df, group_key=group_key)
     
@@ -160,10 +158,14 @@ if __name__ == "__main__":
         topk_df = df.groupby([group_key]).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df['confidence']))).reset_index(drop=True)
         avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby(group_key).match.any().mean()
         avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby(group_key).match.mean().mean()
-    print(f'avg {avg}\n')
+    
+    coverage_to_print = {k: f"{avg[f'roundtrip-coverage-{k}_weighted_0.9']}\n" for k in args.round_trip_k}
+    accuracy_to_print = {k: f"{avg[f'roundtrip-accuracy-{k}_weighted_0.9']}\n" for k in args.round_trip_k}
+    print(f'coverage:\n\t{coverage_to_print}\n')
+    print(f'accuracy:\n\t{accuracy_to_print}')
 
     # 8. log scores to wandb
-    reaction_file_name = args.translation_out_file
+    reaction_file_name = args.input_file
     wandb_run_id = 'test'
     print(f'args.log_to_wandb {args.log_to_wandb}\n')
     if args.log_to_wandb:
