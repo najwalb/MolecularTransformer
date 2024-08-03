@@ -192,6 +192,7 @@ def _assign_groups(df, samples_per_product):
     # group is the number of conditioning product
     # for test data: group is [0,5006], with each 10 samples having the same index
     df['group'] = np.arange(len(df)) // samples_per_product
+    
     return df
 
 def assign_groups(df, samples_per_product_per_file=10):
@@ -201,6 +202,7 @@ def assign_groups(df, samples_per_product_per_file=10):
     # for each file, we assign numbers 0...nb_product_in_subset to each group of 10 samples 
     # (i.e. assign the index of the product to each group of 10 samples)
     df = df.groupby('from_file', group_keys=False).apply(partial(_assign_groups, samples_per_product=samples_per_product_per_file))
+    
     return df
 
 def compute_confidence(df, group_key='product'):
@@ -265,35 +267,6 @@ def canonicalize(smi):
         return np.nan
     return Chem.MolToSmiles(m)
 
-def compute_confidence_like_rb(df):
-    # count the number of times a prediction is made for a given product/group => repetitions!!
-    counts = df.groupby(['group', 'pred'], group_keys=False).size().reset_index(name='count') 
-    # group = single product => count the number of predictions we get per product => nb_samples_per_product
-    group_size = df.groupby(['group'], group_keys=False).size().reset_index(name='group_size') # shld be 100 in paper experiments
-
-    #     # Don't use .merge() as it can change the order of rows
-    ##     df = df.merge(counts, on=['group', 'pred'], how='left')
-    #     df = df.merge(counts, on=['group', 'pred'], how='inner')
-    #     df = df.merge(group_size, on=['group'], how='left')
-    
-    counts_dict = {(g, p): c for g, p, c in zip(counts['group'], counts['pred'], counts['count'])}
-    df['count'] = df.apply(lambda x: counts_dict[(x['group'], x['pred'])], axis=1)
-
-    size_dict = {g: s for g, s in zip(group_size['group'], group_size['group_size'])}
-    df['group_size'] = df.apply(lambda x: size_dict[x['group']], axis=1)
-
-    # how many times the same prediction is made for a given product
-    df['confidence'] = df['count'] / df['group_size']
-
-    # sanity check
-    # what does nunique do?
-    # it counts the number of unique values in a series: all product_pred have the same confidence value
-    # all groups have the same group_size (n_samples is the same for all products)
-    assert (df.groupby(['group', 'pred'], group_keys=False)['confidence'].nunique() == 1).all()
-    assert (df.groupby(['group'], group_keys=False)['group_size'].nunique() == 1).all()
-
-    return df
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # parser.add_argument("--csv_file", type=Path, required=True)
@@ -307,7 +280,9 @@ if __name__ == "__main__":
     parser.add_argument("--remove_charges", default=False, action='store_true')
     parser.add_argument('--new_prob_weight', type=float, default=0.9, help='new_prob_weight')
     parser.add_argument('--ranking_metric', type=str, default='new_weighted_prob', help='ranking_metric')
-    parser.add_argument('--retrobridge_samples', action='store_true', default=False, help='retrobridge_samples')
+    parser.add_argument('--group_key', type=str, default='product', help='key in samples dataframe to group predictions by')
+    # parser.add_argument('--retrobridge_samples', action='store_true', default=False, help='retrobridge_samples')
+    parser.add_argument('--retrobridge_samples', type=Path, default=None, help='path to a file with samples in a format as shared by RB')
     # added these params to be able to get data from wandb
     parser.add_argument('--wandb_run_id', type=str, help='The id of the training run on wandb')
     parser.add_argument('--n_conditions', type=str, help='to identify the samples artifact')
@@ -339,8 +314,9 @@ if __name__ == "__main__":
     wandb_project = 'retrodiffuser'
     model = "MIT_mixed_augm_model_average_20.pt"
     
-    if args.retrobridge_samples:
-        eval_file = os.path.join(parent_path, 'data', 'retrobridge', 'retrobridge_samples_small.csv')
+    if args.retrobridge_samples is not None:
+        #eval_file = os.path.join(parent_path, 'data', 'retrobridge', 'retrobridge_samples_small.csv')
+        eval_file = args.retrobridge_samples
         reactions = read_retrobridge_samples(eval_file, no_pred_product=True, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_invalid_molecules=args.keep_invalid_molecules)
         df = pd.DataFrame(reactions, columns=['product', 'pred', 'true', 'score', 'true_n_dummy_nodes', 'sampled_n_dummy_nodes', 'nll', 'ell', 'from_file'])
     elif args.wandb_run_id:
@@ -358,9 +334,9 @@ if __name__ == "__main__":
         # 2. read saved reaction data from eval file
         log.info(f'Read saved reactions...\n')
         reactions = read_saved_reaction_data_like_retrobridge(eval_file, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_invalid_molecules=args.keep_invalid_molecules)
-        print(f'reactions {len(reactions)}\n')
-        print(f'reactions {reactions[0]}\n')
-        print(f'reactions set {len(set([reaction[1] for reaction in reactions]))}\n')
+        # print(f'reactions {len(reactions)}\n')
+        # print(f'reactions {reactions[0]}\n')
+        # print(f'reactions set {len(set([reaction[1] for reaction in reactions]))}\n')
         
         # 3. output reaction data to text file as one reaction per line
         mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_invalid_molecules}_NOcharges{args.remove_charges}'
@@ -373,20 +349,17 @@ if __name__ == "__main__":
         df = pd.DataFrame(reactions, columns=['product', 'true', 'pred', 'elbo', 'loss_t', 'loss_0', 'counts', 'weighted_prob'])
 
         print(f"7ck {df.groupby(['product', 'true']).agg({'true':'size'}).shape}\n")
-        exit()
+
     # add normalized counts
-    all_sizes = df.groupby('product').size().to_dict()
-    df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
+    all_sizes = df.groupby(args.group_key).size().to_dict()
+    df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x[args.group_key]], axis=1)
     df['normalized_counts'] = df['counts']/df['n_samples_per_product']
     
     # Find unique SMILES
     unique_smiles = list(set(df['pred'][df['pred']!='']))
-    # print(f'unique_smiles {unique_smiles}\n')
-    # print(f'')
-
+    
     # Tokenize
     tokenized_smiles = [smi_tokenizer(s.strip()) for s in unique_smiles]
-    #print(f'tokenized_smiles {tokenized_smiles}\n')
 
     print("Predicting products...")
     tic = time()
@@ -407,7 +380,7 @@ if __name__ == "__main__":
     pred_products = {r:p for r, p in zip(unique_smiles, pred_products)}
 
     # update dataframe
-    df.insert(3, 'pred_product', [pred_products[r] if r!='' else '' for r in df['pred'] ])
+    df.insert(3, 'pred_product', [pred_products[r] if r!='' else 'WRONG' for r in df['pred'] ])
 
     # Write results
     mt_opts = f'reprocess{args.reprocess_like_retrobridge}_keepUnprocessed{args.keep_invalid_molecules}_removeCharges{args.remove_charges}'
@@ -418,16 +391,15 @@ if __name__ == "__main__":
     os.makedirs(os.path.join(parent_path, 'experiments', 'results', dataset), exist_ok=True)
     df.to_csv(os.path.join(parent_path, 'experiments', 'results', dataset, reaction_file_name), index=False)
 
-    if args.retrobridge_samples:
+    if args.retrobridge_samples is not None:
         df = assign_groups(df, samples_per_product_per_file=10)
         df.loc[(df['product'] == 'C') & (df['true'] == 'C'), 'true'] = 'Placeholder'
-        # NOTE: the structure of the df changes here
-        df = compute_confidence_like_rb(df)
     else:
-        df = compute_confidence(df, group_key='product')
-        df = recompute_elbo(df, group_key='product')
+        
+        df = recompute_elbo(df, group_key=args.group_key)
         df['new_weighted_prob'] = (1-args.new_prob_weight)*df['new_elbo'] + args.new_prob_weight*df['confidence']
 
+    df = compute_confidence(df, group_key=args.group_key)
     for key in ['product', 'pred_product']:
         df[key] = df[key].apply(canonicalize)
 
@@ -438,10 +410,10 @@ if __name__ == "__main__":
     assert args.ranking_metric in df.columns, f'ranking metric {args.ranking_metric} not in columns'
     avg = {}
     for k in args.round_trip_k:
-        topk_df = df.groupby(['product']).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[args.ranking_metric]))).reset_index(drop=True)
-        avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby('product').match.any().mean()
-        avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby('product').match.mean().mean()
-        avg[f'top-{k}_weighted_0.9'] = topk_df.groupby('product').exact_match.any().mean()
+        topk_df = df.groupby([args.group_key]).apply(partial(get_top_k, k=k, scoring=lambda df:np.log(df[args.ranking_metric]))).reset_index(drop=True)
+        avg[f'roundtrip-coverage-{k}_weighted_0.9'] = topk_df.groupby(args.group_key).match.any().mean()
+        avg[f'roundtrip-accuracy-{k}_weighted_0.9'] = topk_df.groupby(args.group_key).match.mean().mean()
+        avg[f'top-{k}_weighted_0.9'] = topk_df.groupby(args.group_key).exact_match.any().mean()
     
     if not args.retrobridge_samples: avg['epoch'] = epoch
     print(f'avg {avg}\n')
