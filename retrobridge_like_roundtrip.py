@@ -231,15 +231,18 @@ def compute_confidence(df, group_key='product'):
     df['confidence'] = df['new_counts'] / df['n_samples_per_product']
 
     # sanity check
-    # what does nunique do?
-    # it counts the number of unique values in a series: all product_pred have the same confidence value
-    # all groups have the same group_size (n_samples is the same for all products)
-    assert (df.groupby([group_key, 'pred'], group_keys=False)['confidence'].nunique() == 1).all()
-    assert (df.groupby([group_key], group_keys=False)['n_samples_per_product'].nunique() == 1).all()
+    # 1. the same prediction should not have different confidence scores
+    ## what does nunique do? => # of unique values in each (product,pred) group
+    # 2. all groups have the same group_size (n_samples is the same for all products)
+    assert (df.groupby([group_key,'pred'],group_keys=False)['confidence'].nunique()==1).all() 
+    assert (df.groupby([group_key],group_keys=False)['n_samples_per_product'].nunique()==1).all()
 
     return df
 
 def recompute_elbo(df, group_key='product'):
+    # recompute the elbo some molecule post-processing added duplicates
+    # group by product and predictions pairs => take the mean of the elbo 
+    # => gives the elbo for each post-processed pred
     new_elbos = df.groupby([group_key, 'pred'], group_keys=False).agg({'elbo': 'mean'}).to_dict()
     df['new_elbo'] = df.apply(lambda x: new_elbos['elbo'][(x[group_key], x['pred'])], axis=1)
     
@@ -267,12 +270,12 @@ def canonicalize(smi):
 
 def compute_confidence_like_rb(df):
     # count the number of times a prediction is made for a given product/group => repetitions!!
-    counts = df.groupby(['group', 'pred'], group_keys=False).size().reset_index(name='count') 
+    counts = df.groupby(['group','pred'], group_keys=False).size().reset_index(name='count') 
     # group = single product => count the number of predictions we get per product => nb_samples_per_product
     group_size = df.groupby(['group'], group_keys=False).size().reset_index(name='group_size') # shld be 100 in paper experiments
 
     #     # Don't use .merge() as it can change the order of rows
-    ##     df = df.merge(counts, on=['group', 'pred'], how='left')
+    #     df = df.merge(counts, on=['group', 'pred'], how='left')
     #     df = df.merge(counts, on=['group', 'pred'], how='inner')
     #     df = df.merge(group_size, on=['group'], how='left')
     
@@ -289,8 +292,8 @@ def compute_confidence_like_rb(df):
     # what does nunique do?
     # it counts the number of unique values in a series: all product_pred have the same confidence value
     # all groups have the same group_size (n_samples is the same for all products)
-    assert (df.groupby(['group', 'pred'], group_keys=False)['confidence'].nunique() == 1).all()
-    assert (df.groupby(['group'], group_keys=False)['group_size'].nunique() == 1).all()
+    assert (df.groupby(['group','pred'],group_keys=False)['confidence'].nunique()==1).all() #??
+    assert (df.groupby(['group'],group_keys=False)['group_size'].nunique()==1).all()
 
     return df
 
@@ -354,39 +357,35 @@ if __name__ == "__main__":
     elif args.input_file:
         eval_file = str(args.input_file)
         epoch = 0
+        
     if args.input_file or args.wandb_run_id:
         # 2. read saved reaction data from eval file
         log.info(f'Read saved reactions...\n')
         reactions = read_saved_reaction_data_like_retrobridge(eval_file, remove_charges=args.remove_charges, reprocess_like_retrobridge=args.reprocess_like_retrobridge, keep_invalid_molecules=args.keep_invalid_molecules)
-        print(f'reactions {len(reactions)}\n')
-        print(f'reactions {reactions[0]}\n')
-        print(f'reactions set {len(set([reaction[1] for reaction in reactions]))}\n')
-        
-        # 3. output reaction data to text file as one reaction per line
-        mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_invalid_molecules}_NOcharges{args.remove_charges}'
-        eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
-        dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
-        reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
-
-        # Read CSV
-        # turn list into df
+        # print(f'reactions {len(reactions)}\n')
+        # print(f'reactions {reactions[0]}\n')
+        # print(f'reactions set {len(set([reaction[1] for reaction in reactions]))}\n')
         df = pd.DataFrame(reactions, columns=['product', 'true', 'pred', 'elbo', 'loss_t', 'loss_0', 'counts', 'weighted_prob'])
+        print(f"# of unique products in {eval_file} {df['product'].nunique()}\n")
+        
+        # # 3. output reaction data to text file as one reaction per line
+        # mt_opts = f'RB_translated_reproc{args.reprocess_like_retrobridge}_keep{args.keep_invalid_molecules}_NOcharges{args.remove_charges}'
+        # eval_file_name = eval_file.split('/')[-1].split('.txt')[0]
+        # dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
+        # reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
 
-        print(f"7ck {df.groupby(['product', 'true']).agg({'true':'size'}).shape}\n")
-        exit()
     # add normalized counts
     all_sizes = df.groupby('product').size().to_dict()
     df['n_samples_per_product'] = df.apply(lambda x: all_sizes[x['product']], axis=1)
-    df['normalized_counts'] = df['counts']/df['n_samples_per_product']
+    df['normalized_counts'] = df['counts']/df['n_samples_per_product'] # should be the same as confidence?
+    #df = compute_confidence(df, group_key='product')
     
     # Find unique SMILES
+    # NOTE: we ignore the empty smiles string below => we get e.g. if we fail to remap the predictions with chython
     unique_smiles = list(set(df['pred'][df['pred']!='']))
-    # print(f'unique_smiles {unique_smiles}\n')
-    # print(f'')
 
     # Tokenize
     tokenized_smiles = [smi_tokenizer(s.strip()) for s in unique_smiles]
-    #print(f'tokenized_smiles {tokenized_smiles}\n')
 
     print("Predicting products...")
     tic = time()
@@ -407,7 +406,9 @@ if __name__ == "__main__":
     pred_products = {r:p for r, p in zip(unique_smiles, pred_products)}
 
     # update dataframe
-    df.insert(3, 'pred_product', [pred_products[r] if r!='' else '' for r in df['pred'] ])
+    # NOTE: if pred is an empty string, pred_product should also be an empty string
+    # (e.g. if we fail to remap the predictions with chython)
+    df.insert(3, 'pred_product', [pred_products[r] if r!='' else '' for r in df['pred']])
 
     # Write results
     mt_opts = f'reprocess{args.reprocess_like_retrobridge}_keepUnprocessed{args.keep_invalid_molecules}_removeCharges{args.remove_charges}'
@@ -415,8 +416,8 @@ if __name__ == "__main__":
     dataset = f'{args.wandb_run_id}_eval' # use eval_run name (collection name) as dataset name
     reaction_file_name = f"{eval_file_name}_{mt_opts}_parsed.txt" # file name is: alias name from wandb+translation options+parsed (to mark that it was parsed)
     print("Writing CSV file...")
-    os.makedirs(os.path.join(parent_path, 'experiments', 'results', dataset), exist_ok=True)
-    df.to_csv(os.path.join(parent_path, 'experiments', 'results', dataset, reaction_file_name), index=False)
+    os.makedirs(os.path.join(parent_path,'experiments','results', dataset), exist_ok=True)
+    df.to_csv(os.path.join(parent_path,'experiments','results', dataset, reaction_file_name), index=False)
 
     if args.retrobridge_samples:
         df = assign_groups(df, samples_per_product_per_file=10)

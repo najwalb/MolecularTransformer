@@ -147,6 +147,7 @@ if __name__ == "__main__":
     translation_out_file = '/scratch/project_2006950/MolecularTransformer/data/retrobridge/retrobridge_samples_retranslated.csv'
     translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_rb_in_common.csv'
     translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/samples_from_7ck620_in_common.csv'
+    translation_out_file = '/scratch/project_2006950/MolecularTransformer/experiments/results/None_eval/7ck620_all_from_atoms_and_bonds.csv'
     df_in = pd.read_csv(translation_out_file)
     df_in = df_in.dropna(0)
     df_in = assign_groups(df_in, samples_per_product_per_file=10)

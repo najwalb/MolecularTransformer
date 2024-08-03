@@ -288,15 +288,16 @@ mkdir_p(output_dir)
 #    experiment_name = f'{run_id}_wandb_pipeline_retrobridge_reproc{reprocess_like_retrobridge}_keep{keep_unprocessed}_rmch{remove_charges}_nprob{new_prob_weight}_rank{ranking_metric}'
 
 run_id = ''
-input_file = "/scratch/project_2006950/MolecularTransformer/experiments/results/7ck_620_eval/7ck_620.txt"
+input_file = '/scratch/project_2006950/MolecularTransformer/data/7ck620/eval_epoch620_steps100_resorted_0.9_cond4992_sampercond100_test_lam0.9.txt'
 nb_gpus = 1
 batch_size = 512
 metric = 'new_weighted_prob'
+remove_charges = True
 cpus_per_task = 8
 t = '00:30:00'
 
 file_name = input_file.split('/')[-1]
-experiment_name = f'round_trip_{file_name}'
+experiment_name = f'{metric}_{"removeCharges" if remove_charges else ""}_{file_name}'
 print(f"Creating job {experiment_name}... ")
 job_file = os.path.join(job_directory, f"{experiment_name}.job")
 
@@ -323,7 +324,7 @@ with open(job_file, 'w') as fh:
     # else:
         # fh.writelines(f"python3 retrobridge_like_roundtrip.py --wandb_run_id {run_id} --n_conditions {n_conditions} --steps {steps} --epochs {epochs} --edge_conditional_set {edge_conditional_set} --n_samples_per_condition {n_samples_per_condition}"+\
         #           f" --new_prob_weight {new_prob_weight} --ranking_metric {ranking_metric} {boolean_flags}\n")
-    fh.writelines(f"python3 retrobridge_like_roundtrip.py --log_to_wandb --remove_charges --input_file {input_file} --ranking_metric {metric} --gpu {nb_gpus} --batch_size {batch_size}\n")
+    fh.writelines(f"python3 retrobridge_like_roundtrip.py --log_to_wandb {'--remove_charges' if remove_charges else ''} --input_file {input_file} --ranking_metric {metric} --gpu {nb_gpus} --batch_size {batch_size}\n")
 
 result = subprocess.run(args="sbatch", stdin=open(job_file, 'r'), capture_output=True)
 if 'job' not in result.stdout.decode("utf-8"):
